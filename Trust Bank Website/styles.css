@@ -38,6 +38,12 @@
      font-weight: normal;
  }
 
+ .navbar-custom .container-fluid {
+     display: flex;
+     justify-content: center;
+     margin-left:500px;
+ }
+
  .navbar-custom {
      background-color: #86C36E;
      /* Light Green */
