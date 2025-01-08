@@ -1,5 +1,6 @@
  .navbar-custom {
-     background-color: #0A6842;
+     background-color:#087c3c;
+        color: white;
      /* Green background */
  }
 
@@ -20,6 +21,8 @@
 
  .navbar-header {
      background-color: #0A6842;
+     color:white;
+     
      /* Dark Green */
  }
 
@@ -45,14 +48,16 @@
  }
 
  .navbar-custom {
-     background-color: #86C36E;
+     background-color: #087c3c;
+     color:white;
      /* Light Green */
  }
 
+ 
  .navbar-custom .nav-link {
-     color: #0A6842;
+     color: white;
      /* Dark Green */
-     font-weight: bold;
+     /* font-weight: bold; */
  }
 
  .navbar-custom .nav-link:hover {
@@ -60,6 +65,12 @@
      /* Darker Green */
  }
 
+ .logo-img {
+     width: 450px;
+     /* Adjust the width as needed */
+     height: auto;
+     /* Maintain aspect ratio */
+ }
  body {
      background: linear-gradient(to right, #86c36e, #a0d884);
      height: 100vh;
@@ -69,7 +80,7 @@
  .sidebar {
      background-color: #0a6842;
      /* Dark green */
-     height: 100vh;
+     height: 40vh;
      width: 60px;
      display: flex;
      flex-direction: column;
@@ -89,11 +100,54 @@
      /* Light green */
  }
 
+ .slider-image{
+    background-image: url('/bannerImage.jpeg');
+        /* Replace with your image URL */
+        background-size: cover;
+        background-position: center;
+        padding: 50px;
+        color: #fff;
+        height:50vh;
+        /* Adjust text color for better visibility */
+        text-align: center;
+        border-radius: 8px;
+ }
  .content {
      padding: 40px;
      color: #333;
+     
+     
      /* Dark text */
  }
+
+  .content {
+      padding: 50px;
+      color: #333;
+      /* Adjust text color for visibility */
+      text-align: left;
+      border-radius: 8px;
+      max-width: 400px;
+      /* Optional: Limit the width of the div */
+      /* background-color: #ffffff; */
+      /* Optional: Add a white background for contrast */
+      /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+      /* Optional: Add a subtle shadow */
+  }
+
+  .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ff4081;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+  }
+
+  .cta-button:hover {
+      background-color: #e73370;
+  }
 
  .content h1 {
      font-size: 2rem;
@@ -183,4 +237,12 @@
   .counter-text {
       font-size: 1.1rem;
       opacity: 0.9;
+  }
+
+  .card{
+    margin:1rem;
+  }
+
+  .cards-row{
+    margin-right: 50px;
   }
