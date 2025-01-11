@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information and Notice Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .download-row {
+            transition: background-color 0.3s;
+        }
+        .download-row:hover {
+            background-color: #f8f9fa;
+        }
+        .download-btn {
+            color: #6c757d;
+            text-decoration: none;
+        }
+        .download-btn:hover {
+            color: #0d6efd;
+        }
+
+        .carousel-item {
+      position: relative;
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 128, 0, 0.7);
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+    }
+    </style>
+</head>
+<body>
+    <section>
+        <div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="background-image: url('/annual-report.jpg');">
+        <div class="carousel-caption">
+          <h5>Annual Report</h5>
+        </div>
+      </div>
+      <div class="carousel-item" style="background-image: url('/annual-report.jpg');">
+        <div class="carousel-caption">
+          <h5>Project Overview</h5>
+        </div>
+      </div>
+      <div class="carousel-item" style="background-image: url('/annual-report.jpg');">
+        <div class="carousel-caption">
+          <h5>Growth Analysis</h5>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+    </section>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">REPORTS SECTION</h2>
+        
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="price-sensitive-tab" data-bs-toggle="tab" 
+                        data-bs-target="#price-sensitive" type="button" role="tab" 
+                        aria-controls="price-sensitive" aria-selected="true">
+                    Directors Reports
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="shareholder-notice-tab" data-bs-toggle="tab" 
+                        data-bs-target="#shareholder-notice" type="button" role="tab" 
+                        aria-controls="shareholder-notice" aria-selected="false">
+                    Annual Reports
+                </button>
+            </li>
+        </ul>
+        
+        <!-- Tab content -->
+        <div class="tab-content" id="myTabContent">
+            <!-- Price-Sensitive Information Tab -->
+            <div class="tab-pane fade show active" id="price-sensitive" role="tabpanel" 
+                 aria-labelledby="price-sensitive-tab">
+                <div class="list-group">
+                    <div class="list-group-item download-row d-flex justify-content-between align-items-center">
+                        <span>Directors Report</span>
+                        <a href="#" class="download-btn">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                    <!-- <div class="list-group-item download-row d-flex justify-content-between align-items-center">
+                        <span>Financial Performance for the period ended June 30, 2024</span>
+                        <a href="#" class="download-btn">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                    <div class="list-group-item download-row d-flex justify-content-between align-items-center">
+                        <span>Financial Performance for the period ended March 31, 2024</span>
+                        <a href="#" class="download-btn">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div> -->
+                </div>
+            </div>
+            
+            <!-- Information/Notice for Shareholders Tab -->
+            <div class="tab-pane fade" id="shareholder-notice" role="tabpanel" 
+                 aria-labelledby="shareholder-notice-tab">
+                <div class="list-group">
+                    <div class="list-group-item download-row d-flex justify-content-between align-items-center">
+                        <span>2023</span>
+                        <a href="#" class="download-btn">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                    <div class="list-group-item download-row d-flex justify-content-between align-items-center">
+                        <span>2024</span>
+                        <a href="#" class="download-btn">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                    <div class="list-group-item download-row d-flex justify-content-between align-items-center">
+                        <span>2022</span>
+                        <a href="#" class="download-btn">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

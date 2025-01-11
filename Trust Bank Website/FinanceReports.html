@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports & Financials</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .accordion-button {
+            background-color: #023020 !important;
+            color: white !important;
+        }
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #023020 !important;
+            color: white !important;
+        }
+        .nav-link {
+            color: #495057;
+            font-weight: 500;
+        }
+        .nav-link.active {
+            background-color: #023020 !important;
+            color: white !important;
+        }
+        .btn-read-more {
+            background-color: #023020;
+            color: white;
+            transition: all 0.3s;
+        }
+        .btn-read-more:hover {
+            background-color: #218838;
+            color: white;
+        }
+        .btn-download {
+            background-color:#023020;
+            color: white;
+            transition: all 0.3s;
+        }
+        .btn-download:hover {
+            background-color: #023020;
+            color: white;
+        }
+        .accordion-item {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="annual-tab" data-bs-toggle="tab" data-bs-target="#annual" type="button" role="tab">
+                    Financial Statements
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="earnings-tab" data-bs-toggle="tab" data-bs-target="#earnings" type="button" role="tab">
+                    Unclaimed/Undistributive Dividends
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="highlights-tab" data-bs-toggle="tab" data-bs-target="#highlights" type="button" role="tab">
+                    Unclaimed/Undistributive Stock Dividends
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="discussion-tab" data-bs-toggle="tab" data-bs-target="#discussion" type="button" role="tab">
+                    Disclosure of Risk Based Capital
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab content -->
+        <div class="tab-content" id="myTabContent">
+            <!-- Annual and Quarterly Reports Tab -->
+            <div class="tab-pane fade show active" id="annual" role="tabpanel">
+                <div class="accordion" id="accordionAnnual">
+                    <!-- Generate accordions for years 2024 to 2015 -->
+                    <script>
+                        const years = Array.from({length: 10}, (_, i) => 2024 - i);
+                        const reports = ['Annual Report', 'Q1 Report', 'Q2 Report', 'Q3 Report', 'Q4 Report'];
+                        
+                        document.getElementById('accordionAnnual').innerHTML = years.map(year => `
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAnnual${year}">
+                                        ${year}
+                                    </button>
+                                </h2>
+                                <div id="collapseAnnual${year}" class="accordion-collapse collapse" data-bs-parent="#accordionAnnual">
+                                    <div class="accordion-body">
+                                        ${reports.map(report => `
+                                            <div class="mb-4">
+                                                <p class="mb-3">${report} for ${year} containing detailed financial statements, management analysis, and future outlook.</p>
+                                                <div class="d-flex gap-2">
+                                                    <button class="btn btn-read-more">
+                                                        <i class="fas fa-book-reader"></i> Read More
+                                                    </button>
+                                                    <button class="btn btn-download">
+                                                        <i class="fas fa-download"></i> Download
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('');
+                    </script>
+                </div>
+            </div>
+
+            <!-- Quarterly Earnings Presentations Tab -->
+            <div class="tab-pane fade" id="earnings" role="tabpanel">
+                <div class="accordion" id="accordionEarnings">
+                    <script>
+                        document.getElementById('accordionEarnings').innerHTML = years.map(year => `
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEarnings${year}">
+                                        ${year}
+                                    </button>
+                                </h2>
+                                <div id="collapseEarnings${year}" class="accordion-collapse collapse" data-bs-parent="#accordionEarnings">
+                                    <div class="accordion-body">
+                                        ${['Q1', 'Q2', 'Q3', 'Q4'].map(quarter => `
+                                            <div class="mb-4">
+                                                <p class="mb-3">${quarter} ${year} Earnings Presentation including financial performance, key metrics, and market analysis.</p>
+                                                <div class="d-flex gap-2">
+                                                    <button class="btn btn-read-more">
+                                                        <i class="fas fa-book-reader"></i> Read More
+                                                    </button>
+                                                    <button class="btn btn-download">
+                                                        <i class="fas fa-download"></i> Download
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('');
+                    </script>
+                </div>
+            </div>
+
+            <!-- Financial Highlights Tab -->
+            <div class="tab-pane fade" id="highlights" role="tabpanel">
+                <div class="accordion" id="accordionHighlights">
+                    <script>
+                        document.getElementById('accordionHighlights').innerHTML = years.map(year => `
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHighlights${year}">
+                                        ${year}
+                                    </button>
+                                </h2>
+                                <div id="collapseHighlights${year}" class="accordion-collapse collapse" data-bs-parent="#accordionHighlights">
+                                    <div class="accordion-body">
+                                        <div class="mb-4">
+                                            <p class="mb-3">Financial Highlights for ${year} showcasing key performance indicators, growth metrics, and business achievements.</p>
+                                            <div class="d-flex gap-2">
+                                                <button class="btn btn-read-more">
+                                                    <i class="fas fa-book-reader"></i> Read More
+                                                </button>
+                                                <button class="btn btn-download">
+                                                    <i class="fas fa-download"></i> Download
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('');
+                    </script>
+                </div>
+            </div>
+
+            <!-- Management Discussion Tab -->
+            <div class="tab-pane fade" id="discussion" role="tabpanel">
+                <div class="accordion" id="accordionDiscussion">
+                    <script>
+                        document.getElementById('accordionDiscussion').innerHTML = years.map(year => `
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDiscussion${year}">
+                                        ${year}
+                                    </button>
+                                </h2>
+                                <div id="collapseDiscussion${year}" class="accordion-collapse collapse" data-bs-parent="#accordionDiscussion">
+                                    <div class="accordion-body">
+                                        <div class="mb-4">
+                                            <p class="mb-3">Management Discussion and Analysis for ${year} providing detailed insights into financial performance, strategic initiatives, and future outlook.</p>
+                                            <div class="d-flex gap-2">
+                                                <button class="btn btn-read-more">
+                                                    <i class="fas fa-book-reader"></i> Read More
+                                                </button>
+                                                <button class="btn btn-download">
+                                                    <i class="fas fa-download"></i> Download
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('');
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
