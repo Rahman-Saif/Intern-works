@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trust Bank Loan Types</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <style>
+    .loan-btn {
+      transition: all 0.3s ease-in-out;
+      height: 180px;
+    
+
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    .loan-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .loan-btn:active {
+      background-color: #023020 !important;
+    }
+
+    .loan-btn .logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      background: white;
+      border-radius: 50%;
+      padding: 15px;
+      margin-top: -20px;
+      display: flex;
+  align-items: center;
+  justify-content: center;
+    }
+
+    .loan-btn span.title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(2, 48, 32, 0.9);
+      color: white;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .slider-container {
+      position: relative;
+      margin-top: 30px;
+      scroll-margin-top: 20px;
+    }
+
+    .slider {
+      display: none;
+      opacity: 0;
+      position: relative;
+      left: -100%;
+      transition: all 0.5s ease-in-out;
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin: 0 50px;
+    }
+
+    .slider.show {
+      display: block;
+      opacity: 1;
+      left: 0;
+    }
+    .loan-select-container {
+      position: relative;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    .loan-select {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #023020;
+      border-radius: 8px;
+      background-color: white;
+      color: #023020;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .loan-select:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(2, 48, 32, 0.2);
+    }
+
+    .slider h3 {
+      color: #023020;
+      margin-bottom: 20px;
+    }
+
+    .slider p {
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .tab-content {
+      margin-top: 20px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .nav-tabs .nav-link.active {
+      background-color: #023020;
+      color: white;
+      border-color: #023020;
+    }
+
+    .nav-tabs .nav-link:not(.active):hover {
+      border-color: #023020;
+      color: #023020;
+    }
+
+    .slider-nav {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      display: none;
+      justify-content: space-between;
+      pointer-events: none;
+      padding: 0 10px;
+    }
+
+    .slider-nav.active {
+      display: flex;
+    }
+
+    .arrow-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      background-color: #023020;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      pointer-events: auto;
+      z-index: 100;
+    }
+
+    .arrow-btn:hover {
+      background-color: #034530;
+      transform: scale(1.1);
+    }
+
+    .arrow-btn i {
+      font-size: 1.5rem;
+    }
+    .loan-btn .logo img {
+  width: 70px;    /* Increased from default */
+  height: 70px;   /* Increased from default */
+}
+
+.loan-btn .logo svg {
+  width: 70px;    /* Increased from 40px */
+  height: 70px;   /* Increased from 40px */
+  fill: #023020;  /* Changed to green */
+    /* .col-md-4{
+        width:200px;
+    } */
+}
+  </style>
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Trust Bank Loan Services</h1>
+<h3 class="text-center mb-4">Services We Offer</h3>
+ <!-- Added Dropdown Menu -->
+ <div class="loan-select-container">
+    <select class="loan-select" id="loanSelect">
+      <option value="">Select a Deposit Type</option>
+      <option value="govt-loan">House Building Loan for Government Employees</option>
+      <option value="apon-nibash">Apon Nibash Loan</option>
+      <option value="car-loan">Car Loan</option>
+      <option value="doctor-loan">Doctor's Loan</option>
+      <option value="salary-loan">Loan Against Salary</option>
+      <option value="personal-loan">Personal Loan</option>
+    </select>
+  </div>
+
+  <!-- Buttons for loan types -->
+  <div class="row g-4">
+    <div class="col-md-4">
+      <button class="btn w-100 loan-btn" data-slider="govt-loan" style="background-image: url('/api/placeholder/400/320')">
+        <div class="logo">
+          <img src="image\output-onlinepngtools.png" alt="Government" class="w-100">
+        </div>
+        <span class="title">House Building Loan for Government Employees</span>
+      </button>
+    </div>
+    <div class="col-md-4">
+      <button class="btn w-100 loan-btn" data-slider="apon-nibash" style="background-image: url('/api/placeholder/400/320')">
+        <div class="logo">
+          <img src="image\home.png" alt="Home" class="w-100">
+        </div>
+        <span class="title">Apon Nibash Loan</span>
+      </button>
+    </div>
+    <div class="col-md-4">
+      <button class="btn w-100 loan-btn" data-slider="car-loan" style="background-image: url('/api/placeholder/400/320')">
+        <div class="logo">
+          <img src="image\car loan.png" alt="Car" class="w-100">
+        </div>
+        <span class="title">Car Loan</span>
+      </button>
+    </div>
+    <div class="col-md-4">
+      <button class="btn w-100 loan-btn" data-slider="doctor-loan" style="background-image: url('/api/placeholder/400/320')">
+        <div class="logo">
+          <img src="image\healthcare.png" alt="Medical" class="w-100">
+        </div>
+        <span class="title">Doctor's Loan</span>
+      </button>
+    </div>
+    <div class="col-md-4">
+      <button class="btn w-100 loan-btn" data-slider="salary-loan" style="background-image: url('/api/placeholder/400/320')">
+        <div class="logo">
+          <img src="image/salary.png" alt="Salary" class="w-100">
+        </div>
+        <span class="title">Loan Against Salary</span>
+      </button>
+    </div>
+    <div class="col-md-4">
+      <button class="btn w-100 loan-btn" data-slider="personal-loan" style="background-image: url('/api/placeholder/400/320')">
+        <div class="logo">
+          <img src="image\personal (1).png" alt="Personal" class="w-100">
+        </div>
+        <span class="title">Personal Loan</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Slider container -->
+  <div class="slider-container">
+   <!-- Government Employee Loan -->
+<div id="govt-loan" class="slider">
+    <h3>House Building Loan for Government Employees</h3>
+    <p>Secure your dream home with our specialized loan service for government employees.</p>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#govt-features">Features</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#govt-requirements">Required Documents</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#govt-contact">Contact Information</button>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div id="govt-features" class="tab-pane fade show active">
+        <p>Features for government employees:</p>
+        <ul>
+          <li>Special interest rates for government employees</li>
+          <li>Extended repayment periods</li>
+          <li>Higher loan amounts available
+            <li>Loan amount from BDT 5 lac to BDT 20 lacs</li>
+          </li>
+        </ul>
+      </div>
+      <div id="govt-requirements" class="tab-pane fade">
+        <p>Required documents for government employees:</p>
+        <ul>
+            <li>For list of required standard documents, please<a href="https://www.tblbd.com/sites/default/files/Retail/Documents-for-Apon-Nibash-Home-Finance-Loan.pdf" target="_blank"> Click here</a></li>
+           
+          </ul>
+      </div>
+      <div id="govt-contact" class="tab-pane fade">
+        <p>Contact our government service desk:</p>
+        <ul>
+            <li > for Contact
+            <a href="https://eservice.tblbd.com/website/BranchList" target="_blank"> Click here</a></li>
+            <li>Phone: 16201 </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Apon Nibash Loan -->
+  <div id="apon-nibash" class="slider">
+    <h3>Apon Nibash House Finance Loan</h3>
+    <p>Fulfill Your Dream of Owning a Home with Apon Nibash House Finance Loan! Whether you're looking to purchase, construct or renovate your dream home, we have got you covered.</p>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#apon-features">Features</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#apon-requirements">Required Documents</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#apon-contact">Contact Information</button>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div id="apon-features" class="tab-pane fade show active">
+        <p>Features of Apon Nibash Loan:</p>
+        <ul>
+          <li>For Property purchase, home construction or renovation</li>
+            <li> Loan amount up to BDT 2 crore</li>
+                <li>Loan tenure 1 year to 25 years</li>
+                    <li>Market competitive rate</li>
+                        <li>Loan up to 70% of property value</li>
+         
+        </ul>
+      </div>
+      <div id="apon-requirements" class="tab-pane fade">
+        <p>Required documents:</p>
+        <ul>
+          <li>For list of required standard documents, please<a href="https://www.tblbd.com/sites/default/files/Retail/Documents-for-Apon-Nibash-Home-Finance-Loan.pdf" target="_blank"> Click here</a></li>
+         
+        </ul>
+      </div>
+      <div id="apon-contact" class="tab-pane fade">
+        <p>Contact our home loan specialists:</p>
+        <ul>
+          <li > for Contact
+          <a href="https://eservice.tblbd.com/website/BranchList" target="_blank"> Click here</a></li>
+          <li>Phone: 16201 </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Car Loan -->
+  <div id="car-loan" class="slider">
+    <h3>Car Loan</h3>
+    <p>Start Driving with Trust Bank flexible Car Loan options. Whether you're a service holder, landlord/landlady, professional, or businessman, we've got you covered!</p>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#car-features">Features</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#car-requirements">Required Documents</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#car-contact">Contact Information</button>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div id="car-features" class="tab-pane fade show active">
+        <p>Car loan features:</p>
+        <ul>
+          <li>Loan amount up to BDT 60 Lac</li>
+            <li>  Brand new & reconditioned car</li>
+                <li>Loan tenure 1 year to 5 years</li>
+                    <li>No hidden charges</li>
+                        <li>Competitive interest rate</li>
+                            <li> Up to 50% Financing on reconditioned/brand new vehicles</li>
+    
+        </ul>
+      </div>
+      <div id="car-requirements" class="tab-pane fade">
+        <p>Required documents:</p>
+        <ul>
+            <li>For list of required standard documents, please<a href="https://www.tblbd.com/sites/default/files/Retail/Documents-for-Apon-Nibash-Home-Finance-Loan.pdf" target="_blank"> Click here</a></li>
+           
+          </ul>
+      </div>
+      <div id="car-contact" class="tab-pane fade">
+        <p>Contact our car loan team:</p>
+        <ul>
+            <li > for Contact 
+            <a href="https://eservice.tblbd.com/website/BranchList" target="_blank"> Click here</a></li>
+            <li>Phone: 16201 </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Doctor's Loan -->
+  <div id="doctor-loan" class="slider">
+    <h3>Doctor's Loan</h3>
+    <p>Medical is a noble profession which is evolving fast. In a country like ours it is important to be a part of those changes as we cannot afford to be lag behind.</p>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#doctor-features">Features</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#doctor-requirements">Required Documents</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#doctor-contact">Contact Information</button>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div id="doctor-features" class="tab-pane fade show active">
+        <p>Special features for doctors:</p>
+        <ul>
+          <li>Loan Limit: BDT .50 Lac - BDT 20 Lac</li>
+
+            <li> Tenure: 1 year – 5 Years</li>
+            
+                <li> Minimum Down Payment: 50%</li>
+            
+                    <li>Age Limit: Min 25 Years </li>
+            
+                        <li>Max 65 Years at the time of loan maturity or till the date of retirement (Which is earlier)</li>
+          
+        </ul>
+      </div>
+      <div id="doctor-requirements" class="tab-pane fade">
+        <p>Required documents:</p>
+        <ul>
+            <li>For list of required standard documents, please<a href="https://www.tblbd.com/sites/default/files/Retail/Documents-for-Apon-Nibash-Home-Finance-Loan.pdf" target="_blank"> Click here</a></li>
+           
+          </ul>
+      </div>
+      <div id="doctor-contact" class="tab-pane fade">
+        <p>Contact our medical professionals desk:</p>
+        <ul>
+            <li > for Contact:
+            <a href="https://eservice.tblbd.com/website/BranchList" target="_blank"> Click here</a></li>
+            <li>Phone: 16201 </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Loan Against Salary -->
+  <div id="salary-loan" class="slider">
+    <h3>Loan Against Salary</h3>
+    <p>Unlock financial flexibility with Trust Bank's Loan Against Salary! Whether it's miscellaneous household appliances, furniture, travel plans, or unexpected expenses, we're with you every step of the way.</p>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#salary-features">Features</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#salary-requirements">Required Documents</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#salary-contact">Contact Information</button>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div id="salary-features" class="tab-pane fade show active">
+        <p>Salary loan features:</p>
+        <ul>
+          <li>Loan amount up to BDT 5 Lac to BDT 20 Lac</li>
+            <li> Loan tenure 1 year to 5 years</li>
+                <li>No hidden charges</li>
+                    <li>Competitive interest rate</li>
+        </ul>
+      </div>
+      <div id="salary-requirements" class="tab-pane fade">
+        <p>Required documents:</p>
+        <ul>
+            <li>For list of required standard documents, please<a href="https://www.tblbd.com/sites/default/files/Retail/Documents-for-Apon-Nibash-Home-Finance-Loan.pdf" target="_blank"> Click here</a></li>
+           
+          </ul>
+      </div>
+      <div id="salary-contact" class="tab-pane fade">
+        <p>Contact our salary loan team:</p>
+        <ul>
+            <li > for Contact:
+            <a href="https://eservice.tblbd.com/website/BranchList" target="_blank"> Click here</a></li>
+            <li>Phone: 16201 </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Personal Loan -->
+  <div id="personal-loan" class="slider">
+    <h3>Personal Loan</h3>
+    <p>Looking for a financial boost? Trust Bank's Personal Loan is designed to meet your needs, whether it's home renovation, travel, or an emergency expense.</p>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#personal-features">Features</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#personal-requirements">Required Documents</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#personal-contact">Contact Information</button>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div id="personal-features" class="tab-pane fade show active">
+        <p>Personal loan features:</p>
+        <ul>
+          <li>Loan amount from BDT 5 lac to BDT 20 lacs</li>
+            <li> Loan tenure 1 year to 5 years</li>
+                <li>No hidden charges</li>
+                    <li>Competitive interest rate</li>
+         
+        </ul>
+      </div>
+      <div id="personal-requirements" class="tab-pane fade">
+        <p>Required documents:</p>
+        <ul>
+            <li>For list of required standard documents, please<a href="https://www.tblbd.com/sites/default/files/Retail/Documents-for-Apon-Nibash-Home-Finance-Loan.pdf" target="_blank"> Click here</a></li>
+           
+          </ul>
+      </div>
+      <div id="personal-contact" class="tab-pane fade">
+        <p>Contact our personal loan team:</p>
+        <ul>
+            <li > for Contact:
+            <a href="https://eservice.tblbd.com/website/BranchList" target="_blank"> Click here</a></li>
+            <li>Phone: 16201 </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+    <!-- Slider navigation arrows -->
+    <div class="slider-nav">
+      <button class="arrow-btn" id="prev-slider">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <button class="arrow-btn" id="next-slider">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+</div>
+</div>
+
+<script>
+ // JavaScript to handle button clicks, slider toggling, and smooth scrolling
+ const sliders = Array.from(document.querySelectorAll('.slider'));
+  const sliderNav = document.querySelector('.slider-nav');
+  const loanSelect = document.getElementById('loanSelect');
+  let currentSliderIndex = 0;
+
+  function showSlider(sliderId) {
+    // Hide all sliders
+    sliders.forEach(slider => {
+      slider.classList.remove('show');
+      slider.style.display = 'none';
+    });
+
+    // Show the selected slider
+    const slider = document.getElementById(sliderId);
+    slider.style.display = 'block';
+    setTimeout(() => slider.classList.add('show'), 10);
+
+    // Update current slider index
+    currentSliderIndex = sliders.indexOf(slider);
+    sliderNav.classList.add('active');
+
+    // Smooth scroll to the slider
+    slider.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  // Handle dropdown change
+  loanSelect.addEventListener('change', (e) => {
+    if (e.target.value) {
+      showSlider(e.target.value);
+      
+      // Update button styles
+      document.querySelectorAll('.loan-btn span.title').forEach(span => 
+        span.style.backgroundColor = 'rgba(2, 48, 32, 0.9)');
+      
+      const relatedButton = document.querySelector(`[data-slider="${e.target.value}"]`);
+      if (relatedButton) {
+        relatedButton.querySelector('span.title').style.backgroundColor = 'rgba(2, 48, 32, 1)';
+      }
+    }
+  });
+
+  // Handle button clicks
+  document.querySelectorAll('.loan-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      // Reset all buttons to original style
+      document.querySelectorAll('.loan-btn span.title').forEach(span => 
+        span.style.backgroundColor = 'rgba(2, 48, 32, 0.9)');
+
+      // Change clicked button style
+      button.querySelector('span.title').style.backgroundColor = 'rgba(2, 48, 32, 1)';
+
+      // Show slider and scroll
+      const sliderId = button.getAttribute('data-slider');
+      showSlider(sliderId);
+      
+      // Update dropdown to match selection
+      loanSelect.value = sliderId;
+    });
+  });
+
+  // Handle navigation buttons
+  document.getElementById('prev-slider').addEventListener('click', () => {
+    const prevIndex = (currentSliderIndex - 1 + sliders.length) % sliders.length;
+    const prevSliderId = sliders[prevIndex].id;
+    showSlider(prevSliderId);
+    loanSelect.value = prevSliderId;
+  });
+
+  document.getElementById('next-slider').addEventListener('click', () => {
+    const nextIndex = (currentSliderIndex + 1) % sliders.length;
+    const nextSliderId = sliders[nextIndex].id;
+    showSlider(nextSliderId);
+    loanSelect.value = nextSliderId;
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
