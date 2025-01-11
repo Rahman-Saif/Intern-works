@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Structure</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .accordion-button {
+            background-color: #88c440 !important;
+            color: white !important;
+            font-weight: 500;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #88c440 !important;
+            color: white !important;
+        }
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+        }
+        .table {
+            margin-bottom: 0;
+        }
+        .table th {
+            background-color: #f0f9e8;
+            color: #666;
+            font-weight: 500;
+        }
+        .table td {
+            color: #666;
+        }
+        .shareholding-table {
+            background-color: #f0f9e8;
+        }
+        .total-row {
+            font-weight: 500;
+        }
+        .accordion-item {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="accordion" id="mainAccordion">
+            <!-- Shareholding Structure -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        1. Shareholding Structure (31 October 2024)
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body shareholding-table">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>SI #</th>
+                                        <th>Group Name</th>
+                                        <th>No. of Shares</th>
+                                        <th>Ownership(%)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01</td>
+                                        <td>Company</td>
+                                        <td>200,751,997</td>
+                                        <td>21.71</td>
+                                    </tr>
+                                    <tr>
+                                        <td>02</td>
+                                        <td>Foreign Investors</td>
+                                        <td>206,577</td>
+                                        <td>0.02</td>
+                                    </tr>
+                                    <tr>
+                                        <td>03</td>
+                                        <td>Non-Resident Bangladeshi (NRB)</td>
+                                        <td>393,876</td>
+                                        <td>0.04</td>
+                                    </tr>
+                                    <tr>
+                                        <td>04</td>
+                                        <td>General Public</td>
+                                        <td>168,545,567</td>
+                                        <td>18.23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>05</td>
+                                        <td>Sponsors</td>
+                                        <td>554,827,083</td>
+                                        <td>60.00</td>
+                                    </tr>
+                                    <tr class="total-row">
+                                        <td></td>
+                                        <td>Total</td>
+                                        <td>924,725,100</td>
+                                        <td>100.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Performance -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        2. Financial Performance (2024)
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body shareholding-table">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Particulars</th>
+                                        <th>Amount (BDT Million)</th>
+                                        <th>Growth (%)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Operating Revenue</td>
+                                        <td>15,234.56</td>
+                                        <td>12.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Operating Profit</td>
+                                        <td>4,567.89</td>
+                                        <td>8.3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Net Profit</td>
+                                        <td>3,234.56</td>
+                                        <td>7.2</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Capital Structure -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                        3. Capital Structure (2024)
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body shareholding-table">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Amount (BDT Million)</th>
+                                        <th>Percentage (%)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Paid-up Capital</td>
+                                        <td>9,247.25</td>
+                                        <td>25.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reserve & Surplus</td>
+                                        <td>18,494.50</td>
+                                        <td>50.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Retained Earnings</td>
+                                        <td>9,247.25</td>
+                                        <td>25.00</td>
+                                    </tr>
+                                    <tr class="total-row">
+                                        <td>Total</td>
+                                        <td>36,989.00</td>
+                                        <td>100.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Market Performance -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                        4. Market Performance (2024)
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body shareholding-table">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Indicator</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Market Price (BDT)</td>
+                                        <td>250.30</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Price Earnings Ratio</td>
+                                        <td>15.2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Market Capitalization (BDT Million)</td>
+                                        <td>231,458.69</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
