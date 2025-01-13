@@ -474,3 +474,29 @@
     background-color: #f8f9fa;
 }
 
+.slide-content{
+    background-color: #86c36e;
+}
+
+.explore-button {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #2e7d32;
+    text-decoration: none;
+    border: 2px solid transparent;
+    /* border-radius: 30px; */
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.explore-button:hover {
+    background-color: #1b5e20;
+    color: #fff;
+    border-color: #1b5e20;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
