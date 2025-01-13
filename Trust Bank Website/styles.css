@@ -1,17 +1,14 @@
- .navbar-custom {
+ /* .navbar-custom {
      background-color:#087c3c;
         color: white;
-     /* Green background */
  }
 
  .navbar-custom .nav-link {
      color: white;
-     /* White text */
  }
 
  .navbar-custom .nav-link:hover {
      color: #FFD700;
-     /* Gold hover effect */
  }
 
  .icon-link img {
@@ -23,10 +20,9 @@
      background-color: #0A6842;
      color:white;
      
-     /* Dark Green */
- }
+ } */
 
- .navbar-header img {
+ /* .navbar-header img {
      width: 50px;
  }
 
@@ -39,8 +35,8 @@
  .navbar-brand span {
      font-size: 0.9rem;
      font-weight: normal;
- }
-
+ } */
+/* 
  .navbar-custom .container-fluid {
      display: flex;
      justify-content: center;
@@ -51,18 +47,145 @@
      background-color: #087c3c;
      color:white;
      /* Light Green */
- }
+ 
 
  
- .navbar-custom .nav-link {
+ /* .navbar-custom .nav-link {
      color: white;
      /* Dark Green */
      /* font-weight: bold; */
- }
+  */ */
 
- .navbar-custom .nav-link:hover {
+ /* .navbar-custom .nav-link:hover {
      color: #004D27;
      /* Darker Green */
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .header-color {
+     background-color: #006E2E;
+     ;
+ }
+
+ :root {
+     --royal-green: #023020;
+ }
+
+ .navbar {
+     padding: 0;
+     z-index: 1000;
+ }
+
+ .navbar-top {
+     background-color: var(--royal-green);
+     padding: 8px 0;
+ }
+
+ .navbar-top a {
+     color: white;
+     text-decoration: none;
+     font-size: 14px;
+     margin-left: 20px;
+ }
+
+ .main-navbar {
+     background-color: white;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ }
+
+ .navbar-brand {
+     font-size: 24px;
+     font-weight: bold;
+     color: var(--royal-green);
+ }
+
+ .nav-link {
+     color: var(--royal-green) !important;
+     padding: 20px !important;
+     font-weight: 500;
+ }
+
+ .mega-menu {
+     position: absolute;
+     width: 100%;
+     left: 0;
+     right: 0;
+     padding: 30px;
+     background-color: var(--royal-green);
+     visibility: hidden;
+     opacity: 0;
+     transition: all 0.3s ease;
+     border-top: 1px solid rgba(255, 255, 255, 0.1);
+ }
+
+ .nav-item:hover .mega-menu {
+     visibility: visible;
+     opacity: 1;
+ }
+
+ .mega-menu h3 {
+     color: white;
+     font-size: 18px;
+     font-weight: bold;
+     margin-bottom: 15px;
+     padding-bottom: 10px;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+ }
+
+ .mega-menu-list {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+ }
+
+ .mega-menu-list li a {
+     color: rgba(255, 255, 255, 0.8);
+     text-decoration: none;
+     padding: 8px 0;
+     display: block;
+     transition: all 0.3s ease;
+ }
+
+ .mega-menu-list li a:hover {
+     color: white;
+     padding-left: 5px;
+ }
+
+ .search-container {
+     position: relative;
+     margin-left: 20px;
+ }
+
+ .search-btn {
+     background-color: var(--royal-green);
+     border: none;
+     color: white;
+     padding: 10px 15px;
+     border-radius: 4px;
+     display: flex;
+     align-items: center;
+     gap: 5px;
+ }
+
+ .search-btn:hover {
+     background-color: rgba(2, 48, 32, 0.9);
+ }
+
+ .search-btn i {
+     font-size: 16px;
  }
 
  .logo-img {
@@ -101,7 +224,7 @@
  }
 
  .slider-image{
-    background-image: url('/bannerImage.jpeg');
+    background-image: url('/imgs/Corporate-Banking_0.jpg');
         /* Replace with your image URL */
         background-size: cover;
         background-position: center;
@@ -159,6 +282,14 @@
      margin-bottom: 20px;
  }
 
+ .tabz-next-slider{
+    background-color: #023020;
+ }
+
+ footer{
+    background-color: #023020;
+ }
+
  .cta-button {
      background-color: #ff8080;
      /* Light red */
@@ -178,6 +309,7 @@
  }
 
   .events-section {
+        background-color: #f8f9fa;
       padding: 60px 0;
   }
 
@@ -214,11 +346,12 @@
   }
 
   .counter-section {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1920/1080');
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/imgs/shadinota-tower.jpg');
       background-size: cover;
       background-position: center;
       padding: 100px 0;
       color: white;
+      height:650px;
   }
 
   .counter-box {
@@ -239,6 +372,13 @@
       opacity: 0.9;
   }
 
+  .counter-section .row{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:170px;
+  }
+
   .card{
     margin:1rem;
   }
@@ -249,6 +389,10 @@
 
   body {
       font-family: Arial, sans-serif;
+  }
+
+  .tabz-carousel{
+    background-color: white;
   }
 #chatbot {
     display: none;
@@ -324,5 +468,9 @@
     background-color: #f1f1f1;
     color: black;
     text-align: left;
+}
+
+.accordion-section{
+    background-color: #f8f9fa;
 }
 

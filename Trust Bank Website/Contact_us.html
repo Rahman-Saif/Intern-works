@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+
+.header-color{
+  background-color: #006E2E;
+}
+     :root {
+            --royal-green: #023020;
+        }
+
+        .navbar {
+            padding: 0;
+            z-index: 1000;
+        }
+
+        .navbar-top {
+            background-color: var(--royal-green);
+            padding: 8px 0;
+        }
+
+        .navbar-top a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 20px;
+        }
+
+        .main-navbar {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--royal-green);
+        }
+
+        .nav-link {
+            color: var(--royal-green) !important;
+            padding: 20px !important;
+            font-weight: 500;
+        }
+
+        .mega-menu {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background-color: var(--royal-green);
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-item:hover .mega-menu {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .mega-menu h3 {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .mega-menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mega-menu-list li a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            padding: 8px 0;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .mega-menu-list li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .search-container {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .search-btn {
+            background-color: var(--royal-green);
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-btn:hover {
+            background-color: rgba(2, 48, 32, 0.9);
+        }
+
+        .search-btn i {
+            font-size: 16px;
+        }
+
+
+
+  .carousel-item {
+      position: relative;
+      height: 600px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 128, 0, 0.7);
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+    }
+     .custom-footer {
+    background-color: #006E2E; /* Replace with your desired color */
+}
+
+    
+
+
+</style>
+<body>
+    <section>
+            <nav class="navbar navbar-top">
+        <div class="container d-flex justify-content-between">
+            <div class="social-links">
+                <a href="#">f</a>
+                <a href="#">in</a>
+                <a href="#">yt</a>
+            </div>
+            <div class="utility-links">
+                <a href="#">CONNECT</a>
+                <a href="#">CAREERS</a>
+                <a href="#">INVESTORS RELATION</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Navbar -->
+    <nav class="navbar main-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Trust Bank</a>
+            <div class="nav-items d-flex align-items-center">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FOR YOU</a>
+                        <div class="mega-menu">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h3>CONVENTIONAL BANKING</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Save</a></li>
+                                            <li><a href="#">Borrow</a></li>
+                                            <li><a href="#">Debit Card</a></li>
+                                            <li><a href="#">Credit Card</a></li>
+                                            <li><a href="#">Student File</a></li>
+                                            <li><a href="#">Priority Banking: Monarch</a></li>
+                                            <li><a href="#">Neera</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>ISLAMIC BANKING</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Save</a></li>
+                                            <li><a href="#">Invest</a></li>
+                                            <li><a href="#">Credit Card</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>NRB BANKING</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Foreign Remittance Services</a></li>
+                                            <li><a href="#">Account Facilities for NRBs</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>DIGITAL SOLUTION</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">MyPrime</a></li>
+                                            <li><a href="#">PrimePlus</a></li>
+                                            <li><a href="#">Prime Assist</a></li>
+                                            <li><a href="#">RemitPrime</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FOR YOUR BUSINESS</a>
+                        <div class="mega-menu">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h3>BUSINESS BANKING</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Business Accounts</a></li>
+                                            <li><a href="#">Business Loans</a></li>
+                                            <li><a href="#">Trade Finance</a></li>
+                                            <li><a href="#">Business Credit Cards</a></li>
+                                            <li><a href="#">Corporate Banking</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>CORPORATE SOLUTIONS</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Payment Solutions</a></li>
+                                            <li><a href="#">Cash Management</a></li>
+                                            <li><a href="#">Supply Chain Finance</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>INDUSTRY EXPERTISE</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Manufacturing</a></li>
+                                            <li><a href="#">Real Estate</a></li>
+                                            <li><a href="#">Technology</a></li>
+                                            <li><a href="#">Agriculture</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>SPECIALIZED SERVICES</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Advisory Services</a></li>
+                                            <li><a href="#">Investment Banking</a></li>
+                                            <li><a href="#">International Business</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ABOUT US</a>
+                        <div class="mega-menu">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h3>MEET PRIME BANK</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Overview</a></li>
+                                            <li><a href="#">History</a></li>
+                                            <li><a href="#">Mission & Vision</a></li>
+                                        </ul>
+                                        <h3>OUR SUBSIDIARIES</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Subsidiary Companies</a></li>
+                                            <li><a href="#">Joint Ventures</a></li>
+                                        </ul>
+                                        <h3>OUR AWARDS & ACHIEVEMENTS</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Recognition</a></li>
+                                            <li><a href="#">Milestones</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>OUR TEAM</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Board of Directors</a></li>
+                                            <li><a href="#">Executive Committee</a></li>
+                                            <li><a href="#">Audit Committee</a></li>
+                                            <li><a href="#">Risk Management Committee</a></li>
+                                            <li><a href="#">Shari'ah Supervisory Committee</a></li>
+                                            <li><a href="#">Management</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>SUSTAINABLE FINANCE</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Our Sustainability Commitments</a></li>
+                                            <li><a href="#">Commitment for Management of Environmental and Social Risk</a></li>
+                                            <li><a href="#">Sustainable Finance</a></li>
+                                            <li><a href="#">Our Sustainable Projects</a></li>
+                                            <li><a href="#">Community Inclusiveness</a></li>
+                                            <li><a href="#">Social Commitments</a></li>
+                                            <li><a href="#">Climate Strategy</a></li>
+                                            <li><a href="#">Concern & Communication</a></li>
+                                            <li><a href="#">Sustainability Report</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>IMPORTANT INFORMATION</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Policies</a></li>
+                                            <li><a href="#">Regulatory Information</a></li>
+                                            <li><a href="#">Governance</a></li>
+                                            <li><a href="#">Compliance</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="search-container">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    </section>
+    <section>
+        <section>
+        <div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="background-image: url('/imgs/Contact-Us.png');">
+        <!-- <div class="carousel-caption">
+          <h5>Annual Report</h5>
+        </div> -->
+      </div>
+      <div class="carousel-item" style="background-image: url('/annual-report.jpg');">
+        <div class="carousel-caption">
+          <h5>Project Overview</h5>
+        </div>
+      </div>
+      <div class="carousel-item" style="background-image: url('/annual-report.jpg');">
+        <div class="carousel-caption">
+          <h5>Growth Analysis</h5>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+    </section>
+    </section>
+  <div class="container my-5">
+    <div class="row">
+      <!-- Head Office Section -->
+      <div class="col-md-6">
+        <div class="card shadow">
+          <div class="card-header  text-white header-color">
+            <h5 class="mb-0">Head Office</h5>
+          </div>
+          <div class="card-body">
+            <p><strong>Address:</strong> Shadinota Tower,Bir Shrestra Shaheed Jahangir Gate,Dhaka</p>
+            <p><strong>Phone:</strong> +880 (2)55068721-23 (PABX)</p>
+            <p><strong>Fax:</strong> +880-02-345763</p>
+            <p><strong>Email:</strong> <a href="mailto:info@primebank.com.bd">info@tblbd.com.bd</a></p>
+            <p><strong>Website:</strong> <a href="http://www.primebank.com.bd" target="_blank">www.trutbank.com.bd</a></p>
+            <p><strong>SWIFT:</strong> TTLBLBDDH</p>
+          </div>
+        </div>
+      </div>
+      <!-- Contact Center Assistance Section -->
+      <div class="col-md-6">
+        <div class="card shadow">
+          <div class="card-header header-color text-white">
+            <h5 class="mb-0">For 24/7 Contact Center Assistance</h5>
+          </div>
+          <div class="card-body">
+            <p>Dial <strong>16218</strong> or <strong>+88 09610016218</strong> (Locally) and <strong>+88 09604016218</strong> or <strong>+88 09612316218</strong> (From overseas).</p>
+            <p>You can also email us at <a href="mailto:contactcenter@trustbank.com.bd">contactcenter@trustbank.com.bd</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="custom-footer text-white py-5">
+        <div class="container">
+          <div class="row">
+            <!-- Logo and Subscribe -->
+            <div class="col-lg-3 mb-4">
+              <div class="logo mb-4">LOGO</div>
+              <div class="subscribe-form">
+                <form class="d-flex">
+                  <input
+                    type="email"
+                    class="form-control me-2"
+                    placeholder="Enter your email to get the latest news"
+                  />
+                  <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Column One -->
+            <div class="col-lg-3 mb-4">
+              <h5 class="mb-3">COLUMN ONE</h5>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Twenty One</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Thirty Two</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Fourty Three</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Fifty Four</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Column Two -->
+            <div class="col-lg-3 mb-4">
+              <h5 class="mb-3">COLUMN TWO</h5>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Sixty Five</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Seventy Six</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Eighty Seven</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Ninety Eight</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Column Three -->
+            <div class="col-lg-3 mb-4">
+              <h5 class="mb-3">COLUMN THREE</h5>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >One Two</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Three Four</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Five Six</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Seven Eight</a
+                  >
+                </li>
+              </ul>
+              <div class="mt-4">
+                <h5 class="mb-3">COLUMN FOUR</h5>
+                <p class="mb-2">Join Us</p>
+                <div class="social-icons">
+                  <a href="#" class="text-white me-3"
+                    ><i class="bi bi-youtube"></i
+                  ></a>
+                  <a href="#" class="text-white me-3"
+                    ><i class="bi bi-facebook"></i
+                  ></a>
+                  <a href="#" class="text-white me-3"
+                    ><i class="bi bi-twitter"></i
+                  ></a>
+                  <a href="#" class="text-white me-3"
+                    ><i class="bi bi-instagram"></i
+                  ></a>
+                  <a href="#" class="text-white"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Footer -->
+          <div class="row mt-4 pt-4 border-top">
+            <div class="col-md-6">
+              <p class="mb-0">Greelogix © 2024. All rights reserved.</p>
+            </div>
+            <div class="col-md-6">
+              <ul class="list-inline mb-0 text-md-end">
+                <li class="list-inline-item">
+                  <a href="#" class="text-white text-decoration-none">Home</a>
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Services</a
+                  >
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a href="#" class="text-white text-decoration-none">Blog</a>
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Help Center</a
+                  >
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a href="#" class="text-white text-decoration-none">About</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
