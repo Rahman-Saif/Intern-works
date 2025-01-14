@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .slider-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .card-slider {
+            transition: transform 0.5s ease;
+        }
+
+        .card-container {
+            display: none;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .card-container.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .card-wrapper {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .card-image-wrapper {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .feature-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.9);
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 20px 0;
+        }
+
+        .benefits-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .benefits-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+        }
+
+        .slider-controls {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .slider-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-btn:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .select-wrapper {
+            max-width: 400px;
+            margin: 0 auto 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h2 class="text-center mb-4">Our Premium Credit Cards</h2>
+        
+        <!-- Card Selection Dropdown -->
+        <div class="select-wrapper">
+            <select class="form-select" id="cardSelector">
+                <option value="">Select a Card</option>
+                <option value="signature">Visa Signature Card</option>
+                <option value="platinum">Visa Platinum Card</option>
+                <option value="gold">Visa Gold Credit Card</option>
+                <option value="classic">Visa Classic Credit Card</option>
+                <option value="sena">TBL Sena Card</option>
+                <option value="lounge">Lounge Key</option>
+            </select>
+        </div>
+
+        <!-- Slider Container -->
+        <div class="slider-container">
+            <div class="card-slider">
+                <!-- Visa Signature Card -->
+                <div class="card-container" data-card="signature">
+                    <div class="card-wrapper">
+                        <div class="card-image-wrapper">
+                            <img src="/api/placeholder/800/400" alt="Visa Signature Card">
+                            <span class="feature-badge">Premium</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Visa Signature Card</h3>
+                            <ul class="benefits-list">
+                                <li>Exclusive Travel Rewards</li>
+                                <li>24/7 Concierge Service</li>
+                                <li>Premium Insurance Coverage</li>
+                            </ul>
+                            <button class="btn btn-primary w-100">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other cards following same structure -->
+                <!-- Visa Platinum Card -->
+                <div class="card-container" data-card="platinum">
+                    <div class="card-wrapper">
+                        <div class="card-image-wrapper">
+                            <img src="/api/placeholder/800/400" alt="Visa Platinum Card">
+                            <span class="feature-badge">Platinum</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Visa Platinum Card</h3>
+                            <ul class="benefits-list">
+                                <li>Enhanced Reward Points</li>
+                                <li>Travel Insurance</li>
+                                <li>Extended Warranty</li>
+                            </ul>
+                            <button class="btn btn-primary w-100">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Similar structure for other cards... -->
+            </div>
+
+            <!-- Slider Controls -->
+            <div class="slider-controls">
+                <button class="slider-btn prev-btn">Previous</button>
+                <button class="slider-btn next-btn">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card-container');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const cardSelector = document.querySelector('#cardSelector');
+            let currentIndex = 0;
+
+            // Show initial card
+            showCard(currentIndex);
+
+            // Next button click
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % cards.length;
+                showCard(currentIndex);
+            });
+
+            // Previous button click
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+                showCard(currentIndex);
+            });
+
+            // Dropdown selection
+            cardSelector.addEventListener('change', function() {
+                const selectedCard = this.value;
+                if (selectedCard) {
+                    const cardIndex = Array.from(cards).findIndex(
+                        card => card.dataset.card === selectedCard
+                    );
+                    if (cardIndex !== -1) {
+                        currentIndex = cardIndex;
+                        showCard(currentIndex);
+                    }
+                }
+            });
+
+            // Auto rotate every 5 seconds
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % cards.length;
+                showCard(currentIndex);
+            }, 5000);
+
+            function showCard(index) {
+                cards.forEach(card => card.classList.remove('active'));
+                cards[index].classList.add('active');
+                
+                // Update dropdown
+                const currentCard = cards[index].dataset.card;
+                cardSelector.value = currentCard;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card-container {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            height: 100%;
+        }
+
+        .card-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .card-image-wrapper {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .card-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card-container:hover .card-image-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .feature-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.9);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .card-content {
+            padding: 20px;
+            background: white;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .benefits-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .benefits-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+
+        .apply-btn {
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .apply-btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h2 class="text-center mb-5">Our Premium Credit Cards</h2>
+        <div class="row g-4">
+            <!-- Visa Signature Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card-container shadow">
+                    <div class="card-image-wrapper">
+                        <img src="/api/placeholder/400/200" alt="Visa Signature Card">
+                        <span class="feature-badge">Premium</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Visa Signature Card</h3>
+                        <ul class="benefits-list mb-4">
+                            <li>Exclusive Travel Rewards</li>
+                            <li>24/7 Concierge Service</li>
+                            <li>Premium Insurance Coverage</li>
+                        </ul>
+                        <button class="btn btn-primary apply-btn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visa Platinum Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card-container shadow">
+                    <div class="card-image-wrapper">
+                        <img src="/api/placeholder/400/200" alt="Visa Platinum Card">
+                        <span class="feature-badge">Platinum</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Visa Platinum Card</h3>
+                        <ul class="benefits-list mb-4">
+                            <li>Enhanced Reward Points</li>
+                            <li>Travel Insurance</li>
+                            <li>Extended Warranty</li>
+                        </ul>
+                        <button class="btn btn-primary apply-btn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visa Gold Credit Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card-container shadow">
+                    <div class="card-image-wrapper">
+                        <img src="/api/placeholder/400/200" alt="Visa Gold Credit Card">
+                        <span class="feature-badge">Gold</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Visa Gold Credit Card</h3>
+                        <ul class="benefits-list mb-4">
+                            <li>Cashback Rewards</li>
+                            <li>Shopping Protection</li>
+                            <li>Zero Liability</li>
+                        </ul>
+                        <button class="btn btn-primary apply-btn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visa Classic Credit Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card-container shadow">
+                    <div class="card-image-wrapper">
+                        <img src="/api/placeholder/400/200" alt="Visa Classic Credit Card">
+                        <span class="feature-badge">Classic</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Visa Classic Credit Card</h3>
+                        <ul class="benefits-list mb-4">
+                            <li>Basic Insurance</li>
+                            <li>Secure Payments</li>
+                            <li>Wide Acceptance</li>
+                        </ul>
+                        <button class="btn btn-primary apply-btn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TBL Sena Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card-container shadow">
+                    <div class="card-image-wrapper">
+                        <img src="/api/placeholder/400/200" alt="TBL Sena Card">
+                        <span class="feature-badge">Special</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">TBL Sena Card</h3>
+                        <ul class="benefits-list mb-4">
+                            <li>Military Benefits</li>
+                            <li>Special Discounts</li>
+                            <li>Exclusive Perks</li>
+                        </ul>
+                        <button class="btn btn-primary apply-btn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lounge Key -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card-container shadow">
+                    <div class="card-image-wrapper">
+                        <img src="/api/placeholder/400/200" alt="Lounge Key">
+                        <span class="feature-badge">Premium Access</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Lounge Key</h3>
+                        <ul class="benefits-list mb-4">
+                            <li>Global Lounge Access</li>
+                            <li>Priority Services</li>
+                            <li>Travel Comfort</li>
+                        </ul>
+                        <button class="btn btn-primary apply-btn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

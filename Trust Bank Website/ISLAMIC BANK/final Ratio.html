@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIB Mudaraba Deposits - Profit Rates 2023</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .rate-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        .rate-high {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+        .rate-medium {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+        .rate-low {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+        .rate-basic {
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        .stats-card {
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
+        .search-container {
+            position: relative;
+        }
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6b7280;
+        }
+        .search-input {
+            padding-left: 2.5rem !important;
+        }
+    </style>
+</head>
+<body class="bg-light">
+      <div class="container py-4">
+        <div class="card shadow-sm">
+            <div class="card-header bg-light-green">
+                <h4 class="card-title mb-0 text-center">TIB Mudaraba Deposits - Profit Rates 2023</h4>
+            </div> 
+            
+            </div>
+            <div class="card-body"> 
+                <!-- Stats Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="stats-card bg-primary bg-opacity-10">
+                            <p class="text-primary mb-1">Average Rate</p>
+                            <h3 class="mb-0" id="avgRate">0%</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="stats-card bg-success bg-opacity-10">
+                            <p class="text-success mb-1">Highest Rate</p>
+                            <h3 class="mb-0" id="maxRate">0%</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stats-card bg-purple bg-opacity-10">
+                            <p class="text-purple mb-1">Lowest Rate</p>
+                            <h3 class="mb-0" id="minRate">0%</h3>
+                        </div>
+                    </div>
+                </div> 
+              
+
+                <!-- Search Box -->
+                <div class="search-container mb-4">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchInput" class="form-control search-input" placeholder="Search deposit types...">
+                </div>
+
+                <!-- Table -->
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="table-light">
+                            <tr>
+                                <th>ID</th>
+                                <th>Deposit Type</th>
+                                <th>Profit Rate (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ratesTableBody">
+                            <!-- Table content will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const depositData = [
+            { id: 1, type: "10 Taka Farmers MSA", rate: 3.19 },
+            { id: 2, type: "Mudaraba Savings A/C", rate: 2.94 },
+            { id: 3, type: "TBL Employee Mudaraba Salary A/C", rate: 2.94 },
+    { id: 4, type: "Defence Personnel Mudaraba Salary A/C (DPMSA)", rate: 2.94 },
+    { id: 5, type: "TIB Payroll A/C", rate: 2.94 },
+    { id: 6, type: "Provident Fund (TIB Payroll) A/C", rate: 2.94 },
+    { id: 7, type: "Mudaraba Seniors Deposit Account [MSDA]", rate: 3.19 },
+    { id: 8, type: "Mudaraba Porua Account", rate: 3.19 },
+    { id: 9, type: "Mudaraba SND A/c", rate: 1.47 },
+    { id: 10, type: "MTDR-1 Months", rate: 1.96 },
+    { id: 11, type: "MTDR-3 Months", rate: 4.17 },
+    { id: 12, type: "MTDR-6 Months", rate: 4.41 },
+    { id: 13, type: "MTDR 12 Months", rate: 4.66 },
+    { id: 14, type: "MTDR 36 Months", rate: 4.80 },
+    { id: 15, type: "MTDR 60 Months", rate: 4.90 },
+    { id: 16, type: "MTDR-1 Month (Entity)", rate: 1.47 },
+    { id: 17, type: "MTDR-3 Months (Entity)", rate: 2.70 },
+    { id: 18, type: "MTDR-6 Months (Entity)", rate: 3.19 },
+    { id: 19, type: "MTDR-12 Months (Entity)", rate: 3.68 },
+    { id: 20, type: "MTDR- 24 & 36 Months (Entity)", rate: 3.92 },
+    { id: 21, type: "MTDR- 60 Months (Entity)", rate: 4.17 },
+    { id: 22, type: "MTDR Seniors 3 Months", rate: 4.41 },
+    { id: 23, type: "MTDR Seniors - 6 Months", rate: 4.51 },
+    { id: 24, type: "MTDR Seniors - 12 Months", rate: 4.66 },
+    { id: 25, type: "MTDR Seniors - 24 & 36 Months", rate: 4.90 },
+    { id: 26, type: "MTDR Seniors - 60 Months", rate: 5.15 },
+    { id: 27, type: "Mudaraba Monthly Savings Scheme-36 months", rate: 5.00 },
+    { id: 28, type: "Mudaraba Monthly Savings Scheme-60 months", rate: 5.15 },
+    { id: 29, type: "Mudaraba Monthly Savings Scheme -96 months", rate: 5.15 },
+    { id: 30, type: "Mudaraba Monthly Savings Scheme -120 months", rate: 5.39 },
+    { id: 31, type: "Mudaraba Monthly Savings Scheme-144 months", rate: 5.64 },
+    { id: 32, type: "Barakat Hajj Deposit Scheme up to 10 years", rate: 5.64 },
+    { id: 33, type: "Barakat Hajj Deposit Scheme above 10 years", rate: 5.88 },
+    { id: 34, type: "Mudaraba Millionaire Scheme up to 10 years", rate: 5.30 },
+    { id: 35, type: "Mudaraba Millionaire Scheme above 10 years", rate: 5.39 },
+    { id: 36, type: "Mudaraba Kotipati Scheme up to 10 years", rate: 5.30 },
+    { id: 37, type: "Mudaraba Kotipati Scheme above 10 years", rate: 5.39 },
+    { id: 38, type: "Mudaraba Money Double Scheme", rate: 5.15 },
+    { id: 39, type: "Trust Mudadpah Deposit Scheme 3 years", rate: 4.80 },
+    { id: 40, type: "Trust Mudadpah Deposit Scheme 5 years", rate: 4.90 },
+    { id: 41, type: "Mudaraba Monthly Profit Scheme- 1 & 2 Years", rate: 4.80 },
+    { id: 42, type: "Mudaraba Monthly Profit Scheme- 3 Years", rate: 4.80 },
+    { id: 43, type: "Mudaraba Monthly Profit Scheme - 5 Years", rate: 4.90 },
+    { id: 44, type: "Mudaraba Monthly Profit Scheme Seniors 1 years", rate: 4.80 },
+    { id: 45, type: "Mudaraba Monthly Profit Scheme Seniors 2 & 3 years", rate: 4.90 },
+    { id: 46, type: "Mudaraba Monthly Profit Scheme Seniors 5 years", rate: 5.15 },
+    { id: 47, type: "Mudaraba Cash Waqf Scheme-3 years", rate: 4.80 },
+    { id: 48, type: "Mudaraba Cash Waqf Scheme-5 years", rate: 4.90 },
+    { id: 49, type: "Mudaraba Junior Savings Scheme (MJSS)", rate: 5.00 }
+  ];
+            // ... (rest of the data array - same as in your React version)
+       
+
+        // Calculate and display statistics
+        function updateStats() {
+            const avgRate = (depositData.reduce((acc, curr) => acc + curr.rate, 0) / depositData.length).toFixed(2);
+            const maxRate = Math.max(...depositData.map(item => item.rate));
+            const minRate = Math.min(...depositData.map(item => item.rate));
+
+            document.getElementById('avgRate').textContent = avgRate + '%';
+            document.getElementById('maxRate').textContent = maxRate + '%';
+            document.getElementById('minRate').textContent = minRate + '%';
+        }
+
+        // Get rate badge class based on rate value
+        function getRateBadgeClass(rate) {
+            if (rate >= 5) return 'rate-high';
+            if (rate >= 4) return 'rate-medium';
+            if (rate >= 3) return 'rate-low';
+            return 'rate-basic';
+        }
+
+        // Render table rows
+        function renderTable(data) {
+            const tableBody = document.getElementById('ratesTableBody');
+            tableBody.innerHTML = '';
+
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="text-muted">${item.id}</td>
+                    <td>${item.type}</td>
+                    <td><span class="rate-badge ${getRateBadgeClass(item.rate)}">${item.rate}%</span></td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredData = depositData.filter(item =>
+                item.type.toLowerCase().includes(searchTerm)
+            );
+            renderTable(filteredData);
+        });
+
+        // Initial render
+        updateStats();
+        renderTable(depositData);
+    </script>
+</body>
+</html>

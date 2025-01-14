@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Showcase</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        .card-gradient-signature {
+            background: url('img/Signature-Card-Banner-removebg-preview.png'); /* Replace 'your-image-path.jpg' with the actual image path */
+    /* background-size: cover; Ensures the image covers the entire element */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+        }
+        .card-gradient-platinum {
+            background: url('img/Classic-Banner_TRUST-removebg-preview.png'); /* Replace 'your-image-path.jpg' with the actual image path */
+     /* Ensures the image covers the entire element */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+        }
+        .card-gradient-gold {
+            
+            background: url('img/Visa_Go.png'); /* Replace 'your-image-path.jpg' with the actual image path */
+     /* Ensures the image covers the entire element */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+          
+}
+        
+        .card-gradient-classic {
+            background: url('img/Classic-Banner_TRUST-removebg-preview.png'); /* Replace 'your-image-path.jpg' with the actual image path */
+     /* Ensures the image covers the entire element */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+        }
+        .card-gradient-sena {
+            background: linear-gradient(45deg, #059669, #047857);
+        }
+        .card-gradient-lounge {
+            background: linear-gradient(45deg, #dc2626, #be123c);
+        }
+
+        /* Enhanced Animation Styles */
+        .credit-card {
+            height: 200px;
+            border-radius: 15px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .credit-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+        }
+
+        .credit-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            transition: all 0.8s;
+            opacity: 0;
+        }
+
+        .credit-card:hover::after {
+            transform: rotate(45deg) translate(50%, 50%);
+            opacity: 1;
+        }
+
+        .card-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+        }
+
+        .card-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background: #f8f9fa;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(1);
+        }
+
+        .benefit-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+            transform: translateX(0);
+        }
+
+        .benefit-item:hover {
+            padding-left: 10px;
+            background-color: #f8f9fa;
+        }
+
+        .benefit-item:last-child {
+            border-bottom: none;
+        }
+
+        .btn {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            transition: all 0.8s;
+            opacity: 0;
+        }
+
+        .btn:hover::after {
+            transform: rotate(45deg) translate(50%, 50%);
+            opacity: 1;
+        }
+
+        /* Carousel Animation */
+        .carousel-item {
+            transition: transform 0.8s ease-in-out;
+        }
+
+        /* Fade Animation for Benefits */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .benefits > div {
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+
+        .benefits > div:nth-child(1) { animation-delay: 0.1s; }
+        .benefits > div:nth-child(2) { animation-delay: 0.2s; }
+        .benefits > div:nth-child(3) { animation-delay: 0.3s; }
+
+        /* .card-gradient-gold {
+        background: linear-gradient(45deg, rgba(202, 138, 4, 0.85), rgba(180, 83, 9, 0.85));
+        position: relative;
+    }
+    
+    .card-gradient-gold::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('img\Visa_Gold_0-removebg-preview.png'); /* Replace with your image path */
+        /* background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }  */
+
+    </style>
+</head>   
+<body class="bg-light">
+    <div class="container py-5">
+        <h1 class="text-center mb-5 fw-bold">Our Premium Credit Cards</h1>
+
+    <div class="container text-center my-5 content-container">
+        <!-- Image or Icon -->
+        <!-- <img src="img/4_Credit card.png" alt="Islamic Banking Icon" class="my-3 img-fluid fade-in" style="max-width: 300px;"> -->
+
+        <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+<!--  -->
+
+
+
+                <!-- Visa Signature Card -->
+                <div class="carousel-item active">
+                    <div class="card-container bg-white p-4 mx-auto" style="max-width: 500px;">
+                        <div class="credit-card card-gradient-signature p-4 mb-4">
+                            <div class="d-flex justify-content-between">
+                                <!-- <i class="fas fa-plane text-white fa-2x"></i> -->
+                                <!-- <img src="" alt="Visa logo" class="opacity-75"> -->
+                            </div>
+                            <div class="mt-5">
+                                <!-- <img src="img\TRUST_Visa-International-removebg-preview.png" alt="Card number" class="opacity-0"> -->
+                            </div>
+                        </div>
+                        <h3 class="fw-bold">Visa Signature Card</h3>
+                        <p class="text-muted">Premium travel benefits and exclusive rewards</p>
+                        <div class="benefits my-4">
+                            <div class="benefit-item"><i class="fas fa-check me-2 text-success"></i>Travel Insurance</div>
+                            <div class="benefit-item"><i class="fas fa-check me-2 text-success"></i>Airport Lounge Access</div>
+                            <div class="benefit-item"><i class="fas fa-check me-2 text-success"></i>Concierge Service</div>
+                        </div>
+                        <button class="btn btn-dark w-100 py-3">Apply Now</button>
+                    </div>
+                </div>
+
+                <!-- Visa Platinum Card -->
+                <div class="carousel-item">
+                    <div class="card-container bg-white p-4 mx-auto" style="max-width: 500px;">
+                        <div class="credit-card card-gradient-platinum p-4 mb-4">
+                            <div class="d-flex justify-content-between">
+                                <!-- <i class="fas fa-crown text-white fa-2x"></i>
+                                <img src="/api/placeholder/60/40" alt="Visa logo" class="opacity-75">
+                            -->
+                            </div>
+                            <div class="mt-5">
+                                <!-- <img src="/api/placeholder/320/40" alt="Card number" class="opacity-50">
+                            -->
+                            </div>
+                        </div>
+                        <h3 class="fw-bold">Visa Platinum Card</h3>
+                        <p class="text-muted">Enhanced rewards and premium features</p>
+                        <div class="benefits my-4">
+                            <div class="benefit-item"><i class="fas fa-check me-2 text-success"></i>Extended Warranty</div>
+                            <div class="benefit-item"><i class="fas fa-check me-2 text-success"></i>Purchase Protection</div>
+                            <div class="benefit-item"><i class="fas fa-check me-2 text-success"></i>Reward Points</div>
+                        </div>
+                        <button class="btn btn-dark w-100 py-3">Apply Now</button>
+                    </div>
+                </div>
+
+                <!-- Additional cards follow the same pattern -->
+                <!-- Visa Gold Credit Card -->
+                <!-- <div class="carousel-item">
+                    <div class="card-container bg-white p-4 mx-auto" style="max-width: 500px;">
+                        <div class="credit-card card-gradient-gold p-4 mb-4">
+                            <div class="d-flex justify-content-between">
+                                <i class="fas fa-credit-card text-white fa-2x"></i>
+                                <img src="/api/placeholder/60/40" alt="Visa logo" class="opacity-75">
+                            </div>
+                            <div class="mt-5">
+                                <img src="/api/placeholder/320/40" alt="Card number" class="opacity-50">
+                            </div>
+                        </div>
+                        <h3 class="fw-bold">Visa Gold Credit Card</h3>
+                        <p class="text-muted">Balanced benefits for everyday spending</p>
+                        <div class="benefits my-4">
+                            <div class="benefit-item"><i class="fas fa-check me-2 text-success"></i>Cash Back</div>
+                            <div class="benefit-item"><i class="fas fa-check me-2 text-success"></i>Zero Liability</div>
+                            <div class="benefit-item"><i class="fas fa-check me-2 text-success"></i>Emergency Assistance</div>
+                        </div>
+                        <button class="btn btn-dark w-100 py-3">Apply Now</button>
+                    </div>
+                </div> -->
+
+                <!-- Remaining cards... -->
+
+                <div class="carousel-item">
+                    <div class="card-container bg-white p-4 mx-auto" style="max-width: 500px;">
+                        <div class="credit-card card-gradient-gold p-4 mb-4">
+                            <div class="d-flex justify-content-between">
+                                <!-- <i class="fas fa-credit-card text-white fa-2x"></i>
+                                <img src="/api/placeholder/60/40" alt="Visa logo" class="opacity-75">
+                             -->
+                            </div>
+                            <div class="mt-5">
+                                <!-- <img src="/api/placeholder/320/40" alt="Card number" class="opacity-50">
+                            -->
+                            </div>
+                        </div>
+                        <h3 class="fw-bold">Visa Gold Credit Card</h3>
+                        <p class="text-muted">Balanced benefits for everyday spending</p>
+                        <div class="benefits my-4">
+                            <div class="benefit-item"><i class="fas fa-check me-2 text-success"></i>Cash Back</div>
+                            <div class="benefit-item"><i class="fas fa-check me-2 text-success"></i>Zero Liability</div>
+                            <div class="benefit-item"><i class="fas fa-check me-2 text-success"></i>Emergency Assistance</div>
+                        </div>
+                        <button class="btn btn-dark w-100 py-3">Apply Now</button>
+                    </div>
+                </div>
+                <!--  -->
+
+            </div>
+            <button class="carousel-control-prev ms-3" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next me-3" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+     
+        
+                <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators position-relative mt-4">
+                <button type="button" data-bs-target="#cardCarousel" data-bs-slide-to="0" class="active bg-dark" aria-current="true"></button>
+                <button type="button" data-bs-target="#cardCarousel" data-bs-slide-to="1" class="bg-dark"></button>
+                <button type="button" data-bs-target="#cardCarousel" data-bs-slide-to="2" class="bg-dark"></button>
+                <button type="button" data-bs-target="#cardCarousel" data-bs-slide-to="3" class="bg-dark"></button>
+                <button type="button" data-bs-target="#cardCarousel" data-bs-slide-to="4" class="bg-dark"></button>
+                <button type="button" data-bs-target="#cardCarousel" data-bs-slide-to="5" class="bg-dark"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

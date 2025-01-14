@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainable Finance</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <style>
+    body {
+      background-color: #e7f4e4;
+      color: #2d6233;
+    }
+    .heading {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .subheading {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-top: 1.5rem;
+    }
+
+     .nav-link {
+            color: #495057;
+            font-weight: 500;
+        }
+        .nav-link.active {
+            background-color: #023020 !important;
+            color: white !important;
+        }
+        .btn-read-more {
+            background-color: #023020;
+            color: white;
+            transition: all 0.3s;
+        }
+        .btn-read-more:hover {
+            background-color: #218838;
+            color: white;
+        }
+        .btn-download {
+            background-color:#023020;
+            color: white;
+            transition: all 0.3s;
+        }
+        .btn-download:hover {
+            background-color: #023020;
+            color: white;
+        }
+        .accordion-item {
+            margin-bottom: 5px;
+        }
+
+         :root {
+            --royal-green: #023020;
+        }
+
+        .navbar {
+            padding: 0;
+            z-index: 1000;
+        }
+
+        .navbar-top {
+            background-color: var(--royal-green);
+            padding: 8px 0;
+        }
+
+        .navbar-top a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 20px;
+        }
+
+        .main-navbar {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--royal-green);
+        }
+
+        .nav-link {
+            color: var(--royal-green) !important;
+            padding: 20px !important;
+            font-weight: 500;
+        }
+
+        .mega-menu {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background-color: var(--royal-green);
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-item:hover .mega-menu {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .mega-menu h3 {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .mega-menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mega-menu-list li a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            padding: 8px 0;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .mega-menu-list li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .search-container {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .search-btn {
+            background-color: var(--royal-green);
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-btn:hover {
+            background-color: rgba(2, 48, 32, 0.9);
+        }
+
+        .search-btn i {
+            font-size: 16px;
+        }
+
+           .custom-footer {
+    background-color: #006E2E;
+    margin-top:100px; /* Replace with your desired color */
+}
+  </style>
+</head>
+<body>
+     <section>
+            <nav class="navbar navbar-top">
+        <div class="container d-flex justify-content-between">
+            <div class="social-links">
+                <a href="#">f</a>
+                <a href="#">in</a>
+                <a href="#">yt</a>
+            </div>
+            <div class="utility-links">
+                <a href="#">CONNECT</a>
+                <a href="#">CAREERS</a>
+                <a href="#">INVESTORS RELATION</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Navbar -->
+    <nav class="navbar main-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Trust Bank</a>
+            <div class="nav-items d-flex align-items-center">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FOR YOU</a>
+                        <div class="mega-menu">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h3>CONVENTIONAL BANKING</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Save</a></li>
+                                            <li><a href="#">Borrow</a></li>
+                                            <li><a href="#">Debit Card</a></li>
+                                            <li><a href="#">Credit Card</a></li>
+                                            <li><a href="#">Student File</a></li>
+                                            <li><a href="#">Priority Banking: Monarch</a></li>
+                                            <li><a href="#">Neera</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>ISLAMIC BANKING</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Save</a></li>
+                                            <li><a href="#">Invest</a></li>
+                                            <li><a href="#">Credit Card</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>NRB BANKING</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Foreign Remittance Services</a></li>
+                                            <li><a href="#">Account Facilities for NRBs</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>DIGITAL SOLUTION</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">MyPrime</a></li>
+                                            <li><a href="#">PrimePlus</a></li>
+                                            <li><a href="#">Prime Assist</a></li>
+                                            <li><a href="#">RemitPrime</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FOR YOUR BUSINESS</a>
+                        <div class="mega-menu">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h3>BUSINESS BANKING</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Business Accounts</a></li>
+                                            <li><a href="#">Business Loans</a></li>
+                                            <li><a href="#">Trade Finance</a></li>
+                                            <li><a href="#">Business Credit Cards</a></li>
+                                            <li><a href="#">Corporate Banking</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>CORPORATE SOLUTIONS</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Payment Solutions</a></li>
+                                            <li><a href="#">Cash Management</a></li>
+                                            <li><a href="#">Supply Chain Finance</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>INDUSTRY EXPERTISE</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Manufacturing</a></li>
+                                            <li><a href="#">Real Estate</a></li>
+                                            <li><a href="#">Technology</a></li>
+                                            <li><a href="#">Agriculture</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>SPECIALIZED SERVICES</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Advisory Services</a></li>
+                                            <li><a href="#">Investment Banking</a></li>
+                                            <li><a href="#">International Business</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ABOUT US</a>
+                        <div class="mega-menu">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h3>MEET PRIME BANK</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Overview</a></li>
+                                            <li><a href="#">History</a></li>
+                                            <li><a href="#">Mission & Vision</a></li>
+                                        </ul>
+                                        <h3>OUR SUBSIDIARIES</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Subsidiary Companies</a></li>
+                                            <li><a href="#">Joint Ventures</a></li>
+                                        </ul>
+                                        <h3>OUR AWARDS & ACHIEVEMENTS</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Recognition</a></li>
+                                            <li><a href="#">Milestones</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>OUR TEAM</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Board of Directors</a></li>
+                                            <li><a href="#">Executive Committee</a></li>
+                                            <li><a href="#">Audit Committee</a></li>
+                                            <li><a href="#">Risk Management Committee</a></li>
+                                            <li><a href="#">Shari'ah Supervisory Committee</a></li>
+                                            <li><a href="#">Management</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>SUSTAINABLE FINANCE</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Our Sustainability Commitments</a></li>
+                                            <li><a href="#">Commitment for Management of Environmental and Social Risk</a></li>
+                                            <li><a href="#">Sustainable Finance</a></li>
+                                            <li><a href="#">Our Sustainable Projects</a></li>
+                                            <li><a href="#">Community Inclusiveness</a></li>
+                                            <li><a href="#">Social Commitments</a></li>
+                                            <li><a href="#">Climate Strategy</a></li>
+                                            <li><a href="#">Concern & Communication</a></li>
+                                            <li><a href="#">Sustainability Report</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>IMPORTANT INFORMATION</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Policies</a></li>
+                                            <li><a href="#">Regulatory Information</a></li>
+                                            <li><a href="#">Governance</a></li>
+                                            <li><a href="#">Compliance</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="search-container">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    </section>
+  <div class="container my-5">
+    <div class="text-center mb-4">
+      <h1 class="text-success">SUSTAINABLE FINANCE</h1>
+    </div>
+    <div class="mb-4">
+      <p>Bangladesh is one of the promising countries towards attaining SDGs on action to end poverty, protect the planet, and ensure peace and prosperity for all people by 2030. To attain the goal, sustainable finance plays a significant role. Sustainable Finance covers Green Finance including Agriculture, CMSME, and Socially Responsible Finance linked to sustainability.</p>
+      <p>Socially Responsible Finance is financing that supports actions mitigating or addressing a specific social issue and seeking to achieve positive social outcomes. The project categories include but are not limited to providing or promoting basic infrastructure, access to essential services, affordable housing, employment generation, food security, socioeconomic advancement, and empowerment. Our mission is to reach the wider section of people towards inclusive, sustainable, and quality growth. As such, our motto is “A Bank for Financial Inclusion.”</p>
+      <p>Trust Bank PLC is always concerned for the social and environmental impact of its investments. The bank is doing business with the objective of reducing greenhouse gas emissions by any manner. In-house green policies and practices are another part of becoming an environment-friendly bank.</p>
+    </div>
+    <div>
+      <h2 class="subheading">GOVERNANCE, SUSTAINABILITY AND COMPLIANCE</h2>
+      <p>The rapid change in climate (one of the major threats in today’s world) will be too great to allow many ecosystems to suitably adapt, since the change has a direct impact on biodiversity, agriculture, forestry, dry land, water resources, and human health. Due to unusual weather patterns, rising greenhouse gases, and declining air quality, society demands that businesses also take responsibility in safeguarding the planet.</p>
+      <p>Our commitment is to sustainable investment which has strengthened Green Financing strategy in line with the United Nations’ Sustainable Development Goals on affordable and clean energy, economic growth and climate action. We verify it through a mandatory social and environmental screening process in our project financing activities. During the year, we disbursed BDT 4,398.03 million in green finance and BDT 88,925.15 million in sustainable finance with a goal of low-carbon economy.</p>
+      <p>In the year 2023, Trust Bank Ltd. has been recognized as one of the Seven Banks in the "Sustainability Rating 2022”. This rating has been declared by Bangladesh Bank based on the Bank’s performance on four indicators which are Sustainable Finance, Green Refinance, Corporate Social Responsibility and Core Banking Sustainability. </p>
+    </div>
+    <div class="container my-5">
+    <h2 class="major-heading text-center text-success mb-4">Major Achievement</h2>
+
+    <div class="row align-items-center mb-4">
+      <div class="col-md-4 text-center">
+        <img src="/banks-slide.png" alt="Bank Logo" class="img-fluid">
+      </div>
+      <div class="col-md-8">
+        <p class="mb-1"><span class="highlight">One of the top 7 Sustainable Banks of the country</span>, as declared by Bangladesh Bank.</p>
+      </div>
+    </div>
+
+    <p>
+      Trust Bank PLC is concerned with social and environmental impacts of its investments and in-house green management to become a sustainable investment-friendly bank. Trust Bank PLC has been conducting banking business in those areas and in such a manner that helps the overall reduction of carbon emission by its customers as well as from its own operations. Sustainable finance is often understood both as <span class="highlight">“doing good and doing well.”</span>
+    </p>
+
+    <h3 class="subheading">Trust Bank sustainable financing position up to December, 2023</h3>
+
+    <div class="text-center my-4">
+      <img src="/charts-slide.png" alt="Sustainable Financing Chart" class="chart-image">
+      <p>The Sustainable Finance Unit (SFU) of the bank ensures that funds are properly administered and disbursed in accordance with the bank’s vision, objectives, and areas of focus. We have a well-defined structure for reviewing and monitoring our CSR initiatives. The SFU of the bank has created policy guidelines on Corporate Social Responsibility and processes to monitor and evaluate our CSR programs. This not only helps in designing the target group but also in monitoring and evaluating the program in a structured way.</p>
+    </div>
+  </div>
+
+
+  </div>
+   <footer class="custom-footer text-white py-5">
+        <div class="container">
+          <div class="row">
+            <!-- Logo and Subscribe -->
+            <div class="col-lg-3 mb-4">
+              <div class="logo mb-4">LOGO</div>
+              <div class="subscribe-form">
+                <form class="d-flex">
+                  <input
+                    type="email"
+                    class="form-control me-2"
+                    placeholder="Enter your email to get the latest news"
+                  />
+                  <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Column One -->
+            <div class="col-lg-3 mb-4">
+              <h5 class="mb-3">COLUMN ONE</h5>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Twenty One</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Thirty Two</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Fourty Three</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Fifty Four</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Column Two -->
+            <div class="col-lg-3 mb-4">
+              <h5 class="mb-3">COLUMN TWO</h5>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Sixty Five</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Seventy Six</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Eighty Seven</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Ninety Eight</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Column Three -->
+            <div class="col-lg-3 mb-4">
+              <h5 class="mb-3">COLUMN THREE</h5>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >One Two</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Three Four</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Five Six</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Seven Eight</a
+                  >
+                </li>
+              </ul>
+              <div class="mt-4">
+                <h5 class="mb-3">COLUMN FOUR</h5>
+                <p class="mb-2">Join Us</p>
+                <div class="social-icons">
+                  <a href="#" class="text-white me-3"
+                    ><i class="bi bi-youtube"></i
+                  ></a>
+                  <a href="#" class="text-white me-3"
+                    ><i class="bi bi-facebook"></i
+                  ></a>
+                  <a href="#" class="text-white me-3"
+                    ><i class="bi bi-twitter"></i
+                  ></a>
+                  <a href="#" class="text-white me-3"
+                    ><i class="bi bi-instagram"></i
+                  ></a>
+                  <a href="#" class="text-white"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Footer -->
+          <div class="row mt-4 pt-4 border-top">
+            <div class="col-md-6">
+              <p class="mb-0">Greelogix © 2024. All rights reserved.</p>
+            </div>
+            <div class="col-md-6">
+              <ul class="list-inline mb-0 text-md-end">
+                <li class="list-inline-item">
+                  <a href="#" class="text-white text-decoration-none">Home</a>
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Services</a
+                  >
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a href="#" class="text-white text-decoration-none">Blog</a>
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Help Center</a
+                  >
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a href="#" class="text-white text-decoration-none">About</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

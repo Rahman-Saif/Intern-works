@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Islamic Banking</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+   <style>
+.header-color{
+  background-color: #006E2E;
+}
+     :root {
+            --royal-green: #023020;
+        }
+
+        .navbar {
+            padding: 0;
+            z-index: 1000;
+        }
+
+        .navbar-top {
+            background-color: var(--royal-green);
+            padding: 8px 0;
+        }
+
+        .navbar-top a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 20px;
+        }
+
+        .main-navbar {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--royal-green);
+        }
+
+        .nav-link {
+            color: var(--royal-green) !important;
+            padding: 20px !important;
+            font-weight: 500;
+        }
+
+        .mega-menu {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background-color: var(--royal-green);
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-item:hover .mega-menu {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .mega-menu h3 {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .mega-menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mega-menu-list li a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            padding: 8px 0;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .mega-menu-list li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .search-container {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .search-btn {
+            background-color: var(--royal-green);
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-btn:hover {
+            background-color: rgba(2, 48, 32, 0.9);
+       
+ }
+
+        .search-btn i {
+            font-size: 16px;
+        }
+
+
+
+  .carousel-item {
+      position: relative;
+      height: 600px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 128, 0, 0.7);
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+    }
+     .custom-footer {
+    background-color: #006E2E; /* Replace with your desired color */
+}
+
+
+:root {
+            --primary-green: #005826;
+            --darker-green: #00471b;
+            --light-green: #e8f5e9;
+        }
+
+        .text-royal-green {
+            color: var(--primary-green);
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        blockquote {
+            font-style: italic;
+            color: #555;
+            border-left: 4px solid var(--primary-green);
+            padding-left: 10px;
+        }
+
+        .text-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        :root {
+            --primary-green: #005826;
+            --darker-green: #00471b;
+            --light-green: #e8f5e9;
+        }
+
+        .text-royal-green {
+            color: var(--primary-green);
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        blockquote {
+            font-style: italic;
+            color: #555;
+            border-left: 4px solid var(--primary-green);
+            padding-left: 10px;
+        }
+
+        .text-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Enhanced Branch Section Styling */
+        .branches-container {
+            background-color: var(--light-green);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem auto;
+            max-width: 1000px;
+        }
+
+        .branch-title {
+            text-align: center;
+            color: var(--primary-green);
+            margin-bottom: 2rem;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .branch-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: var(--primary-green);
+            margin: 10px auto;
+        }
+
+        .accordion-item {
+            border: none;
+            margin-bottom: 1rem;
+            border-radius: 10px !important;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .accordion-button {
+            background-color: white !important;
+            color: var(--primary-green) !important;
+            font-weight: 600;
+            padding: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--light-green) !important;
+        }
+
+        .accordion-button::after {
+            background-color: var(--primary-green);
+            border-radius: 50%;
+            padding: 0.5rem;
+            background-position: center;
+        }
+
+        .accordion-body {
+            background-color: white;
+            padding: 1.5rem;
+        }
+
+        .branch-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .branch-list li {
+            padding: 0.5rem 0;
+            color: #333;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s ease;
+        }
+
+        .branch-list li:before {
+            content: '\f3c5';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            margin-right: 10px;
+            color: var(--primary-green);
+        }
+
+        .branch-list li:hover {
+            transform: translateX(10px);
+            color: var(--primary-green);
+        }
+
+        .branch-count {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+
+        /* Branch Stats Section */
+        .branch-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 200px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+/* new */
+        /* Royal green color */
+        .text-royal-green {
+            color: #005826; /* Royal green color */
+        }
+
+        /* Styling for the container */
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Blockquote customization */
+        blockquote {
+            font-style: italic;
+            color: #555;
+            border-left: 4px solid #005826;
+            padding-left: 10px;
+        }
+
+        /* Text content */
+        .text-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Animation for scroll and load */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .branches-container {
+            background-color: var(--light-green);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem auto;
+            max-width: 1000px;
+        }
+
+        .branch-title {
+            text-align: center;
+            color: var(--primary-green);
+            margin-bottom: 2rem;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .branch-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: var(--primary-green);
+            margin: 10px auto;
+        }
+
+        .accordion-item {
+            border: none;
+            margin-bottom: 1rem;
+            border-radius: 10px !important;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .accordion-button {
+            background-color: white !important;
+            color: var(--primary-green) !important;
+            font-weight: 600;
+            padding: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--light-green) !important;
+        }
+
+        .accordion-button::after {
+            background-color: var(--primary-green);
+            border-radius: 50%;
+            padding: 0.5rem;
+            background-position: center;
+        }
+
+        .accordion-body {
+            background-color: white;
+            padding: 1.5rem;
+        }
+
+        .branch-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .branch-list li {
+            padding: 0.5rem 0;
+            color: #333;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s ease;
+        }
+
+        .branch-list li:before {
+            content: '\f3c5';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            margin-right: 10px;
+            color: var(--primary-green);
+        }
+
+        .branch-list li:hover {
+            transform: translateX(10px);
+            color: var(--primary-green);
+        }
+
+        .branch-count {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+
+        /* Branch Stats Section */
+        .branch-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 200px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .shariah-committee {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.shariah-committee .section-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.shariah-committee .committee-description {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.shariah-committee .committee-members {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.shariah-committee .member {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.shariah-committee .member h4 {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #444;
+}
+
+.shariah-committee .member p {
+    font-size: 1em;
+    margin: 5px 0;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .shariah-committee .committee-members {
+        grid-template-columns: 1fr;
+    }
+}
+
+.related-products {
+    background-color: #fff;
+    position: relative;
+}
+
+.related-products::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: var(--light-green);
+    z-index: 0;
+}
+
+.related-products .container {
+    position: relative;
+    z-index: 1;
+}
+
+.related-products h2 {
+    color: var(--primary-green);
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+.related-products .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+    border-radius: 15px;
+}
+
+.related-products .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 88, 38, 0.1) !important;
+}
+
+.related-products .text-royal-green {
+    color: var(--primary-green);
+}
+
+.related-products .card-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+    </style>
+</head>
+<body>
+
+    <section>
+        <nav class="navbar navbar-top">
+    <div class="container d-flex justify-content-between">
+        <div class="social-links">
+            <a href="#">f</a>
+            <a href="#">in</a>
+            <a href="#">yt</a>
+        </div>
+        <div class="utility-links">
+            <a href="#">CONNECT</a>
+            <a href="#">CAREERS</a>
+            <a href="#">INVESTORS RELATION</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Navbar -->
+<nav class="navbar main-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="#">Trust Bank</a>
+        <div class="nav-items d-flex align-items-center">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">FOR YOU</a>
+                    <div class="mega-menu">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h3>CONVENTIONAL BANKING</h3>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="#">Save</a></li>
+                                        <li><a href="#">Borrow</a></li>
+                                        <li><a href="#">Debit Card</a></li>
+                                        <li><a href="#">Credit Card</a></li>
+                                        <li><a href="#">Student File</a></li>
+                                        <li><a href="#">Priority Banking: Monarch</a></li>
+                                        <li><a href="#">Neera</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <h3>ISLAMIC BANKING</h3>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="#">Save</a></li>
+                                        <li><a href="#">Invest</a></li>
+                                        <li><a href="#">Credit Card</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <h3>NRB BANKING</h3>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="#">Foreign Remittance Services</a></li>
+                                        <li><a href="#">Account Facilities for NRBs</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <h3>DIGITAL SOLUTION</h3>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="#">MyPrime</a></li>
+                                        <li><a href="#">PrimePlus</a></li>
+                                        <li><a href="#">Prime Assist</a></li>
+                                        <li><a href="#">RemitPrime</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">FOR YOUR BUSINESS</a>
+                    <div class="mega-menu">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h3>BUSINESS BANKING</h3>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="#">Business Accounts</a></li>
+                                        <li><a href="#">Business Loans</a></li>
+                                        <li><a href="#">Trade Finance</a></li>
+                                        <li><a href="#">Business Credit Cards</a></li>
+                                        <li><a href="#">Corporate Banking</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <h3>CORPORATE SOLUTIONS</h3>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="#">Payment Solutions</a></li>
+                                        <li><a href="#">Cash Management</a></li>
+                                        <li><a href="#">Supply Chain Finance</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <h3>INDUSTRY EXPERTISE</h3>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="#">Manufacturing</a></li>
+                                        <li><a href="#">Real Estate</a></li>
+                                        <li><a href="#">Technology</a></li>
+                                        <li><a href="#">Agriculture</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <h3>SPECIALIZED SERVICES</h3>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="#">Advisory Services</a></li>
+                                        <li><a href="#">Investment Banking</a></li>
+                                        <li><a href="#">International Business</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">ABOUT US</a>
+                    <div class="mega-menu">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h3>MEET TRUST BANK</h3>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="#">Overview</a></li>
+                                        <li><a href="#">History</a></li>
+                                        <li><a href="#">Mission & Vision</a></li>
+                                    </ul>
+                                    <h3>OUR SUBSIDIARIES</h3>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="#">Subsidiary Companies</a></li>
+                                        <li><a href="#">Joint Ventures</a></li>
+                                    </ul>
+                                    <h3>OUR AWARDS & ACHIEVEMENTS</h3>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="#">Recognition</a></li>
+                                        <li><a href="#">Milestones</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <h3>OUR TEAM</h3>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="#">Board of Directors</a></li>
+                                        <li><a href="#">Executive Committee</a></li>
+                                        <li><a href="#">Audit Committee</a></li>
+                                        <li><a href="#">Risk Management Committee</a></li>
+                                        <li><a href="#">Shari'ah Supervisory Committee</a></li>
+                                        <li><a href="#">Management</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <h3>SUSTAINABLE FINANCE</h3>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="#">Our Sustainability Commitments</a></li>
+                                        <li><a href="#">Commitment for Management of Environmental and Social Risk</a></li>
+                                        <li><a href="#">Sustainable Finance</a></li>
+                                        <li><a href="#">Our Sustainable Projects</a></li>
+                                        <li><a href="#">Community Inclusiveness</a></li>
+                                        <li><a href="#">Social Commitments</a></li>
+                                        <li><a href="#">Climate Strategy</a></li>
+                                        <li><a href="#">Concern & Communication</a></li>
+                                        <li><a href="#">Sustainability Report</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <h3>IMPORTANT INFORMATION</h3>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="#">Policies</a></li>
+                                        <li><a href="#">Regulatory Information</a></li>
+                                        <li><a href="#">Governance</a></li>
+                                        <li><a href="#">Compliance</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="search-container">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                    Search
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+</section>
+
+
+
+
+    <div class="container text-center my-5 content-container">
+        <!-- Image or Icon -->
+        <img src="img/1_Islamic.png" alt="Islamic Banking Icon" class="my-3 img-fluid fade-in" style="max-width: 300px;">
+
+        <!-- Text Content -->
+        <div class="text-content fade-in">
+            <p>Islam is a comprehensive way of life (deen), addressing both material and spiritual dimensions. Allah (SWT) emphasizes its completeness in the Quran:</p>
+            <blockquote class="blockquote text-center">
+                “This day I have perfected your religion for you, completed My blessing on you, and approved Islam as the way of life for you” (Al-Maidah: 3).
+            </blockquote>
+            <p>Islamic banking aligns with Shariah, prohibiting interest (riba) and ensuring business activities are halal. It offers both worldly profit and divine reward by adhering to Allah's commands. To ensure Shariah compliance, Islamic banking maintains robust documentation, eliminating vagueness in business dealings and responsibilities.</p>
+        </div>
+    </div>
+
+    <div class="branches-container fade-in">
+        <h2 class="branch-title " style="color: #006400;">Our Branch Network</h2>
+        
+        <!-- Branch Statistics -->
+        <div class="branch-stats">
+            <div class="stat-card">
+                <div class="stat-number " style="color: #006400">30</div>
+                <div class="stat-label" style="color: #006400">Total Branches</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" style="color: #006400" >8</div>
+                <div class="stat-label" style="color: #006400" >Cities</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" style="color: #006400" >15</div>
+                <div class="stat-label" style="color: #006400" >Dhaka Branches</div>
+            </div>
+        </div>
+
+        <!-- Enhanced Accordion -->
+        <div class="accordion" id="branchesAccordion">
+            <!-- Dhaka -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingDhaka">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDhaka" aria-expanded="true" aria-controls="collapseDhaka">
+                        Dhaka <span class="branch-count">15 Branches</span>
+                    </button>
+                </h2>
+                <div id="collapseDhaka" class="accordion-collapse collapse show" aria-labelledby="headingDhaka" data-bs-parent="#branchesAccordion">
+                    <div class="accordion-body">
+                        <ul class="branch-list">
+                            <li>Principal Branch</li>
+                            <li>Dhanmondi Corporate Branch</li>
+                            <li>Gulshan Corporate Branch</li>
+                            <li>Dilkusha Corporate Branch</li>
+                            <li>Millennium Corporate Branch</li>
+                            <li>Uttara Corporate Branch</li>
+                            <li>Mirpur Branch</li>
+                            <li>Karwan Bazar Branch</li>
+                            <li>SKB Branch</li>
+                            <li>Bashundhara Branch</li>
+                            <li>Elephant Road Branch</li>
+                            <li>Khawja Garib Newaz Avenue Branch</li>
+                            <li>Banani Branch</li>
+                            <li>Patuatuly Branch</li>
+                            <li>Kafrul Branch</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other cities follow the same pattern -->
+            <!-- Chattogram -->
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingChattogram">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseChattogram" aria-expanded="false" aria-controls="collapseChattogram">
+            Chattogram <span class="branch-count">3 Branches</span>
+        </button>
+    </h2>
+    <div id="collapseChattogram" class="accordion-collapse collapse" aria-labelledby="headingChattogram" data-bs-parent="#branchesAccordion">
+        <div class="accordion-body">
+            <ul class="branch-list">
+                <li>Chattogram Cantonment Branch</li>
+                <li>CDA Avenue Branch</li>
+                <li>Agrabad Branch</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Rangpur -->
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingRangpur">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRangpur" aria-expanded="false" aria-controls="collapseRangpur">
+            Rangpur <span class="branch-count">2 Branches</span>
+        </button>
+    </h2>
+    <div id="collapseRangpur" class="accordion-collapse collapse" aria-labelledby="headingRangpur" data-bs-parent="#branchesAccordion">
+        <div class="accordion-body">
+            <ul class="branch-list">
+                <li>Rangpur Cantonment Branch</li>
+                <li>Saidpur Branch</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Sylhet -->
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingSylhet">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSylhet" aria-expanded="false" aria-controls="collapseSylhet">
+            Sylhet <span class="branch-count">2 Branches</span>
+        </button>
+    </h2>
+    <div id="collapseSylhet" class="accordion-collapse collapse" aria-labelledby="headingSylhet" data-bs-parent="#branchesAccordion">
+        <div class="accordion-body">
+            <ul class="branch-list">
+                <li>Sylhet Corporate Branch</li>
+                <li>Jalalabad Cantt. Branch</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Khulna -->
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingKhulna">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseKhulna" aria-expanded="false" aria-controls="collapseKhulna">
+            Khulna <span class="branch-count">2 Branches</span>
+        </button>
+    </h2>
+    <div id="collapseKhulna" class="accordion-collapse collapse" aria-labelledby="headingKhulna" data-bs-parent="#branchesAccordion">
+        <div class="accordion-body">
+            <ul class="branch-list">
+                <li>Khulna Branch</li>
+                <li>Jashore Cantt. Branch</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Rajshahi -->
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingRajshahi">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRajshahi" aria-expanded="false" aria-controls="collapseRajshahi">
+            Rajshahi <span class="branch-count">1 Branch</span>
+        </button>
+    </h2>
+    <div id="collapseRajshahi" class="accordion-collapse collapse" aria-labelledby="headingRajshahi" data-bs-parent="#branchesAccordion">
+        <div class="accordion-body">
+            <ul class="branch-list">
+                <li>Rajshahi Branch</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Mymensingh -->
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingMymensingh">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMymensingh" aria-expanded="false" aria-controls="collapseMymensingh">
+            Mymensingh <span class="branch-count">1 Branch</span>
+        </button>
+    </h2>
+    <div id="collapseMymensingh" class="accordion-collapse collapse" aria-labelledby="headingMymensingh" data-bs-parent="#branchesAccordion">
+        <div class="accordion-body">
+            <ul class="branch-list">
+                <li>Mymensingh Cantt. Branch</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+            <!-- Similar structure for other cities... -->
+            
+        </div>
+    </div>
+
+    <section id="shariahCommittee" class="shariah-committee">
+        <div class="container">
+            <h2 class="section-title">Shariah Supervisory Committee</h2>
+            <p class="committee-description">
+                The Shari'ah Supervisory Committee of the Bank plays a vital role in framing and enforcing policy for strict adherence to Shari'ah principles in the Bank. As per the Islamic Banking Guidelines circulated by Bangladesh Bank, the Board of Directors forms an independent Shariah Supervisory Committee (SSC) with experienced individuals in Islamic Jurisprudence. Trust Bank's Shari'ah Supervisory Committee is composed of 3 prominent Ulama knowledgeable in Fiqhul Moamalat, providing guidance on the Bank’s Shari'ah compliance.
+            </p>
+    
+            <div class="committee-members">
+                <div class="member">
+                    <h4 class="member-role">Chairman</h4>
+                    <p class="member-name">Janab Dr. Mohammad Manzur-E-Elahi</p>
+                </div>
+                <div class="member">
+                    <h4 class="member-role">Vice Chairman</h4>
+                    <p class="member-name">Janab Dr. Muhammad Saifullah</p>
+                </div>
+                <div class="member">
+                    <h4 class="member-role">Member</h4>
+                    <p class="member-name">Janab Maulana Md Mahmudul Haque</p>
+                </div>
+                <div class="member">
+                    <h4 class="member-role">Ex-Officio Member</h4>
+                    <p class="member-name">Janab Ahsan Zaman Chowdhury</p>
+                </div>
+                <div class="member">
+                    <h4 class="member-role">Member Secretary</h4>
+                    <p class="member-name">Janab Mohammad Reyad Hossain</p>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <section class="related-products py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Your Share of the Profit Journey</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-5 mb-4">
+                    <a href="profit.html" class="text-decoration-none">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center p-4">
+                                <div class="mb-3">
+                                    <i class="fas fa-percentage fa-3x text-royal-green"></i>
+                                </div>
+                                <h5 class="card-title text-royal-green">Profit-Sharing Ratio</h5>
+                                <p class="card-text text-muted">Discover our transparent profit-sharing mechanisms aligned with Islamic banking principles.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-5 mb-4">
+                    <a href="final.html" class="text-decoration-none">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center p-4">
+                                <div class="mb-3">
+                                    <i class="fas fa-chart-line fa-3x text-royal-green"></i>
+                                </div>
+                                <h5 class="card-title text-royal-green">Final Profit Ratio</h5>
+                                <p class="card-text text-muted">Learn about our final profit distribution ratios and calculation methods.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        const fadeIns = document.querySelectorAll('.fade-in');
+
+        function showOnScroll() {
+            fadeIns.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                    el.classList.add('show');
+                }
+            });
+        }
+
+        window.addEventListener('load', showOnScroll);
+        window.addEventListener('scroll', showOnScroll);
+
+       
+    </script>
+    <footer class="custom-footer text-white py-5">
+        <div class="container">
+          <div class="row">
+            <!-- Logo and Subscribe -->
+            <div class="col-lg-3 mb-4">
+              <div class="logo mb-4">LOGO</div>
+              <div class="subscribe-form">
+                <form class="d-flex">
+                  <input
+                    type="email"
+                    class="form-control me-2"
+                    placeholder="Enter your email to get the latest news"
+                  />
+                  <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Column One -->
+            <div class="col-lg-3 mb-4">
+              <h5 class="mb-3">COLUMN ONE</h5>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Twenty One</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Thirty Two</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Fourty Three</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Fifty Four</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Column Two -->
+            <div class="col-lg-3 mb-4">
+              <h5 class="mb-3">COLUMN TWO</h5>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Sixty Five</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Seventy Six</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Eighty Seven</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Ninety Eight</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Column Three -->
+            <div class="col-lg-3 mb-4">
+              <h5 class="mb-3">COLUMN THREE</h5>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >One Two</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Three Four</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Five Six</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Seven Eight</a
+                  >
+                </li>
+              </ul>
+              <div class="mt-4">
+                <h5 class="mb-3">COLUMN FOUR</h5>
+                <p class="mb-2">Join Us</p>
+                <div class="social-icons">
+                  <a href="#" class="text-white me-3"
+                    ><i class="bi bi-youtube"></i
+                  ></a>
+                  <a href="#" class="text-white me-3"
+                    ><i class="bi bi-facebook"></i
+                  ></a>
+                  <a href="#" class="text-white me-3"
+                    ><i class="bi bi-twitter"></i
+                  ></a>
+                  <a href="#" class="text-white me-3"
+                    ><i class="bi bi-instagram"></i
+                  ></a>
+                  <a href="#" class="text-white"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Footer -->
+          <div class="row mt-4 pt-4 border-top">
+            <div class="col-md-6">
+              <p class="mb-0">Greelogix © 2024. All rights reserved.</p>
+            </div>
+            <div class="col-md-6">
+              <ul class="list-inline mb-0 text-md-end">
+                <li class="list-inline-item">
+                  <a href="#" class="text-white text-decoration-none">Home</a>
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Services</a
+                  >
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a href="#" class="text-white text-decoration-none">Blog</a>
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Help Center</a
+                  >
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a href="#" class="text-white text-decoration-none">About</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+</body>
+</html>

@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trust Bank Deposit Products</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    <style>
+        :root {
+            --royal-green: #004d40;
+            --medium-green: #00695c;
+            --light-green: #4db6ac;
+            --hover-green: #00897b;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0f2f1 100%);
+            min-height: 100vh;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--royal-green) 0%, var(--medium-green) 100%);
+            padding: 80px 0 120px;
+            color: white;
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(135deg, var(--royal-green) 0%, var(--medium-green) 100%);
+            transform: skewY(-3deg);
+            z-index: -1;
+        }
+
+        .quick-stats {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: -40px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--royal-green);
+            margin-bottom: 5px;
+        }
+
+        .product-select {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid var(--royal-green);
+            border-radius: 15px;
+            background-color: white;
+            color: var(--royal-green);
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 30px 0;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .product-select:hover {
+            border-color: var(--hover-green);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid #e0e0e0;
+            animation: slideIn 0.5s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--royal-green) 0%, var(--medium-green) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            border-color: var(--royal-green);
+        }
+
+        .product-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-title {
+            color: var(--royal-green);
+            font-weight: bold;
+            margin-bottom: 0;
+            font-size: 18px;
+            flex-grow: 1;
+        }
+
+        .product-badge {
+            background: var(--light-green);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .features-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .features-container.active {
+            max-height: 1000px;
+        }
+
+        .feature-item {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            background: rgba(0,77,64,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+        .feature-item.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .feature-item i {
+            color: var(--royal-green);
+            margin-right: 10px;
+        }
+
+        .feature-item:hover {
+            transform: translateX(10px);
+            background: rgba(0,77,64,0.08);
+        }
+
+        .toggle-icon {
+            color: var(--royal-green);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .category-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .category-pill {
+            padding: 8px 20px;
+            border-radius: 25px;
+            background: white;
+            color: var(--royal-green);
+            border: 2px solid var(--royal-green);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-pill:hover, .category-pill.active {
+            background: var(--royal-green);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 40px 0 80px;
+            }
+            
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+                padding: 10px;
+            }
+            
+            .stat-item:last-child {
+                border-bottom: none;
+            }
+            
+            .product-card {
+                padding: 15px;
+            }
+            
+            .product-title {
+                font-size: 16px;
+            }
+            
+            .category-pills {
+                gap: 5px;
+            }
+            
+            .category-pill {
+                padding: 6px 15px;
+                font-size: 14px;
+            }
+        }
+        :root {
+            --royal-green: #004d40;
+            --medium-green: #00695c;
+            --light-green: #4db6ac;
+            --hover-green: #00897b;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0f2f1 100%);
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, var(--royal-green) 0%, var(--medium-green) 100%);
+            padding: 40px 0;
+            color: white;
+            margin-bottom: 40px;
+            border-radius: 0 0 50px 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .product-select {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid var(--royal-green);
+            border-radius: 15px;
+            background-color: white;
+            color: var(--royal-green);
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .product-select:hover {
+            border-color: var(--hover-green);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: var(--royal-green);
+        }
+
+        .product-title {
+            color: var(--royal-green);
+            font-weight: bold;
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+
+        .features-container {
+            display: none;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 15px;
+            border-left: 4px solid var(--royal-green);
+        }
+
+        .features-container.active {
+            display: block;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .feature-item {
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            background: rgba(0,77,64,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateX(10px);
+            background: rgba(0,77,64,0.08);
+        }
+
+        .toggle-icon {
+            color: var(--royal-green);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-card {
+                padding: 15px;
+            }
+            
+            .product-title {
+                font-size: 14px;
+            }
+            
+            .feature-item {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+        .header-section {
+            background: linear-gradient(135deg, var(--royal-green) 0%, var(--medium-green) 100%);
+            padding: 40px 0;
+            color: white;
+            margin-bottom: 40px;
+            border-radius: 0 0 50px 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .product-btn {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            background: white;
+        }
+
+        .product-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--royal-green) 0%, var(--medium-green) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-btn:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .product-btn:hover::before {
+            opacity: 0.1;
+        }
+
+        .product-btn .logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -60%);
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            border: 2px solid var(--light-green);
+        }
+
+        .product-btn:hover .logo {
+            transform: translate(-50%, -65%);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-btn span.title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--royal-green);
+            color: white;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .product-btn:hover span.title {
+            background: var(--medium-green);
+            padding-bottom: 20px;
+        }
+
+        .product-select {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid var(--royal-green);
+            border-radius: 15px;
+            background-color: white;
+            color: var(--royal-green);
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .product-select:hover {
+            border-color: var(--hover-green);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-slider {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            margin: 30px 0;
+            overflow: hidden;
+            border: 1px solid rgba(0,77,64,0.1);
+        }
+
+        .info-slider.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .info-slider h3 {
+            color: white;
+            background: linear-gradient(135deg, var(--royal-green) 0%, var(--medium-green) 100%);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .nav-tabs {
+            background: rgba(0,77,64,0.05);
+            padding: 10px 20px 0;
+            border: none;
+        }
+
+        .nav-tabs .nav-link {
+            color: var(--royal-green);
+            border: none;
+            padding: 12px 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-radius: 10px 10px 0 0;
+            margin-right: 5px;
+        }
+
+        .nav-tabs .nav-link:hover {
+            background: rgba(0,77,64,0.1);
+        }
+
+        .nav-tabs .nav-link.active {
+            background: var(--royal-green);
+            color: white;
+        }
+
+        .tab-content {
+            padding: 30px;
+        }
+
+        .feature-list li {
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            background: rgba(0,77,64,0.03);
+            border-left: 4px solid var(--royal-green);
+        }
+
+        .feature-list li:hover {
+            transform: translateX(10px);
+            background: rgba(0,77,64,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .calculator-widget {
+            background: rgba(0,77,64,0.03);
+            border-radius: 15px;
+            padding: 25px !important;
+        }
+
+        .btn-primary {
+            background: var(--royal-green);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--hover-green);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-control, .form-select {
+            border: 2px solid rgba(0,77,64,0.2);
+            border-radius: 10px;
+            padding: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--royal-green);
+            box-shadow: 0 0 0 3px rgba(0,77,64,0.1);
+        }
+
+        /* Animation for features */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .feature-list li {
+            animation: slideIn 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .feature-list li:nth-child(1) { animation-delay: 0.1s; }
+        .feature-list li:nth-child(2) { animation-delay: 0.2s; }
+        .feature-list li:nth-child(3) { animation-delay: 0.3s; }
+        .feature-list li:nth-child(4) { animation-delay: 0.4s; }
+        .feature-list li:nth-child(5) { animation-delay: 0.5s; }
+
+        /* Floating animation for cards */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .product-btn {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .product-btn:nth-child(1) { animation-delay: 0s; }
+        .product-btn:nth-child(2) { animation-delay: 1s; }
+        .product-btn:nth-child(3) { animation-delay: 2s; }
+        .product-btn:nth-child(4) { animation-delay: 3s; }
+        .product-btn:nth-child(5) { animation-delay: 4s; }
+        .info-slider {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            margin: 30px 0;
+            overflow: hidden;
+            border: 1px solid rgba(0,77,64,0.1);
+        }
+
+        .info-slider.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .main-header {
+            background: #004d40;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-header:hover {
+            background: #00695c;
+        }
+
+        .main-header .icon {
+            transition: transform 0.3s ease;
+        }
+
+        .main-header.collapsed .icon {
+            transform: rotate(-180deg);
+        }
+
+        .products-container {
+            max-height: 2000px;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+
+        .products-container.collapsed {
+            max-height: 0;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: #004d40;
+        }
+
+        .product-title {
+            color: #004d40;
+            font-weight: bold;
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+
+        .features-container {
+            display: none;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 15px;
+            border-left: 4px solid #004d40;
+        }
+
+        .features-container.active {
+            display: block;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .toggle-icon {
+            color: #004d40;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .main-header {
+            background: #004d40;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-header:hover {
+            background: #00695c;
+        }
+
+        .main-header .icon {
+            transition: transform 0.3s ease;
+        }
+
+        .main-header.collapsed .icon {
+            transform: rotate(-180deg);
+        }
+
+        .products-container {
+            max-height: 2000px;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+
+        .products-container.collapsed {
+            max-height: 0;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: #004d40;
+        }
+
+        .product-title {
+            color: #004d40;
+            font-weight: bold;
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+
+        .features-container {
+            display: none;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 15px;
+            border-left: 4px solid #004d40;
+        }
+
+        .features-container.active {
+            display: block;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .toggle-icon {
+            color: #004d40;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+        .main-header {
+            background: #004d40;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-header:hover {
+            background: #00695c;
+        }
+
+        .main-header .icon {
+            transition: transform 0.3s ease;
+        }
+
+        .main-header.collapsed .icon {
+            transform: rotate(-180deg);
+        }
+
+        .products-container {
+            max-height: 2000px;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+
+        .products-container.collapsed {
+            max-height: 0;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: #004d40;
+        }
+
+        .product-title {
+            color: #004d40;
+            font-weight: bold;
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+
+        .features-container {
+            display: none;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 15px;
+            border-left: 4px solid #004d40;
+        }
+
+        .features-container.active {
+            display: block;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .toggle-icon {
+            color: #004d40;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 text-center">
+                    <h1 class="display-4 mb-3">Trust Bank Islamic Deposit Products</h1>
+                    <p class="lead">Discover the perfect savings solution for your financial goals</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-10">
+                <div class="quick-stats">
+                    <div class="row">
+                        <div class="col-md-3 col-6">
+                            <div class="stat-item">
+                                <div class="stat-number">8+</div>
+                                <div class="stat-label">Product Categories</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="stat-item">
+                                <div class="stat-number">12%</div>
+                                <div class="stat-label">Profit Rate</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="stat-item">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">Online Banking</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="stat-item">
+                                <div class="stat-number">100+</div>
+                                <div class="stat-label">Branches</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8">
+                <select class="product-select" id="productSelect">
+                    <option value="">Select a Deposit Product</option>
+                    <option value="current">Current Account Products</option>
+                    <option value="savings">Savings Account Products</option>
+                    <option value="scheme">Deposit Scheme Products</option>
+                    <option value="terms">Term Deposit Products</option>
+                    <option value="others">Other Deposit Products</option>
+                </select>
+            </div>
+        </div>
+    
+        <div class="row g-4">
+            <!-- Current Account -->
+            <div class="col-md-4">
+                <button class="btn w-100 product-btn" data-slider="current">
+                    <div class="logo">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 19h16v2H4zm5-4h11v2H9zm-5-4h16v2H4zm5-4h11v2H9zM4 3h16v2H4z"/>
+                        </svg>
+                    </div>
+                    <span class="title">Current Account Products</span>
+                </button>
+            </div>
+    
+            <!-- Savings Account -->
+            <div class="col-md-4">
+                <button class="btn w-100 product-btn" data-slider="savings">
+                    <div class="logo">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"/>
+                        </svg>
+                    </div>
+                    <span class="title">Savings Account Products</span>
+                </button>
+            </div>
+    
+            <!-- Scheme Products -->
+            <div class="col-md-4">
+                <button class="btn w-100 product-btn" data-slider="scheme">
+                    <div class="logo">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 10h3v7H4zm6.5-7h3v14h-3zm6.5 3h3v11h-3z"/>
+                        </svg>
+                    </div>
+                    <span class="title">Deposit Scheme Products</span>
+                </button>
+            </div>
+    
+            <!-- Term Products -->
+            <div class="col-md-4">
+                <button class="btn w-100 product-btn" data-slider="terms">
+                    <div class="logo">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                        </svg>
+                    </div>
+                    <span class="title">Term Deposit Products</span>
+                </button>
+            </div>
+    
+            <!-- Other Products -->
+            <div class="col-md-4">
+                <button class="btn w-100 product-btn" data-slider="others">
+                    <div class="logo">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+                        </svg>
+                    </div>
+                    <span class="title">Other Deposit Products</span>
+                </button>
+            </div>
+        </div>
+    
+        <!-- <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="category-pills">
+                    <button class="category-pill active" data-category="all">All Products</button>
+                    <button class="category-pill" data-category="savings">Savings</button>
+                    <button class="category-pill" data-category="current">Current</button>
+                    <button class="category-pill" data-category="scheme">Schemes</button>
+                    <button class="category-pill" data-category="term">Term Deposits</button>
+                    <button class="category-pill" data-category="islamic">Islamic Banking</button>
+                </div>
+
+                <select class="product-select" id="productSelect">
+                    <option value="">Select a Product Category</option>
+                    <option value="savings">Savings Account Products</option>
+                    <option value="current">Current Account Products</option>
+                    <option value="scheme">Deposit Scheme Products</option>
+                    <option value="term">Term Deposit Products</option>
+                    <option value="islamic">Islamic Banking Products</option>
+                    <option value="special">Special Deposit Products</option>
+                    <option value="corporate">Corporate Banking Solutions</option>
+                    <option value="student">Student Banking Products</option>
+                </select> -->
+ <!-- Information Sliders -->
+ <div id="current" class="info-slider">
+    <h3 class="p-4 bg-light border-bottom">Current Account Products</h3>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#current-products">Products</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#current-features">Features</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#current-requirements">Requirements</button>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="current-products" class="tab-pane fade show active">
+            <ul class="feature-list list-unstyled">
+                <li>Al-Wadiah Current Account (AWCA)</li>
+            </ul>
+        </div>
+        <div id="current-features" class="tab-pane fade">
+            <ul class="feature-list list-unstyled">
+                <li>Zero minimum balance requirement</li>
+                <li>Free checkbook facility</li>
+                <li>Online banking access</li>
+                <li>SMS banking facility</li>
+            </ul>
+        </div>
+        <div id="current-requirements" class="tab-pane fade">
+            <ul class="feature-list list-unstyled">
+                <li>Valid ID proof</li>
+                <li>Address proof</li>
+                <li>Passport size photographs</li>
+                <li>Initial deposit amount</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Savings Account Slider -->
+<div id="savings" class="info-slider">
+    <h3 class="p-4 bg-light border-bottom">Savings Account Products</h3>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#savings-products">Products</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#savings-features">Features</button>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="savings-products" class="tab-pane fade show active">
+            <ul class="feature-list list-unstyled">
+                <li>Mudaraba Savings Account</li>
+                <li>TEMSA</li>
+                <li>TIB Payroll</li>
+                <li>Provident Fund Account</li>
+                <li>10 Taka Farmers MSA</li>
+                <li>Mudaraba Short Notice Deposit</li>
+                <li>MSDA</li>
+                <li>DPMSA</li>
+            </ul>
+        </div>
+        <div id="savings-features" class="tab-pane fade">
+            <ul class="feature-list list-unstyled">
+                <li>Competitive profit rates</li>
+                <li>Monthly profit calculation</li>
+                <li>Online banking facility</li>
+                <li>ATM card facility</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Scheme Products Slider -->
+<div id="scheme" class="info-slider">
+<h3 class="p-4 bg-light border-bottom">Deposit Scheme Products</h3>
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item">
+    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#scheme-products">Products</button>
+</li>
+<li class="nav-item">
+    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#scheme-features">Features</button>
+</li>
+<li class="nav-item">
+    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#scheme-requirements">Requirements</button>
+</li>
+</ul>
+<div class="tab-content">
+<div id="scheme-products" class="tab-pane fade show active">
+    <ul class="feature-list list-unstyled">
+        <li>MMSS - Monthly Money Saving Scheme</li>
+        <li>MKS - Monthly Kotipoti Scheme</li>
+        <li>MMS - Millionaire Money Scheme</li>
+        <li>BHDS - Bright Holiday Scheme</li>
+        <li>TMDS - Trust Money Double Scheme</li>
+    </ul>
+</div>
+<div id="scheme-features" class="tab-pane fade">
+    <ul class="feature-list list-unstyled">
+        <li>Flexible deposit terms</li>
+        <li>Attractive profit rates</li>
+        <li>Auto-renewal facility</li>
+        <li>Loan facility against deposits</li>
+    </ul>
+</div>
+<div id="scheme-requirements" class="tab-pane fade">
+    <div class="contact-info">
+        <h4>How to Apply</h4>
+        <p>Visit your nearest branch with:</p>
+        <ul class="feature-list list-unstyled">
+            <li>Valid photo ID</li>
+            <li>Proof of address</li>
+            <li>Recent photographs</li>
+            <li>Initial deposit amount</li>
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+
+<!-- Terms Products Slider -->
+<div id="terms" class="info-slider">
+<h3 class="p-4 bg-light border-bottom">Term Deposit Products</h3>
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item">
+    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#terms-products">Products</button>
+</li>
+<li class="nav-item">
+    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#terms-features">Features</button>
+</li>
+<li class="nav-item">
+    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#terms-calculator">Calculator</button>
+</li>
+</ul>
+<div class="tab-content">
+<div id="terms-products" class="tab-pane fade show active">
+    <ul class="feature-list list-unstyled">
+        <li>MTDR - Mudaraba Term Deposit Receipt</li>
+        <li>MMPS - Monthly Mudaraba Profit Scheme</li>
+        <li>MMDS - Mudaraba Money Double Scheme</li>
+    </ul>
+</div>
+<div id="terms-features" class="tab-pane fade">
+    <ul class="feature-list list-unstyled">
+        <li>Higher profit rates</li>
+        <li>Flexible tenure options</li>
+        <li>Auto-renewal facility</li>
+        <li>Loan facility against deposits</li>
+    </ul>
+</div>
+<div id="terms-calculator" class="tab-pane fade">
+    <div class="calculator-widget p-4">
+        <h4>Profit Calculator</h4>
+        <div class="mb-3">
+            <label class="form-label">Deposit Amount</label>
+            <input type="number" class="form-control" id="depositAmount">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Term (Years)</label>
+            <select class="form-select" id="termYears">
+                <option value="1">1 Year</option>
+                <option value="3">3 Years</option>
+                <option value="5">5 Years</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" onclick="calculateProfit()">Calculate</button>
+        <div id="profitResult" class="mt-3"></div>
+    </div>
+</div>
+</div>
+</div>
+
+<!-- Other Products Slider -->
+<div id="others" class="info-slider">
+<h3 class="p-4 bg-light border-bottom">Other Deposit Products</h3>
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item">
+    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#others-products">Products</button>
+</li>
+<li class="nav-item">
+    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#others-features">Features</button>
+</li>
+</ul>
+<div class="tab-content">
+<div id="others-products" class="tab-pane fade show active">
+    <ul class="feature-list list-unstyled">
+        <li>Quard Facility</li>
+        <li>TBMCWS - Trust Bank Money Collection Window Service</li>
+    </ul>
+</div>
+<div id="others-features" class="tab-pane fade">
+    <div class="service-features">
+        <h4 class="mb-4">Special Features</h4>
+        <ul class="feature-list list-unstyled">
+            <li>Flexible withdrawal options</li>
+            <li>Dedicated service window</li>
+            <li>Priority banking services</li>
+            <li>Special profit rates</li>
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+                <div class="products-container" id="productsContainer">
+                    <!-- Products will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const productCategories = {
+            savings: [
+                {
+                    name: "Mudaraba Savings Account",
+                    badge: "Popular",
+                    features: [
+                        "Profit sharing ratio: 65:35",
+                        "Monthly profit calculation",
+                        "No minimum balance requirement",
+                        "Free ATM card",
+                        "Online banking facility"
+                    ]
+                },
+                {
+                    name: "TEMSA",
+                    badge: "Tax Free",
+                    features: [
+                        "Tax exempted savings account",
+                        "Higher profit rates",
+                        "Special investment options",
+                        "Dedicated relationship manager"
+                    ]
+                },
+                {
+                    name: "Premium Savings Account",
+                    badge: "Premium",
+                    features: [
+                        "Priority banking services",
+                        "Higher daily transaction limits",
+                        "Exclusive banking lounge access",
+                        "Personalized service"
+                    ]
+                }
+            ],
+            current: [
+                {
+                    name: "Al-Wadiah Current Account",
+                    badge: "Basic",
+                    features: [
+                        "Zero minimum balance",
+                        "Free checkbook facility",
+                        "Online banking access",
+                        "SMS banking facility"
+                    ]
+                },
+                {
+                    name: "Business Current Account",
+                    badge: "Business",
+                    features: [
+                        "High transaction limits",
+                        "Multiple user access",
+                        "Bulk payment facility",
+                        "Corporate banking support"
+                    ]
+                }
+            ],
+            scheme: [
+                {
+                    name: "Monthly Money Saving Scheme",
+                    badge: "Featured",
+                    features: [
+                        "Flexible deposit terms",
+                        "Attractive profit rates",
+                        "Auto-renewal facility",
+                        "Loan facility against deposits"
+                    ]
+                },
+                {
+                    name: "Millionaire Deposit Scheme",
+                    badge: "Premium",
+                    features: [
+                        "Become a millionaire through monthly savings",
+                        "Flexible tenure options",
+                        "Life insurance coverage",
+                        "Special reward points"
+                    ]
+                }
+            ],
+            islamic: [
+                {
+                    name: "Mudaraba Term Deposit",
+                    badge: "Shariah",
+                    features: [
+                        "Shariah-compliant investment",
+                        "Profit sharing principle",
+                        "Flexible tenure options",
+                        "Monthly profit distribution"
+                    ]
+                },
+                {
+                    name: "Islamic Savings Account",
+                    badge: "Halal",
+                    features: [
+                        "100% halal banking",
+                        "Profit-loss sharing",
+                        "No hidden charges",
+                        "Islamic banking advisory"
+                    ]
+                }
+            ]
+        };
+
+        function createProductCards(category) {
+            const container = document.getElementById('productsContainer');
+            container.innerHTML = ''; // Clear existing content
+            
+            let productsToShow = [];
+            if (category === 'all' || !category) {
+                Object.values(productCategories).forEach(products => {
+                    productsToShow = productsToShow.concat(products);
+                });
+            } else {
+                productsToShow = productCategories[category] || [];
+            }
+            
+            productsToShow.forEach((product, index) => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                 card.style.animationDelay = `${index * 0.1}s`;
+        
+        card.innerHTML = `
+            <div class="product-header">
+                <h3 class="product-title">${product.name}</h3>
+                ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="features-container">
+                ${product.features.map((feature, i) => `
+                    <div class="feature-item" style="animation-delay: ${i * 0.1}s">
+                        <i class="fas fa-check"></i>
+                        ${feature}
+                    </div>
+                `).join('')}
+            </div>
+        `;
+        
+        card.addEventListener('click', () => {
+            card.classList.toggle('active');
+            const featuresContainer = card.querySelector('.features-container');
+            featuresContainer.classList.toggle('active');
+            
+            const featureItems = card.querySelectorAll('.feature-item');
+            featureItems.forEach((item, i) => {
+                setTimeout(() => {
+                    item.classList.toggle('show');
+                }, i * 100);
+            });
+        });
+        
+        container.appendChild(card);
+    });
+}
+
+// // Event listeners for category selection
+// document.querySelectorAll('.category-pill').forEach(pill => {
+//     pill.addEventListener('click', (e) => {
+//         document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+//         e.target.classList.add('active');
+//         createProductCards(e.target.dataset.category);
+//     });
+// });
+
+// document.getElementById('productSelect').addEventListener('change', (e) => {
+//     createProductCards(e.target.value);
+// });
+
+// // Initial load
+// createProductCards('all');
+document.addEventListener('DOMContentLoaded', function() {
+            const products = document.querySelectorAll('.info-slider');
+            const productSelect = document.getElementById('productSelect');
+
+            function showProduct(productId) {
+                // Hide all products first
+                products.forEach(product => {
+                    product.classList.remove('show');
+                });
+
+                // Show selected product
+                const selectedProduct = document.getElementById(productId);
+                if (selectedProduct) {
+                    // Add a slight delay to ensure smooth transition
+                    setTimeout(() => {
+                        selectedProduct.classList.add('show');
+                        // Scroll to the product with offset
+                        const offset = 100; // Adjust this value as needed
+                        const topPos = selectedProduct.getBoundingClientRect().top + window.pageYOffset - offset;
+                        window.scrollTo({
+                            top: topPos,
+                            behavior: 'smooth'
+                        });
+                    }, 50);
+                }
+            }
+
+            // Event listener for buttons
+            document.querySelectorAll('.product-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const productId = button.getAttribute('data-slider');
+                    showProduct(productId);
+                    productSelect.value = productId;
+                });
+            });
+
+            // Event listener for select dropdown
+            productSelect.addEventListener('change', (e) => {
+                if (e.target.value) {
+                    showProduct(e.target.value);
+                }
+            });
+
+            // Calculator function
+            window.calculateProfit = function() {
+                const amount = parseFloat(document.getElementById('depositAmount').value);
+                const years = parseFloat(document.getElementById('termYears').value);
+                const rate = 0.06; // Example rate of 6%
+                
+                if (!isNaN(amount) && !isNaN(years)) {
+                    const profit = amount * rate * years;
+                    const total = amount + profit;
+                    
+                    document.getElementById('profitResult').innerHTML = `
+                        <div class="alert alert-success">
+                            <h5>Calculation Results:</h5>
+                            <p>Estimated Profit: ৳${profit.toFixed(2)}</p>
+                            <p>Total Amount at Maturity: ৳${total.toFixed(2)}</p>
+                        </div>
+                    `;
+                }
+            };
+
+            // Initialize Bootstrap tabs
+            const tabElements = document.querySelectorAll('button[data-bs-toggle="tab"]');
+            tabElements.forEach(tab => {
+                tab.addEventListener('shown.bs.tab', function (event) {
+                    // Animate features when tab is shown
+                    const targetPanel = document.querySelector(event.target.getAttribute('data-bs-target'));
+                    if (targetPanel) {
+                        const features = targetPanel.querySelectorAll('.feature-list li');
+                        features.forEach((feature, index) => {
+                            feature.style.animationDelay = `${index * 0.1}s`;
+                            feature.style.opacity = '0';
+                            setTimeout(() => {
+                                feature.style.opacity = '1';
+                            }, index * 100);
+                        });
+                    }
+                });
+            });
+        });
+
+
+</script>
+
+</body>
+</html>

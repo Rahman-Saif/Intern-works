@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trust Islamic Banking - Weightage Information</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #198754;
+            --light-green: #e8f5e9;
+            --hover-green: #f0fff4;
+        }
+        
+        .bg-light-green {
+            background-color: var(--light-green);
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: var(--primary-green);
+            color: white;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+        }
+        
+        .table-hover tbody tr:hover {
+            background-color: var(--hover-green);
+            transition: background-color 0.3s;
+        }
+        
+        .section-header {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 1rem;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .nav-pills .nav-link.active {
+            background-color: var(--primary-green);
+        }
+        
+        .nav-pills .nav-link {
+            color: var(--primary-green);
+        }
+        
+        .search-box {
+            border: 2px solid var(--primary-green);
+            border-radius: 25px;
+            padding: 8px 15px;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(25, 135, 84, 0.3);
+        }
+        
+        .floating-top-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            z-index: 99;
+        }
+        
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+        }
+        
+        .table th {
+            background-color: var(--primary-green) !important;
+            color: white !important;
+        }
+        
+        .animate-fade {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <!-- Header Section -->
+        <div class="card mb-4 shadow-sm animate-fade">
+            <div class="card-body bg-light-green">
+                <h1 class="text-center text-success mb-4">Trust Islamic Banking</h1>
+                <h2 class="text-center text-success mb-3">Profit Sharing Ratio and Weightage</h2>
+                <div class="text-center">
+                    <p class="h5 text-success">Profit Sharing Ratio (Depositor:Bank) - <strong>65:35</strong></p>
+                    <p class="text-success">Effective from: January 1, 2022 (Valid until further revision)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search and Controls -->
+        <div class="row mb-4 no-print">
+            <div class="col-md-6">
+                <input type="text" id="searchBox" class="search-box" placeholder="Search for deposits...">
+            </div>
+            <div class="col-md-6 text-end">
+                <button class="btn btn-success" onclick="window.print()">
+                    <i class="fas fa-print"></i> Print
+                </button>
+                <button class="btn btn-outline-success" onclick="expandAll()">
+                    <i class="fas fa-expand-alt"></i> Expand All
+                </button>
+                <button class="btn btn-outline-success" onclick="collapseAll()">
+                    <i class="fas fa-compress-alt"></i> Collapse All
+                </button>
+            </div>
+        </div>
+
+        <!-- Accordion Container -->
+        <div class="accordion shadow-sm" id="weightageAccordion">
+            <!-- Mudaraba Scheme Deposit -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#mtdrIndividual">
+                        <i class="fas fa-chart-line me-2"></i> Mudaraba Term Deposit Receipt (MTDR) for Individuals, Employees Provident Fund, and Funds for Post-Retirement
+                    </button>
+                </h2>
+                <div id="mtdrIndividual" class="accordion-collapse collapse show" data-bs-parent="#weightageAccordion">
+                    <div class="accordion-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Scheme Type</th>
+                                        <th>Weightage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Mudaraba Term Deposit Receipt (MTDR) - 1 month</td><td>0.40</td></tr>
+                                    <tr><td>Mudaraba Term Deposit Receipt (MTDR) - 3 month</td><td>0.85</td></tr>
+                                    <tr><td>Mudaraba Term Deposit Receipt (MTDR) - 6 month</td><td>0.90</td></tr>
+                                    <tr><td>Mudaraba Term Deposit Receipt (MTDR) - 12 month</td><td>0.95</td></tr>
+                                    <tr><td>Mudaraba Term Deposit Receipt (MTDR) - 24 & 36 month</td><td>0.98</td></tr>
+                                    <tr><td>Mudaraba Term Deposit Receipt (MTDR) - 60 month</td><td>1.00</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#mtdrOther">
+                        <i class="fas fa-chart-line me-2"></i> Mudaraba Term Deposit Receipt (MTDR) for Other Than Individuals, Employees Provident Fund, and Funds for Post-Retirement
+                    </button>
+                </h2>
+                <div id="mtdrOther" class="accordion-collapse collapse" data-bs-parent="#weightageAccordion">
+                    <div class="accordion-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Scheme Type</th>
+                                        <th>Weightage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Mudaraba Term Deposit Receipt (MTDR) - 1 month</td><td>0.30</td></tr>
+                                    <tr><td>Mudaraba Term Deposit Receipt (MTDR) - 3 month</td><td>0.55</td></tr>
+                                    <tr><td>Mudaraba Term Deposit Receipt (MTDR) - 6 month</td><td>0.65</td></tr>
+                                    <tr><td>Mudaraba Term Deposit Receipt (MTDR) - 12 month</td><td>0.75</td></tr>
+                                    <tr><td>Mudaraba Term Deposit Receipt (MTDR) - 24 & 36 month</td><td>0.80</td></tr>
+                                    <tr><td>Mudaraba Term Deposit Receipt (MTDR) - 60 month</td><td>0.85</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#mtdrSeniors">
+                        <i class="fas fa-chart-line me-2"></i> Mudaraba Term Deposit Receipt (MTDR) for Seniors
+                    </button>
+                </h2>
+                <div id="mtdrSeniors" class="accordion-collapse collapse" data-bs-parent="#weightageAccordion">
+                    <div class="accordion-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Scheme Type</th>
+                                        <th>Weightage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>MTDR - Seniors 3 Months</td><td>0.90</td></tr>
+                                    <tr><td>MTDR - Seniors 6 Months</td><td>0.92</td></tr>
+                                    <tr><td>MTDR - Seniors 12 Months</td><td>0.95</td></tr>
+                                    <tr><td>MTDR - Seniors 24 & 36 Months</td><td>1.00</td></tr>
+                                    <tr><td>MTDR - Seniors 60 Months</td><td>1.05</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#mudarabaScheme">
+                        <i class="fas fa-chart-line me-2"></i> Mudaraba Scheme Deposit
+                    </button>
+                </h2>
+                <div id="mudarabaScheme" class="accordion-collapse collapse" data-bs-parent="#weightageAccordion">
+                    <div class="accordion-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Scheme Type</th>
+                                        <th>Weightage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Mudaraba Monthly Savings Scheme (MMSS) – 36 Month</td><td>1.02</td></tr>
+                                    <tr><td>Mudaraba Monthly Savings Scheme (MMSS) – 60 month</td><td>1.05</td></tr>
+                                    <tr><td>Mudaraba Monthly Savings Scheme (MMSS) – 96 month</td><td>1.05</td></tr>
+                                    <tr><td>Mudaraba Monthly Savings Scheme (MMSS) – 120 month</td><td>1.10</td></tr>
+                                    <tr><td>Mudaraba Monthly Savings Scheme (MMSS) – 144 month</td><td>1.15</td></tr>
+                                    <tr><td>Barakat Hajj Deposit Scheme up to 10 years</td><td>1.15</td></tr>
+                                    <tr><td>Barakat Hajj Deposit Scheme 10 years & above</td><td>1.20</td></tr>
+                                    <tr><td>Mudaraba Millionaire Scheme up to 10 years</td><td>1.08</td></tr>
+                                    <tr><td>Mudaraba Millionaire Scheme 10 years & above</td><td>1.10</td></tr>
+                                    <tr><td>Mudaraba Kotipati Scheme up to 10 years</td><td>1.08</td></tr>
+                                    <tr><td>Mudaraba Kotipati Scheme 10 years & above</td><td>1.10</td></tr>
+                                    <tr><td>Mudaraba Money Double Scheme</td><td>1.05</td></tr>
+                                    <tr><td>Mudaraba Monthly Profit Scheme- 1, 2 & 3 Years</td><td>0.98</td></tr>
+                                    <tr><td>Mudaraba Monthly Profit Scheme- 5 Years</td><td>1.00</td></tr>
+                                    <tr><td>Mudaraba Cash Waqf Scheme 3 Years</td><td>0.98</td></tr>
+                                    <tr><td>Mudaraba Cash Waqf Scheme 5 Years</td><td>1.00</td></tr>
+                                    <tr><td>Trust Mudaapah Deposit Scheme - 3 years</td><td>0.98</td></tr>
+                                    <tr><td>Trust Mudaapah Deposit Scheme -5 Years</td><td>1.00</td></tr>
+                                    <tr><td>Mudaraba Junior Saving Scheme -MJSS</td><td>1.02</td></tr>
+                                    <tr><td>MMPS-Seniors -1,2 & 3 Years</td><td>1.00</td></tr>
+                                    <tr><td>MMPS-Seniors -5 Years</td><td>1.05</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        function expandAll() {
+            document.querySelectorAll('.accordion-collapse').forEach(item => {
+                item.classList.add('show');
+            });
+        }
+        
+        function collapseAll() {
+            document.querySelectorAll('.accordion-collapse').forEach(item => {
+                item.classList.remove('show');
+            });
+        }
+        
+        document.getElementById('searchBox').addEventListener('keyup', function(e) {
+            const searchText = e.target.value.toLowerCase();
+            document.querySelectorAll('tbody tr').forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchText) ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
