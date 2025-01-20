@@ -1,0 +1,13 @@
+#board_of_directors .accordion-body{
+    display: flex;
+    justify-content: space-evenly;
+}
+#board_of_directors img{
+    margin: auto;
+    height: 300px;
+    width: 230px;
+}
+
+.writting h5{
+    font-weight: 400;
+}

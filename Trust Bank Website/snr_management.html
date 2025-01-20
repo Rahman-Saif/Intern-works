@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style_board.css"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e8f5e9;
+        }
+        
+        .trade-title {
+            color: #1b5e20;
+            font-size: 2.5rem;
+            font-weight: 500;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .main-content {
+            color: #2e7d32;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .products-title {
+            color: #1b5e20;
+            font-size: 2rem;
+            font-weight: 500;
+            margin: 2rem 0;
+        }
+        
+        .products-content {
+            color: #2e7d32;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .terminal-image {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 100%;
+            height: auto;
+        }
+
+            body {
+      background-color: #e9f7df; /*Light green background*/
+    }
+    .table thead th {
+      background-color: #276a39; /* Dark green header */
+      color: white; /* White text for header */
+    }
+    .table tbody tr {
+      background-color: #f4fbf1; /* Light green rows */
+    }
+
+    .header-color{
+  background-color: #006E2E;;
+}
+     :root {
+            --royal-green: #023020;
+        }
+
+        .navbar {
+            padding: 0;
+            z-index: 1000;
+        }
+
+        .navbar-top {
+            background-color: var(--royal-green);
+            padding: 8px 0;
+        }
+
+        .navbar-top a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 20px;
+        }
+
+        .main-navbar {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--royal-green);
+        }
+
+        .nav-link {
+            color: var(--royal-green) !important;
+            padding: 20px !important;
+            font-weight: 500;
+        }
+
+        .mega-menu {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background-color: var(--royal-green);
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-item:hover .mega-menu {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .mega-menu h3 {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .mega-menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mega-menu-list li a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            padding: 8px 0;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .mega-menu-list li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .search-container {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .search-btn {
+            background-color: var(--royal-green);
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-btn:hover {
+            background-color: rgba(2, 48, 32, 0.9);
+        }
+
+        .search-btn i {
+            font-size: 16px;
+        }
+
+
+
+  .carousel-item {
+      position: relative;
+      height: 600px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 128, 0, 0.7);
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+    }
+     .custom-footer {
+    background-color: #006E2E ; /* Replace with your desired color */
+}
+.team-grid {
+            background-color: #e8f5e9;
+            padding: 50px 0;
+        }
+
+        .team-member {
+            position: relative;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .member-card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            height: 100%;
+        }
+
+        .member-image {
+            width: 200px;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .member-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .member-position {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .member-image {
+                width: 150px;
+                height: 180px;
+            }
+        }
+        #board_of_directors .accordion-body{
+    display: flex;
+    justify-content: space-evenly;
+}
+#board_of_directors img{
+    margin: auto;
+    height: 300px;
+    width: 230px;
+}
+
+.writting h5{
+    font-weight: 400;
+}
+    </style>
+</head>
+<body>
+     <section>
+            <nav class="navbar navbar-top">
+        <div class="container d-flex justify-content-between">
+            <div class="social-links">
+                <a href="#">f</a>
+                <a href="#">in</a>
+                <a href="#">yt</a>
+            </div>
+            <div class="utility-links">
+                <a href="#">CONNECT</a>
+                <a href="#">CAREERS</a>
+                <a href="#">INVESTORS RELATION</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Navbar -->
+    <nav class="navbar main-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Trust Bank</a>
+            <div class="nav-items d-flex align-items-center">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FOR YOU</a>
+                        <div class="mega-menu">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h3>CONVENTIONAL BANKING</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Save</a></li>
+                                            <li><a href="#">Borrow</a></li>
+                                            <li><a href="#">Debit Card</a></li>
+                                            <li><a href="#">Credit Card</a></li>
+                                            <li><a href="#">Student File</a></li>
+                                            <li><a href="#">Priority Banking: Monarch</a></li>
+                                            <li><a href="#">Neera</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>ISLAMIC BANKING</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Save</a></li>
+                                            <li><a href="#">Invest</a></li>
+                                            <li><a href="#">Credit Card</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>NRB BANKING</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Foreign Remittance Services</a></li>
+                                            <li><a href="#">Account Facilities for NRBs</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>DIGITAL SOLUTION</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">MyPrime</a></li>
+                                            <li><a href="#">PrimePlus</a></li>
+                                            <li><a href="#">Prime Assist</a></li>
+                                            <li><a href="#">RemitPrime</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FOR YOUR BUSINESS</a>
+                        <div class="mega-menu">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h3>BUSINESS BANKING</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Business Accounts</a></li>
+                                            <li><a href="#">Business Loans</a></li>
+                                            <li><a href="#">Trade Finance</a></li>
+                                            <li><a href="#">Business Credit Cards</a></li>
+                                            <li><a href="#">Corporate Banking</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>CORPORATE SOLUTIONS</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Payment Solutions</a></li>
+                                            <li><a href="#">Cash Management</a></li>
+                                            <li><a href="#">Supply Chain Finance</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>INDUSTRY EXPERTISE</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Manufacturing</a></li>
+                                            <li><a href="#">Real Estate</a></li>
+                                            <li><a href="#">Technology</a></li>
+                                            <li><a href="#">Agriculture</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>SPECIALIZED SERVICES</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Advisory Services</a></li>
+                                            <li><a href="#">Investment Banking</a></li>
+                                            <li><a href="#">International Business</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ABOUT US</a>
+                        <div class="mega-menu">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h3>MEET PRIME BANK</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Overview</a></li>
+                                            <li><a href="#">History</a></li>
+                                            <li><a href="#">Mission & Vision</a></li>
+                                        </ul>
+                                        <h3>OUR SUBSIDIARIES</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Subsidiary Companies</a></li>
+                                            <li><a href="#">Joint Ventures</a></li>
+                                        </ul>
+                                        <h3>OUR AWARDS & ACHIEVEMENTS</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Recognition</a></li>
+                                            <li><a href="#">Milestones</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>OUR TEAM</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Board of Directors</a></li>
+                                            <li><a href="#">Executive Committee</a></li>
+                                            <li><a href="#">Audit Committee</a></li>
+                                            <li><a href="#">Risk Management Committee</a></li>
+                                            <li><a href="#">Shari'ah Supervisory Committee</a></li>
+                                            <li><a href="#">Management</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>SUSTAINABLE FINANCE</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Our Sustainability Commitments</a></li>
+                                            <li><a href="#">Commitment for Management of Environmental and Social Risk</a></li>
+                                            <li><a href="#">Sustainable Finance</a></li>
+                                            <li><a href="#">Our Sustainable Projects</a></li>
+                                            <li><a href="#">Community Inclusiveness</a></li>
+                                            <li><a href="#">Social Commitments</a></li>
+                                            <li><a href="#">Climate Strategy</a></li>
+                                            <li><a href="#">Concern & Communication</a></li>
+                                            <li><a href="#">Sustainability Report</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3>IMPORTANT INFORMATION</h3>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#">Policies</a></li>
+                                            <li><a href="#">Regulatory Information</a></li>
+                                            <li><a href="#">Governance</a></li>
+                                            <li><a href="#">Compliance</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="search-container">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    </section>
+    <!-- Main Section -->
+    <section class="p-5" id="board_of_directors">
+      <div class="container">
+        <h2 class="text-center mb-4">Meet Our Senior Management Team</h2>
+        <h2 class="text-center mb-4">Chairman</h2>
+        <div class="row g-4 justify-content-center">
+          <!-- Row 1 -->
+          <div class="col-lg-4 col-md-4 col-sm-6">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#mymodal" style="text-decoration: none;">
+              <div class="team-member">
+                  <div class="member-card">
+                      <img src="img/WhatsApp Image 2024-04-09 at 1.29.48 PM.jpeg" alt="Team Member" class="member-image" style="height: 250px; margin: 10px 0">
+                      <div class="member-name">Ahsan Zaman Chowdhury</div>
+                      <div class="member-position">DMD & CEO</div>
+                  </div>
+              </div>
+            </a>
+          </div> 
+          <div class="modal fade" id="mymodal">
+            <div class="modal-dialog modal-lg" >
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Chairman</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body py-3">
+                  <div class="box" style="display: flex;">
+                    <div class="image my-auto me-4">
+                      <img src="img/WhatsApp Image 2024-04-09 at 1.29.48 PM.jpeg" class="rounded-start" alt="..." style="height: 250px;">
+                    </div>
+                    <div class="writting">
+                      <div class="card-body" style="width: 510px;">
+                        <h4 class="card-title">Ahsan Zaman Chowdhury</h4>
+                        <p class="card-text">Mr. Ahsan Zaman Chowdhury, a seasoned banking professional with nearly four decades of experience, has held key roles at AB Bank, Eastern Bank Limited, and Trust Bank PLC. Joining Trust Bank in 2016, he rose to Deputy Managing Director and Chief Business Officer in 2020 and later served as Managing Director (In-Charge). Renowned for his expertise in business development, corporate banking, and strategic decision-making, he has driven profitability and excellence at Trust Bank. A graduate of the University of Chittagong, he is also an avid golfer, traveler, and active member of socio-cultural organizations, embodying leadership and dedication in all facets of his life.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="text-center mt-5 mb-0">Members</h2>     
+      </div>
+    </section>
+    <div class="team-grid">
+      <div class="container">
+          <div class="row g-4">
+              <!-- Row 1 -->
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                  <div class="team-member">
+                      <div class="member-card">
+                          <img src="img/akhleur rahman.jpeg" alt="Team Member" class="member-image">
+                          <div class="member-name">Aakhleur Rahman Bhuyian</div>
+                          <div class="member-position">DMD & CEO</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                  <div class="team-member">
+                      <div class="member-card">
+                          <img src="img\hashna.jpeg" alt="Team Member" class="member-image">
+                          <div class="member-name">Hasna Dalna Chowdhury</div>
+                          <div class="member-position">DMD & COO</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                  <div class="team-member">
+                      <div class="member-card">
+                          <img src="img\kamal hossain.jpeg" alt="Team Member" class="member-image">
+                          <div class="member-name">Md. Kamal Hossain Siddiki</div>
+                          <div class="member-position">DMD & CCO</div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Row 2 -->
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                  <div class="team-member">
+                      <div class="member-card">
+                          <img src="img\mahbubur rahman.jpeg" alt="Team Member" class="member-image">
+                          <div class="member-name">Md. Mahbubur Rahman</div>
+                          <div class="member-position">Head of Operations Division</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                  <div class="team-member">
+                      <div class="member-card">
+                          <img src="img\mizanur rahman.jpeg" alt="Team Member" class="member-image">
+                          <div class="member-name">Brig Gen Munshi Mizanur Rahman</div>
+                          <div class="member-position">Head of Human Resources Division</div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Row 3 -->
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                  <div class="team-member">
+                      <div class="member-card">
+                          <img src="img\masud.jpeg" alt="Team Member" class="member-image">
+                          <div class="member-name">Mohammad Masud Shahjahan</div>
+                          <div class="member-position">Head of Treasury</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                  <div class="team-member">
+                      <div class="member-card">
+                          <img src="img\mahmood.jpeg" alt="Team Member" class="member-image">
+                          <div class="member-name">Shaikh Altaf Mahmood</div>
+                          <div class="member-position">Head of Credit Administration Division</div>
+                      </div>
+                  </div>
+              </div>
+              <!-- <div class="col-lg-4 col-md-4 col-sm-6">
+                  <div class="team-member">
+                      <div class="member-card">
+                          <img src="/api/placeholder/200/240" alt="Team Member" class="member-image">
+                          <div class="member-name">Brig Gen Abdullah Al Yusuf</div>
+                          <div class="member-position">Head of Recovery & Monitoring Division</div>
+                      </div>
+                  </div>
+              </div> -->
+
+              <!-- Row 4 -->
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                  <div class="team-member">
+                      <div class="member-card">
+                          <img src="img\zahidul.jpeg" alt="Team Member" class="member-image">
+                          <div class="member-name">Lt Col Md Zaidul Ahsan (Retd)</div>
+                          <div class="member-position">Head of Legal Division</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                  <div class="team-member">
+                      <div class="member-card">
+                          <img src="img\mahfuz.jpeg" alt="Team Member" class="member-image">
+                          <div class="member-name">Md. Mahfuzur Rahman</div>
+                          <div class="member-position">CFA & CFO</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+    <footer class="custom-footer text-white py-5">
+        <div class="container">
+          <div class="row">
+            <!-- Logo and Subscribe -->
+            <div class="col-lg-3 mb-4">
+              <div class="logo mb-4">LOGO</div>
+              <div class="subscribe-form">
+                <form class="d-flex">
+                  <input
+                    type="email"
+                    class="form-control me-2"
+                    placeholder="Enter your email to get the latest news"
+                  />
+                  <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Column One -->
+            <div class="col-lg-3 mb-4">
+              <h5 class="mb-3">COLUMN ONE</h5>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Twenty One</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Thirty Two</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Fourty Three</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Fifty Four</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Column Two -->
+            <div class="col-lg-3 mb-4">
+              <h5 class="mb-3">COLUMN TWO</h5>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Sixty Five</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Seventy Six</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Eighty Seven</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Ninety Eight</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Column Three -->
+            <div class="col-lg-3 mb-4">
+              <h5 class="mb-3">COLUMN THREE</h5>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >One Two</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Three Four</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Five Six</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Seven Eight</a
+                  >
+                </li>
+              </ul>
+              <div class="mt-4">
+                <h5 class="mb-3">COLUMN FOUR</h5>
+                <p class="mb-2">Join Us</p>
+                <div class="social-icons">
+                  <a href="#" class="text-white me-3"
+                    ><i class="bi bi-youtube"></i
+                  ></a>
+                  <a href="#" class="text-white me-3"
+                    ><i class="bi bi-facebook"></i
+                  ></a>
+                  <a href="#" class="text-white me-3"
+                    ><i class="bi bi-twitter"></i
+                  ></a>
+                  <a href="#" class="text-white me-3"
+                    ><i class="bi bi-instagram"></i
+                  ></a>
+                  <a href="#" class="text-white"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Footer -->
+          <div class="row mt-4 pt-4 border-top">
+            <div class="col-md-6">
+              <p class="mb-0">Greelogix © 2024. All rights reserved.</p>
+            </div>
+            <div class="col-md-6">
+              <ul class="list-inline mb-0 text-md-end">
+                <li class="list-inline-item">
+                  <a href="#" class="text-white text-decoration-none">Home</a>
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Services</a
+                  >
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a href="#" class="text-white text-decoration-none">Blog</a>
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Help Center</a
+                  >
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a href="#" class="text-white text-decoration-none">About</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

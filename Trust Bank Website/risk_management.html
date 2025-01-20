@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #e8f5e9;
+      }
+
+      .trade-title {
+        color: #1b5e20;
+        font-size: 2.5rem;
+        font-weight: 500;
+        text-align: center;
+        margin: 2rem 0;
+      }
+
+      .main-content {
+        color: #2e7d32;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .products-title {
+        color: #1b5e20;
+        font-size: 2rem;
+        font-weight: 500;
+        margin: 2rem 0;
+      }
+
+      .products-content {
+        color: #2e7d32;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .terminal-image {
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 100%;
+        height: auto;
+      }
+
+      body {
+        background-color: #e9f7df; /* Light green background */
+      }
+      .table thead th {
+        background-color: #276a39; /* Dark green header */
+        color: white; /* White text for header */
+      }
+      .table tbody tr {
+        background-color: #f4fbf1; /* Light green rows */
+      }
+
+      .header-color {
+        background-color: #006e2e;
+      }
+      :root {
+        --royal-green: #023020;
+      }
+
+      .navbar {
+        padding: 0;
+        z-index: 1000;
+      }
+
+      .navbar-top {
+        background-color: var(--royal-green);
+        padding: 8px 0;
+      }
+
+      .navbar-top a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        margin-left: 20px;
+      }
+
+      .main-navbar {
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--royal-green);
+      }
+
+      .nav-link {
+        color: var(--royal-green) !important;
+        padding: 20px !important;
+        font-weight: 500;
+      }
+
+      .mega-menu {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 30px;
+        background-color: var(--royal-green);
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-item:hover .mega-menu {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .mega-menu h3 {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .mega-menu-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .mega-menu-list li a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        padding: 8px 0;
+        display: block;
+        transition: all 0.3s ease;
+      }
+
+      .mega-menu-list li a:hover {
+        color: white;
+        padding-left: 5px;
+      }
+
+      .search-container {
+        position: relative;
+        margin-left: 20px;
+      }
+
+      .search-btn {
+        background-color: var(--royal-green);
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .search-btn:hover {
+        background-color: rgba(2, 48, 32, 0.9);
+      }
+
+      .search-btn i {
+        font-size: 16px;
+      }
+
+      .carousel-item {
+        position: relative;
+        height: 600px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .carousel-caption {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 128, 0, 0.7);
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: white;
+      }
+      .custom-footer {
+        background-color: #006e2e; /* Replace with your desired color */
+      }
+      .team-grid {
+        background-color: #e8f5e9;
+        padding: 50px 0;
+      }
+
+      .team-member {
+        position: relative;
+        margin-bottom: 30px;
+        transition: transform 0.3s ease;
+      }
+
+      .team-member:hover {
+        transform: translateY(-10px);
+      }
+
+      .member-card {
+        background: white;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        height: 100%;
+      }
+
+      .member-image {
+        width: 200px;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+
+      .member-name {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #333;
+        line-height: 1.4;
+      }
+
+      .member-position {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .member-image {
+          width: 150px;
+          height: 180px;
+        }
+      }
+      #board_of_directors .accordion-body {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      #board_of_directors img {
+        margin: auto;
+        height: 300px;
+        width: 230px;
+      }
+
+      .writting h5 {
+        font-weight: 400;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="p-5" id="board_of_directors">
+      <div class="container">
+        <h2 class="text-center mb-4">Meet Our Risk Management Team</h2>
+        <h2 class="text-center mb-4">Chairman</h2>
+        <div class="row g-4 justify-content-center">
+          <!-- Row 1 -->
+          <div class="col-lg-3 col-md-3 col-sm-6">
+            <a
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-1"
+              style="text-decoration: none"
+            >
+              <div class="team-member">
+                <div class="member-card">
+                  <img
+                    src="img/Brig-Gen-Nishat-new.png"
+                    alt="Team Member"
+                    class="member-image"
+                    style="margin: 10px 0"
+                  />
+                  <div class="member-name">
+                    Brig. Gen. Md. Nishatul Islam Khan
+                  </div>
+                  <div class="member-position">NDC, PSC</div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="modal fade" id="modal-1">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Chairman
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body py-3">
+                  <div class="box" style="display: flex">
+                    <div class="image my-auto me-4">
+                      <img
+                        src="img/Brig-Gen-Nishat-new.png"
+                        class="rounded-start img-fluid"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="writting">
+                      <div class="card-body" style="width: 510px">
+                        <h4 class="mb-1 card-title">
+                          Brig. Gen. Md. Nishatul Islam Khan
+                        </h4>
+                        <h5>NDC, PSC</h5>
+                        <p class="card-text">
+                          Brig Gen Md Nishatul Islam Khan, commissioned in 1993,
+                          has held diverse command, staff, and instructional
+                          roles across regiments, headquarters, and training
+                          institutions, including the National Defence College
+                          and DGFI. He commanded an infantry regiment and
+                          brigade, served in key positions such as Deputy
+                          Commander of the President Guard Regiment, and
+                          contributed as Directing Staff for the Armed Forces
+                          War Course. A graduate of prestigious institutions
+                          like the National Defence College, Mirpur, and UK
+                          Defence Academy, he also earned a Master's in Security
+                          and Strategic Studies from Tanzania. He participated
+                          in UN missions in Sierra Leone and Sudan and visited
+                          32 countries. Currently, he serves as Director,
+                          Internal Affairs Bureau at HQ DGFI.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="text-center mt-5 mb-0">Members</h2>
+      </div>
+    </section>
+    <div class="team-grid">
+      <div class="container">
+        <div class="row g-lg-3 justify-content-center">
+          <div class="col-lg-3 col-md-3 col-sm-6">
+            <a
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-2"
+              style="text-decoration: none"
+            >
+              <div class="team-member">
+                <div class="member-card">
+                  <img
+                    src="img/Nusrat Khan_Updated.jpg"
+                    alt="Team Member"
+                    class="member-image"
+                    style="margin: 10px 0"
+                  />
+                  <div class="member-name">Nusrat Khan</div>
+                  <div class="member-position">Independent Director</div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="modal fade" id="modal-2">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Risk Management Team Member
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body py-3">
+                  <div class="box" style="display: flex">
+                    <div class="image my-auto me-4">
+                      <img
+                        src="img/Nusrat Khan_Updated.jpg"
+                        class="rounded-start img-fluid"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="writting">
+                      <div class="card-body" style="width: 510px">
+                        <h4 class="mb-1 card-title">Nusrat Khan</h4>
+                        <p class="card-text">
+                          Nusrat Khan, born on 13 March 1983 in Dhaka, is a
+                          charismatic and hardworking leader who inspires peers
+                          with her dedication and excellence. She began her
+                          career as a lecturer at East West University and later
+                          joined the Department of Finance at the University of
+                          Dhaka, where she is now an Associate Professor. With
+                          an MSc in Management of Risks (distinction) from St.
+                          John's University, New York, she is a Fulbright
+                          Scholar and a member of the Beta Gamma Sigma honor
+                          society. Renowned for her academic excellence and
+                          numerous journal publications, she also serves as an
+                          independent director of Bangladesh Welding Electrodes
+                          Ltd. Her achievements have earned her widespread
+                          admiration in academia and beyond.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6">
+            <a
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-3"
+              style="text-decoration: none"
+            >
+              <div class="team-member">
+                <div class="member-card">
+                  <img
+                    src="img/Anisuddin Ahmed Khan.jpg"
+                    alt="Team Member"
+                    class="member-image"
+                    style="margin: 10px 0"
+                  />
+                  <div class="member-name">Mr. Anisuddin Ahmed Khan</div>
+                  <div class="member-position">NDC, PSC</div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="modal fade" id="modal-3">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Risk Management Team Member
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body py-3">
+                  <div class="box" style="display: flex">
+                    <div class="image my-auto me-4">
+                      <img
+                        src="img/Anisuddin Ahmed Khan.jpg"
+                        class="rounded-start img-fluid"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="writting">
+                      <div class="card-body" style="width: 510px">
+                        <h4 class="mb-1 card-title">
+                          Mr. Anisuddin Ahmed Khan
+                        </h4>
+                        <h5>OSP, AFWC, PSC</h5>
+                        <p class="card-text">
+                          Mr. Anisuddin Ahmed Khan, a Fellow of the Institute of
+                          Bankers, Bangladesh, is a seasoned banker and former
+                          Managing Director & CEO of Mutual Trust Bank Limited
+                          (2009-2019). With over 38 years of experience across
+                          leading financial institutions, he specializes in
+                          corporate banking, credit operations, risk management,
+                          and financial inclusion. He has presented papers at
+                          Harvard and Yale, attended leadership training at
+                          Cambridge and INSEAD, and served as Chairman of ABB
+                          and PDBL. Currently, he is an Adjunct Professor at
+                          IUB, Independent Director at Berger Paints, and
+                          involved in multiple corporate and philanthropic
+                          organizations.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

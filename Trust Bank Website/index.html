@@ -10,202 +10,402 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
+  <style>
+    #partner .carousel-inner {
+      padding: 1em;
+    }
+    #partner .card {
+      margin: 0 0.5em;
+      box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+      border: none;
+    }
+    #partner .carousel-control-prev,
+    .carousel-control-next {
+      background-color: #e1e1e1;
+      width: 6vh;
+      height: 6vh;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 768px) {
+      #partner .carousel-item {
+        margin-right: 0;
+        flex: 0 0 33.333333%;
+        display: block;
+      }
+      #partner .carousel-inner {
+        display: flex;
+      }
+    }
+    #partner .card .img-wrapper {
+      max-width: 100%;
+      height: 13em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card img {
+      max-height: 100%;
+    }
+    #partner_show {
+      text-decoration: none;
+    }
+
+    @media (max-width: 767px) {
+      #partner .card .img-wrapper {
+        height: 17em;
+      }
+    }
+
+    .navbar .medialinks {
+      width: 97%;
+    }
+
+    .utility-links {
+      margin-right: 10px;
+    }
+
+    .utility-links .imglink {
+      margin-right: 10px;
+    }
+  </style>
   <body>
     <!-- saif -section  -->
 
     <section>
-            <nav class="navbar navbar-top">
-        <div class="container d-flex justify-content-between">
-            <div class="social-links">
-                <a href="#">f</a>
-                <a href="#">in</a>
-                <a href="#">yt</a>
-            </div>
-            <div class="utility-links">
-                <a href="#">CONNECT</a>
-                <a href="#">CAREERS</a>
-                <a href="#">INVESTORS RELATION</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Navbar -->
-    <nav class="navbar main-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-              <img src="/tbl-logo.png" />
+      <nav class="navbar navbar-top">
+        <div class="medialinks d-flex justify-content-between">
+          <div class="social-links">
+            <a href="#">ATM/Branch Locations</a>
+            <a href="#">Bank Note Security</a>
+            <a href="#">Complaint Cell</a>
+            <a href="#">Tender</a>
+            <!-- <a href="#">Right to Act</a>
+            <a href="#">Unclaimed Deposits</a> -->
+          </div>
+          <div class="utility-links">
+            <a href="#"
+              ><img src="/imgs/web.png" alt="" class="imglink" /> iBanking
             </a>
-            <div class="nav-items d-flex align-items-center">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">FOR YOU</a>
-                        <div class="mega-menu">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <h3>CONVENTIONAL BANKING</h3>
-                                        <ul class="mega-menu-list">
-                                            <li><a href="/DepositProducts.html">Deposit Products</a></li>
-                                            <li><a href="/LOAN/Loans.html">Loan</a></li>
-                                            <li><a href="/LOAN/defence Personel loan.html">Defence Personnel Loan</a></li>
-                                            <li><a href="/CARD/TBL Card.html">Trust Bank Cards</a></li>
-                                            <!-- <li><a href="#">Credit Card</a></li>
+            <a href="#"
+              ><img src="/imgs/tbl-ekyc.png" alt="" class="imglink" />ekYc</a
+            >
+            <a href="#"
+              ><img src="/imgs/tap-logo.png" alt="" class="imglink" />tap</a
+            >
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Navbar -->
+      <nav class="navbar main-navbar">
+        <div class="navback d-flex align-items-center justify-content-between">
+          <a class="navbar-brand" href="/">
+            <img src="/tbl-logo.png" class="trust-logo" />
+          </a>
+          <div class="nav-items d-flex align-items-center">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row">
+              <li class="nav-item">
+                <a class="nav-link" href="#">FOR YOU</a>
+                <div class="mega-menu">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <h3>CONVENTIONAL BANKING</h3>
+                        <ul class="mega-menu-list">
+                          <li>
+                            <a href="/DepositProducts.html">Deposit Products</a>
+                          </li>
+                          <li><a href="/LOAN/Loans.html">Loan</a></li>
+                          <li>
+                            <a href="/LOAN/defence Personel loan.html"
+                              >Defence Personnel Loan</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/CARD/TBL Card.html">Trust Bank Cards</a>
+                          </li>
+                          <!-- <li><a href="#">Credit Card</a></li>
                                             <li><a href="#">Student File</a></li>
                                             <li><a href="#">Priority Banking: Monarch</a></li>
                                             <li><a href="#">Neera</a></li> -->
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h3>ISLAMIC BANKING</h3>
-                                        <ul class="mega-menu-list">
-                                            <li><a href="/ISLAMIC BANK/about Islamic Banking.html">About</a></li>
-                                            <li><a href="/ISLAMIC BANK/diposite.html">Deposite </a></li>
-                                            <li><a href="/ISLAMIC BANK/final Ratio.html">Final Ratio</a></li>
-                                            <li><a href="/ISLAMIC BANK/investment.html">Investment</a></li>
-                                            <li><a href="/ISLAMIC BANK/profit Sharing Ratio.html">Profit Sharing Ratio</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h3>NRB BANKING</h3>
-                                        <ul class="mega-menu-list">
-                                            <li><a href="/NRB_Bond.html">NRB BONDS</a></li>
-                                            <!-- <li><a href="#">Account Facilities for NRBs</a></li> -->
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h3>DIGITAL SOLUTION</h3>
-                                        <ul class="mega-menu-list">
-                                            <li><a href="/ISLAMIC BANK/Trust_Money_App.html">Trust Money App</a></li>
-                                            <!-- <li><a href="#">PrimePlus</a></li>
+                        </ul>
+                      </div>
+                      <div class="col-md-3">
+                        <h3>ISLAMIC BANKING</h3>
+                        <ul class="mega-menu-list">
+                          <li>
+                            <a href="/ISLAMIC BANK/about Islamic Banking.html"
+                              >About</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/ISLAMIC BANK/diposite.html">Deposite </a>
+                          </li>
+                          <li>
+                            <a href="/ISLAMIC BANK/final Ratio.html"
+                              >Final Ratio</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/ISLAMIC BANK/investment.html"
+                              >Investment</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/ISLAMIC BANK/profit Sharing Ratio.html"
+                              >Profit Sharing Ratio</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-md-3">
+                        <h3>NRB BANKING</h3>
+                        <ul class="mega-menu-list">
+                          <li><a href="/NRB_Bond.html">NRB BONDS</a></li>
+                          <!-- <li><a href="#">Account Facilities for NRBs</a></li> -->
+                        </ul>
+                      </div>
+                      <div class="col-md-3">
+                        <h3>DIGITAL SOLUTION</h3>
+                        <ul class="mega-menu-list">
+                          <li>
+                            <a href="/ISLAMIC BANK/Trust_Money_App.html"
+                              >Trust Money App</a
+                            >
+                          </li>
+                          <!-- <li><a href="#">PrimePlus</a></li>
                                             <li><a href="#">Prime Assist</a></li>
                                             <li><a href="#">RemitPrime</a></li> -->
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">FOR YOUR BUSINESS</a>
-                        <div class="mega-menu">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <h3>BUSINESS BANKING</h3>
-                                        <ul class="mega-menu-list">
-                                            <li><a href="/SME_Financing.html">SME Financing</a></li>
-                                            <li><a href="/SME_productBasedLoans.html">SME Product Based Loans</a></li>
-                                            <li><a href="/Agriculture_loan.html">Agriculture Loan</a></li>
-                                            <li><a href="/Trade_Financing.html">Trade Financing</a></li>
-                                            <!-- <li><a href="#">Corporate Banking</a></li> -->
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h3>CORPORATE SOLUTIONS</h3>
-                                        <ul class="mega-menu-list">
-                                            <li><a href="/AnnualGeneralMeeting.html">Annual General Meeting</a></li>
-                                            <li><a href="/AnnualReports.html">Annual Reports</a></li>
-                                            <li><a href="/FinanceReports.html">Finance Reports</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h3>INDUSTRY EXPERTISE</h3>
-                                        <ul class="mega-menu-list">
-                                            <li><a href="/InvestorRelations.html">Investor Relations</a></li>
-                                            <li><a href="/Provisional_mudaraba_profit_rate.html">Provisional Mudaraba Profit Rate</a></li>
-                                            <li><a href="/Islamic_Banking_Investment_rate.html">Islamic Banking Investment Rate</a></li>
-                                            <li><a href="/Foreign_exchange_rate.html">Foreign Exchange Rate</a></li>
-                                            <li><a href="/FormandDownloads.html">Form and Downloads</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h3>SPECIALIZED SERVICES</h3>
-                                        <ul class="mega-menu-list">
-                                            <li><a href="/Treasury_overview.html">Treasury Overview</a></li>
-                                            <li><a href="/Sustainable_Green_product.html">Sustainable Green Product</a></li>
-                                            <li><a href="/Sustainable_finance.html">Sustainable Finance</a></li>
-                                            <li><a href="/Locker_service.html">Locker Service</a></li>
-                                            <li><a href="/Green_Finance.html">Green Finance</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">ABOUT US</a>
-                        <div class="mega-menu">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <h3>MEET Trust BANK</h3>
-                                        <ul class="mega-menu-list">
-                                            <li><a href="#">Overview</a></li>
-                                            <li><a href="#">History</a></li>
-                                            <li><a href="#">Mission & Vision</a></li>
-                                            <li><a href="/Contact_us.html">Contact us</a></li>
-                                        </ul>
-                                        <h3>OUR SUBSIDIARIES</h3>
-                                        <ul class="mega-menu-list">
-                                            <li><a href="#">Subsidiary Companies</a></li>
-                                            <li><a href="#">Joint Ventures</a></li>
-                                        </ul>
-                                        <h3>OUR AWARDS & ACHIEVEMENTS</h3>
-                                        <ul class="mega-menu-list">
-                                            <li><a href="#">Recognition</a></li>
-                                            <li><a href="#">Milestones</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h3>OUR TEAM</h3>
-                                        <ul class="mega-menu-list">
-                                            <li><a href="#">Board of Directors</a></li>
-                                            <li><a href="#">Executive Committee</a></li>
-                                            <li><a href="#">Audit Committee</a></li>
-                                            <li><a href="#">Risk Management Committee</a></li>
-                                            <li><a href="#">Shari'ah Supervisory Committee</a></li>
-                                            <li><a href="#">Management</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h3>SUSTAINABLE FINANCE</h3>
-                                        <ul class="mega-menu-list">
-                                            <li><a href="#">Our Sustainability Commitments</a></li>
-                                            <li><a href="#">Commitment for Management of Environmental and Social Risk</a></li>
-                                            <li><a href="#">Sustainable Finance</a></li>
-                                            <li><a href="#">Our Sustainable Projects</a></li>
-                                            <li><a href="#">Community Inclusiveness</a></li>
-                                            <li><a href="#">Social Commitments</a></li>
-                                            <li><a href="#">Climate Strategy</a></li>
-                                            <li><a href="#">Concern & Communication</a></li>
-                                            <li><a href="#">Sustainability Report</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h3>IMPORTANT INFORMATION</h3>
-                                        <ul class="mega-menu-list">
-                                            <li><a href="#">Policies</a></li>
-                                            <li><a href="#">Regulatory Information</a></li>
-                                            <li><a href="#">Governance</a></li>
-                                            <li><a href="#">Compliance</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <div class="search-container">
-                    <button class="search-btn">
-                        <i class="fas fa-search"></i>
-                        Search
-                    </button>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">FOR YOUR BUSINESS</a>
+                <div class="mega-menu">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <h3>BUSINESS BANKING</h3>
+                        <ul class="mega-menu-list">
+                          <li>
+                            <a href="/SME_Financing.html">SME Financing</a>
+                          </li>
+                          <li>
+                            <a href="/SME_productBasedLoans.html"
+                              >SME Product Based Loans</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Agriculture_loan.html"
+                              >Agriculture Loan</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Trade_Financing.html">Trade Financing</a>
+                          </li>
+                          <!-- <li><a href="#">Corporate Banking</a></li> -->
+                        </ul>
+                      </div>
+                      <div class="col-md-3">
+                        <h3>CORPORATE SOLUTIONS</h3>
+                        <ul class="mega-menu-list">
+                          <li>
+                            <a href="/AnnualGeneralMeeting.html"
+                              >Annual General Meeting</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/AnnualReports.html">Annual Reports</a>
+                          </li>
+                          <li>
+                            <a href="/FinanceReports.html">Finance Reports</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-md-3">
+                        <h3>INDUSTRY EXPERTISE</h3>
+                        <ul class="mega-menu-list">
+                          <li>
+                            <a href="/InvestorRelations.html"
+                              >Investor Relations</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Provisional_mudaraba_profit_rate.html"
+                              >Provisional Mudaraba Profit Rate</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Islamic_Banking_Investment_rate.html"
+                              >Islamic Banking Investment Rate</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Foreign_exchange_rate.html"
+                              >Foreign Exchange Rate</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/FormandDownloads.html"
+                              >Form and Downloads</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-md-3">
+                        <h3>SPECIALIZED SERVICES</h3>
+                        <ul class="mega-menu-list">
+                          <li>
+                            <a href="/Treasury_overview.html"
+                              >Treasury Overview</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Sustainable_Green_product.html"
+                              >Sustainable Green Product</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Sustainable_finance.html"
+                              >Sustainable Finance</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Locker_service.html">Locker Service</a>
+                          </li>
+                          <li>
+                            <a href="/Green_Finance.html">Green Finance</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="/Whole About Page/About_page_body.html"
+                  >ABOUT US</a
+                >
+              </li>
+
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#">ABOUT US</a>
+                <div class="mega-menu">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <h3>MEET Trust BANK</h3>
+                        <ul class="mega-menu-list">
+                          <li>
+                            <a href="/Whole About Page/About_page_body.html"
+                              >Overview</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Whole About Page/About_page_body.html"
+                              >History</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Whole About Page/About_page_body.html"
+                              >Mission & Vision</a
+                            >
+                          </li>
+                          <li><a href="/Contact_us.html">Contact us</a></li>
+                        </ul>
+                      </div>
+                      <div class="col-md-3">
+                        <h3>OUR TEAM</h3>
+                        <ul class="mega-menu-list">
+                          <li>
+                            <a href="/board_of_directors.html"
+                              >Board of Directors</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Whole About Page/executive_comm.html"
+                              >Executive Committee</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Whole About Page/audit_comm.html"
+                              >Audit Committee</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Whole About Page/risk_management.html"
+                              >Risk Management Committee</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Whole About Page/snr_management.html"
+                              >SNR Management Committee</a
+                            >
+                          </li>
+                          <li><a href="#">Management</a></li>
+                        </ul>
+                      </div>
+                      <div class="col-md-3">
+                        <h3>OUR SUBSIDIARIES</h3>
+                        <ul class="mega-menu-list">
+                          <li>
+                            <a href="/Whole About Page/board_of_directors.html"
+                              >Board of Directors</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Whole About Page/board_of_directors.html"
+                              >Board of Directors</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-md-3">
+                        <h3>Executive Committees</h3>
+                        <ul class="mega-menu-list">
+                          <li>
+                            <a href="/Whole About Page/executive_comm.html"
+                              >Executive Committee</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Whole About Page/risk_management.html"
+                              >Risk Management</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li> -->
+            </ul>
+            <div class="search-container">
+              <button class="search-btn">
+                <i class="fas fa-search"></i>
+                Search
+              </button>
             </div>
+          </div>
         </div>
-    </nav>
+      </nav>
     </section>
     <!-- <section class="">
       <div class="d-flex align-items-center p-2 text-white">
@@ -333,57 +533,112 @@
       </div>
     </section> -->
 
-
-
-
-
     <section>
       <div class="d-flex slider-image">
         <!-- Sidebar -->
         <div class="sidebar">
-          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-</svg></a>
-<div id="chatbot-icon" onclick="toggleChatbot()">
-          <a href="#" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-</svg></a>
-</div>
-          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-1x2-fill" viewBox="0 0 16 16">
-  <path d="M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1z"/>
-</svg></a>
-          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-</svg></a>
-          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard-fill" viewBox="0 0 16 16">
-  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm9 1.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4a.5.5 0 0 0-.5.5M9 8a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4A.5.5 0 0 0 9 8m1 2.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-3a.5.5 0 0 0-.5.5m-1 2C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 0 2 13h6.96q.04-.245.04-.5M7 6a2 2 0 1 0-4 0 2 2 0 0 0 4 0"/>
-</svg></a>
+          <a href="/Foreign_exchange_rate.html"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-list"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+              /></svg
+          ></a>
+          <div id="chatbot-icon" onclick="toggleChatbot()">
+            <a href="#"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-search"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                /></svg
+            ></a>
+          </div>
+          <a href="#"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-grid-1x2-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1z"
+              /></svg
+          ></a>
+          <a href="#"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-person-circle"
+              viewBox="0 0 16 16"
+            >
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+              <path
+                fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+              /></svg
+          ></a>
+          <a href="#"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-person-vcard-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm9 1.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4a.5.5 0 0 0-.5.5M9 8a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4A.5.5 0 0 0 9 8m1 2.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-3a.5.5 0 0 0-.5.5m-1 2C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 0 2 13h6.96q.04-.245.04-.5M7 6a2 2 0 1 0-4 0 2 2 0 0 0 4 0"
+              /></svg
+          ></a>
         </div>
 
         <!-- Content -->
-        <div class="content slide-content ">
+        <div class="content slide-content">
           <h1>Trust Bank</h1>
           <p>
-            Building Strong Relationships, Powered by Integrity and Reliability.At Trust Bank, we believe in building strong, lasting relationships with our customers, grounded in trust and integrity. Our commitment to providing reliable financial services is at the core of everything we do. 
+            Building Strong Relationships, Powered by Integrity and
+            Reliability.At Trust Bank, we believe in building strong, lasting
+            relationships with our customers, grounded in trust and integrity.
+            Our commitment to providing reliable financial services is at the
+            core of everything we do.
           </p>
-          <button  class="explore-button">
-            Explore
-          </button> 
+          <button class="explore-button">Explore</button>
         </div>
         <div id="chatbot">
-    <div class="chatbot-header">
-      <span>Chatbot</span>
-      <button onclick="toggleChatbot()">✖</button>
-    </div>
-    <div class="chatbot-body" id="chatbot-body">
-      <p class="chatbot-message">Hi! How can I assist you?</p>
-    </div>
-    <div class="chatbot-footer">
-  <input type="text" id="chatbot-input" placeholder="Type your message here..." onkeydown="handleInput(event)">
-  <button onclick="sendMessage()">Send</button>
-</div>
-  </div>
+          <div class="chatbot-header">
+            <span>Chatbot</span>
+            <button onclick="toggleChatbot()">✖</button>
+          </div>
+          <div class="chatbot-body" id="chatbot-body">
+            <p class="chatbot-message">Hi! How can I assist you?</p>
+          </div>
+          <div class="chatbot-footer">
+            <input
+              type="text"
+              id="chatbot-input"
+              placeholder="Type your message here..."
+              onkeydown="handleInput(event)"
+            />
+            <button onclick="sendMessage()">Send</button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -395,7 +650,7 @@
       </h2>
 
       <!-- Slider Service -->
-      <section class="p-5    ">
+      <section class="p-5">
         <div
           id="carouselExampleInterval"
           class="carousel slide"
@@ -451,7 +706,7 @@
       </section>
 
       <!-- Slip Section 1 -->
-      <section class="p-5 tabz-next-slider text-light ">
+      <section class="p-5 text-light" style="background-color: #1b5e20">
         <div class="container">
           <div class="row align-items-center justify-content-between">
             <div class="col-md-6">
@@ -505,12 +760,149 @@
           </div>
         </div>
       </section>
-      <h2 class="p-5 text-success text-center">Our Partners</h2>
+
+      <section class="p-5 bg-success-subtle">
+        <h2 class="pb-3 text-success text-center">Our Partners</h2>
+        <div class="container" id="partner">
+          <div id="carouselExampleControls" class="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title 1</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title 2</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title 3</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title 4</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title 5</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title 6</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title 7</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title 8</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <a
+                    href="/Trust_Partners.html"
+                    id="partner_show"
+                    class="text-success"
+                  >
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Show More</h5>
+                      <h2 class="text-center">
+                        <i class="bi-box-arrow-right"></i>
+                      </h2>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </section>
     </section>
 
     <!-- twinkle-section -->
     <section>
-      <section class="events-section ">
+      <section class="events-section">
         <div class="container">
           <h2 class="section-title">Events</h2>
           <div class="row">
@@ -611,316 +1003,200 @@
           </div>
         </div>
       </section>
-      <section class="accordion-section py-5">
-        <div class="container">
-          <div class="accordion" id="mainAccordion">
-            <!-- Accordion Item #1 -->
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                >
-                  How to open Account in Trust Bank 
-                </button>
-              </h2>
-              <div
-                id="collapseOne"
-                class="accordion-collapse collapse show"
-                data-bs-parent="#mainAccordion"
-              >
-                <div class="accordion-body">
-                  This is the first item's accordion body. It is hidden by
-                  default, until the collapse plugin adds the appropriate
-                  classes that we use to style each element. These classes
-                  control the overall appearance, as well as the showing and
-                  hiding via CSS transitions.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                >
-                  What is the interest rate of Trust Bank
-                </button>
-              </h2>
-              <div
-                id="collapseOne"
-                class="accordion-collapse collapse show"
-                data-bs-parent="#mainAccordion"
-              >
-                <div class="accordion-body">
-                  This is the first item's accordion body. It is hidden by
-                  default, until the collapse plugin adds the appropriate
-                  classes that we use to style each element. These classes
-                  control the overall appearance, as well as the showing and
-                  hiding via CSS transitions.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                >
-                  How to open Account in Trust Bank
-                </button>
-              </h2>
-              <div
-                id="collapseOne"
-                class="accordion-collapse collapse show"
-                data-bs-parent="#mainAccordion"
-              >
-                <div class="accordion-body">
-                  This is the first item's accordion body. It is hidden by
-                  default, until the collapse plugin adds the appropriate
-                  classes that we use to style each element. These classes
-                  control the overall appearance, as well as the showing and
-                  hiding via CSS transitions.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                >
-                  How to open Account in Trust Bank
-                </button>
-              </h2>
-              <div
-                id="collapseOne"
-                class="accordion-collapse collapse show"
-                data-bs-parent="#mainAccordion"
-              >
-                <div class="accordion-body">
-                  This is the first item's accordion body. It is hidden by
-                  default, until the collapse plugin adds the appropriate
-                  classes that we use to style each element. These classes
-                  control the overall appearance, as well as the showing and
-                  hiding via CSS transitions.
-                </div>
-              </div>
-            </div>
-
-            <!-- Accordion Item #2 -->
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                >
-                  How to open Account in Trust Bank
-                </button>
-              </h2>
-              <div
-                id="collapseTwo"
-                class="accordion-collapse collapse"
-                data-bs-parent="#mainAccordion"
-              >
-                <div class="accordion-body">Accordion content for item #2</div>
-              </div>
-            </div>
-
-            <!-- Accordion Item #3 -->
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree"
-                >
-                  Wher eis Trust Bank Located
-                </button>
-              </h2>
-              <div
-                id="collapseThree"
-                class="accordion-collapse collapse"
-                data-bs-parent="#mainAccordion"
-              >
-                <div class="accordion-body">Accordion content for item #3</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <!-- Footer -->
-      <footer class=" text-white py-5">
+      <footer class="footer">
         <div class="container">
+          <div class="main-logo-section">
+            <img
+              src="img/tbl-logo-footer.png"
+              alt="Main Logo"
+              class="main-logo"
+            />
+            <!-- <div class="motto">Trust Bank PLC - A Bank for Financial Freedom</div> -->
+          </div>
+
           <div class="row">
-            <!-- Logo and Subscribe -->
-            <div class="col-lg-3 mb-4">
-              <div class="logo mb-4">LOGO</div>
-              <div class="subscribe-form">
-                <form class="d-flex">
-                  <input
-                    type="email"
-                    class="form-control me-2"
-                    placeholder="Enter your email to get the latest news"
-                  />
-                  <button class="btn btn-primary" type="submit">Search</button>
-                </form>
+            <div class="col-md-3 mb-4">
+              <h5 class="footer-heading">QUICK LINKS</h5>
+              <a href="#" class="footer-link">Home</a>
+              <a href="#" class="footer-link">About Us</a>
+              <a href="#" class="footer-link">Services</a>
+              <a href="#" class="footer-link">Contact</a>
+            </div>
+
+            <div class="col-md-3 mb-4">
+              <h5 class="footer-heading">SERVICES</h5>
+              <a href="#" class="footer-link">Banking</a>
+              <a href="#" class="footer-link">Loans</a>
+              <a href="#" class="footer-link">Credit Cards</a>
+              <a href="#" class="footer-link">Investments</a>
+            </div>
+
+            <div class="col-md-3 mb-4">
+              <h5 class="footer-heading">SUPPORT</h5>
+              <a href="#" class="footer-link">Board of Director</a>
+              <a href="#" class="footer-link">Executive Committee</a>
+              <a href="#" class="footer-link">Audit Committee</a>
+              <a href="#" class="footer-link">Senior Management Team</a>
+            </div>
+
+            <div class="col-md-3 mb-4">
+              <h5 class="footer-heading">NEWSLETTER</h5>
+              <div class="d-flex gap-2">
+                <input
+                  type="email"
+                  class="form-control email-input"
+                  placeholder="Enter your email"
+                />
+                <button class="btn search-btn">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
               </div>
-            </div>
-
-            <!-- Column One -->
-            <div class="col-lg-3 mb-4">
-              <h5 class="mb-3">COLUMN ONE</h5>
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Twenty One</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Thirty Two</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Fourty Three</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Fifty Four</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <!-- Column Two -->
-            <div class="col-lg-3 mb-4">
-              <h5 class="mb-3">COLUMN TWO</h5>
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Sixty Five</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Seventy Six</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Eighty Seven</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Ninety Eight</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <!-- Column Three -->
-            <div class="col-lg-3 mb-4">
-              <h5 class="mb-3">COLUMN THREE</h5>
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >One Two</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Three Four</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Five Six</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Seven Eight</a
-                  >
-                </li>
-              </ul>
-              <div class="mt-4">
-                <h5 class="mb-3">COLUMN FOUR</h5>
-                <p class="mb-2">Join Us</p>
-                <div class="social-icons">
-                  <a href="#" class="text-white me-3"
-                    ><i class="bi bi-youtube"></i
-                  ></a>
-                  <a href="#" class="text-white me-3"
-                    ><i class="bi bi-facebook"></i
-                  ></a>
-                  <a href="#" class="text-white me-3"
-                    ><i class="bi bi-twitter"></i
-                  ></a>
-                  <a href="#" class="text-white me-3"
-                    ><i class="bi bi-instagram"></i
-                  ></a>
-                  <a href="#" class="text-white"
-                    ><i class="bi bi-linkedin"></i
-                  ></a>
-                </div>
+              <div class="social-icons">
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-facebook"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-youtube"></i
+                ></a>
               </div>
             </div>
           </div>
 
-          <!-- Bottom Footer -->
-          <div class="row mt-4 pt-4 border-top">
-            <div class="col-md-6">
-              <p class="mb-0">Greelogix © 2024. All rights reserved.</p>
-            </div>
-            <div class="col-md-6">
-              <ul class="list-inline mb-0 text-md-end">
-                <li class="list-inline-item">
-                  <a href="#" class="text-white text-decoration-none">Home</a>
-                </li>
-                <li class="list-inline-item ms-3">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Services</a
-                  >
-                </li>
-                <li class="list-inline-item ms-3">
-                  <a href="#" class="text-white text-decoration-none">Blog</a>
-                </li>
-                <li class="list-inline-item ms-3">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Help Center</a
-                  >
-                </li>
-                <li class="list-inline-item ms-3">
-                  <a href="#" class="text-white text-decoration-none">About</a>
-                </li>
-              </ul>
+          <div class="footer-bottom">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <p class="mb-md-0">
+                  © 2024 Trust Bank PLC. All rights reserved.
+                </p>
+              </div>
+              <div class="col-md-6">
+                <div class="credentials-section">
+                  <div class="badge-container">
+                    <a
+                      href="https://www.bb.org.bd/en/index.php"
+                      target="_blank"
+                    >
+                      <img
+                        src="img/passport.jpg"
+                        alt="Badge 1"
+                        class="badge-img"
+                      />
+                    </a>
+                    <a href="https://www.cse.com.bd/" target="_blank">
+                      <img src="img/cse.jpg" alt="Badge 2" class="badge-img" />
+                    </a>
+                    <a href="https://www.dsebd.org/" target="_blank">
+                      <img
+                        src="img/dhaka stock exchange.png"
+                        alt="Badge 3"
+                        class="badge-img"
+                      />
+                    </a>
+                    <a href="http://www.passport.gov.bd/" target="_blank">
+                      <img
+                        src="img/passport.png"
+                        alt="Badge 4"
+                        class="badge-img"
+                      />
+                    </a>
+                  </div>
+                  <a href="tel:16201" class="helpline">
+                    <i class="fas fa-phone-alt"></i> 16201
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </footer>
     </section>
+    <script src="index.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous" ></script>
-    <script src="index.js"></script>
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let multipleCardCarousel = document.querySelector(
+          "#carouselExampleControls"
+        );
 
+        if (window.matchMedia("(min-width: 768px)").matches) {
+          let carousel = new bootstrap.Carousel(multipleCardCarousel, {
+            interval: false, // Disable automatic sliding
+            wrap: false, // Prevent wrapping at the end
+          });
 
+          let carouselInner = document.querySelector(
+            "#partner .carousel-inner"
+          );
+          let carouselItems = document.querySelectorAll(
+            "#partner .carousel-item"
+          );
+          let cardWidth = carouselItems[0].offsetWidth; // Get width of a single card
+          let scrollPosition = 0;
+
+          // Calculate the maximum scroll position dynamically
+          let carouselWidth = Array.from(carouselItems).reduce(
+            (totalWidth, item) => {
+              return totalWidth + item.offsetWidth;
+            },
+            0
+          );
+
+          document
+            .querySelector("#carouselExampleControls .carousel-control-next")
+            .addEventListener("click", function () {
+              if (scrollPosition < carouselWidth - cardWidth * 3) {
+                // Adjust for 3 visible cards
+                scrollPosition += cardWidth;
+                carouselInner.scrollTo({
+                  left: scrollPosition,
+                  behavior: "smooth",
+                });
+              }
+            });
+
+          document
+            .querySelector("#carouselExampleControls .carousel-control-prev")
+            .addEventListener("click", function () {
+              if (scrollPosition > 0) {
+                scrollPosition -= cardWidth;
+                carouselInner.scrollTo({
+                  left: scrollPosition,
+                  behavior: "smooth",
+                });
+              }
+            });
+
+          // Handle resizing to recalculate dimensions dynamically
+          window.addEventListener("resize", function () {
+            cardWidth = carouselItems[0].offsetWidth;
+            carouselWidth = Array.from(carouselItems).reduce(
+              (totalWidth, item) => {
+                return totalWidth + item.offsetWidth;
+              },
+              0
+            );
+            scrollPosition = Math.min(
+              scrollPosition,
+              carouselWidth - cardWidth * 3
+            );
+            carouselInner.scrollTo({
+              left: scrollPosition,
+              behavior: "smooth",
+            });
+          });
+        } else {
+          multipleCardCarousel.classList.add("slide");
+        }
+      });
+    </script>
   </body>
 </html>

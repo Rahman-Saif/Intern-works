@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trust Money App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <style>
+    .text-trust-green {
+      color: #023020;
+    }
+
+    .loan-btn {
+      transition: all 0.3s ease-in-out;
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    .app-download-section {
+      background-color: #f8f9fa;
+      padding: 2rem 0;
+      margin-bottom: 3rem;
+      border-radius: 10px;
+    }
+
+    .app-store-btn {
+      display: inline-flex;
+      align-items: center;
+      background: #023020;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      margin: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .app-store-btn:hover {
+      transform: translateY(-2px);
+      background: #034530;
+      color: white;
+    }
+
+    .app-store-btn i {
+      font-size: 2rem;
+      margin-right: 0.8rem;
+    }
+
+    .app-store-btn .text-container {
+      text-align: left;
+    }
+
+    .app-store-btn .small-text {
+      font-size: 0.8rem;
+      display: block;
+    }
+
+    .app-store-btn .big-text {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .qr-section {
+      padding: 2rem 0;
+    }
+
+    .qr-code {
+      width: 150px;
+      height: 150px;
+      margin: 1rem;
+    }
+
+    .registration-section {
+      background-color: #f8f9fa;
+      padding: 2rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+    }
+
+    .user-manual-btn {
+      background: #023020;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin: 2rem 0;
+    }
+
+    .user-manual-btn:hover {
+      background: #034530;
+      color: white;
+      transform: translateY(-2px);
+    }
+    .registration-section {
+      background-color: #f8f9fa;
+      padding: 3rem;
+      border-radius: 10px;
+      margin: 2rem auto;
+      max-width: 800px;
+      text-align: center;
+      border: 2px solid #1B4D3E;
+    }
+
+    .registration-list {
+      list-style-position: inside;
+      padding-left: 0;
+      text-align: left;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .registration-list li {
+      margin-bottom: 1rem;
+      color: #1B4D3E;
+      font-size: 1.1rem;
+    }
+
+    .text-royal-green {
+      color: #1B4D3E;
+    }
+
+    .user-manual-btn {
+      background: #1B4D3E;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin: 2rem 0;
+      font-size: 1.1rem;
+    }
+
+    .user-manual-btn:hover {
+      background: #2C614E;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(27, 77, 62, 0.2);
+    }
+
+    .registration-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      color: #1B4D3E;
+    }
+  </style>
+  </style>
+</head>
+<body class="bg-light">
+  <div class="container mt-5">
+    <!-- Welcome Section -->
+    <div class="text-center mb-5">
+      <h1 class="mb-4 text-trust-green">Welcome to Trust Money App</h1>
+      <p class="lead text-trust-green">
+        Trust Money is a safe and secure Apps from Trust Bank, with 50+ features and services satisfying more than just banking needs. 
+        It is a convenient way to access account, transfer funds, pay bills, and more such exciting features on the go. 
+        Simply follow these steps to onboard and get started with Trust Money.
+      </p>
+    </div>
+
+    <!-- App Download Section -->
+    <div class="app-download-section">
+      <h2 class="text-center mb-4 text-trust-green">Download the Trust Money App</h2>
+      <div class="d-flex justify-content-center flex-wrap">
+        <a href="https://play.google.com/store/search?c=apps&q=trust%20money" class="app-store-btn">
+          <i class="bi bi-google-play"></i>
+          <div class="text-container">
+            <span class="small-text">GET IT ON</span>
+            <span class="big-text">Google Play</span>
+          </div>
+        </a>
+        <a href="https://apps.apple.com/us/app/trust-money/id1524627939" class="app-store-btn">
+          <i class="bi bi-apple"></i>
+          <div class="text-container">
+            <span class="small-text">Download on the</span>
+            <span class="big-text">App Store</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- QR Code Section -->
+    <div class="qr-section text-center">
+      <h2 class="text-trust-green mb-4">Scan QR Code to Download</h2>
+      <div class="d-flex justify-content-center flex-wrap">
+        <div class="text-center">
+          <img src="img\gplay_2-removebg-preview.png" alt="Google Play QR Code" class="qr-code">
+          <p class="text-trust-green">Google Play Store</p>
+        </div>
+        <div class="text-center">
+          <img src="img\appstore-removebg-preview.png" alt="App Store QR Code" class="qr-code">
+          <p class="text-trust-green">Apple App Store</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+        <!-- Registration Section -->
+        <div class="registration-section">
+          <h2 class="registration-title">Want to Register?</h2>
+          <p class="text-royal-green mb-4 fs-5">Please ensure the following are at hand before you proceed:</p>
+          <ul class="registration-list">
+            <li>Your Account Number</li>
+            <li>Your Credit Card Details (Number, Expiry Date)</li>
+            <li>Your registered mobile number and e-mail ID</li>
+            <li>Mobile phone with the number registered with the bank to receive OTP</li>
+          </ul>
+        </div>
+    
+        <!-- User Manual Button -->
+        <div class="text-center">
+          <a href="https://www.tblbd.com/sites/default/files/trust-money/USER-MANUAL-TRUST-MONEY-V1.pdf" 
+             class="user-manual-btn">
+            <i class="bi bi-file-text me-2"></i>User Manual
+          </a>
+        </div>
+      </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

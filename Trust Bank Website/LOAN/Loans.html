@@ -7,6 +7,149 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   <style>
+        .loan-calculator{
+    font-family: "Roboto", sans-serif;
+    width: 600px;
+    margin: 24px auto;
+    background: #fff;
+    box-shadow: 0 12px 50px -11px rgb(0,0,0,0.2);
+    border-radius: 8px;
+    color: #14213d;
+    overflow: hidden;
+}
+
+.loan-calculator .title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.loan-calculator, .loan-calculator *{
+    box-sizing: border-box;
+}
+
+.loan-calculator .top{
+    background-color: #064f2c;
+    color: #fff;
+    padding: 32px;
+}
+
+.loan-calculator .top h2{
+    margin-top: 8px;
+}
+
+.loan-calculator form{
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.loan-calculator .title{
+    margin-bottom: 16px;
+}
+
+.loan-calculator form input{
+    font-size: 20px;
+    padding: 8px 14px;
+    width: 100%;
+}
+
+.top .title{
+    display: flex;
+    flex-direction: row;
+}
+
+.top #loan_type{
+    margin-top: 0;
+    padding-right: 10px;
+    width: 200px;
+    height: 40px;
+}
+
+.loan-calculator .result{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.loan-calculator .result .left{
+    width: 100%;
+    padding: 8px 32px;
+}
+
+.loan-calculator .left h3{
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.loan-calculator .result .value{
+    font-size: 30px;
+    font-weight: 900;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(20, 33, 61, 0.2);
+}
+
+.loan-calculator .result .value::before{
+    content: "$";
+    font-size: 24px;
+    font-weight: 400;
+    margin-right: 6px;
+    opacity: 0.4;
+}
+
+.loan-calculator .calculate-btn{
+    background: #e63946;
+    color: #fff;
+    border: none;
+    padding: 8px 32px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 24px 0 5px 0;
+}
+
+.loan-calculator .pdf-btn{
+    background: #e63946;
+    color: #fff;
+    border: none;
+    padding: 8px 32px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 10px 0;
+    width: 200px;
+    height: 50%;
+}
+
+@media(max-width: 650px){
+    .loan-calculator{
+        width: 90%;
+        max-width: 500px;
+    }
+    .loan-calculator form{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .loan-calculator .result{
+        flex-direction: column;
+        text-align: center;
+    }
+    .loan-calculator .right{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    } 
+    .top .title{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
     .loan-btn {
       transition: all 0.3s ease-in-out;
       height: 180px;
@@ -122,7 +265,7 @@
 
     .nav-tabs .nav-link.active {
       background-color: #023020;
-      color: white;
+      color: white !important;
       border-color: #023020;
     }
 
@@ -184,9 +327,468 @@
         width:200px;
     } */
 }
+.header-color{
+  background-color: #006E2E;;
+}
+     :root {
+            --royal-green: #023020;
+        }
+
+        .navbar {
+            padding: 0;
+            z-index: 1000;
+        }
+
+        .navbar-top {
+            background-color: var(--royal-green);
+            padding: 8px 0;
+        }
+
+        .navbar-top a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 20px;
+        }
+
+        .main-navbar {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--royal-green);
+        }
+
+        .nav-link {
+            color: var(--royal-green) !important;
+            padding: 20px !important;
+            font-weight: 500;
+        }
+
+        .mega-menu {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background-color: var(--royal-green);
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-item:hover .mega-menu {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .mega-menu h3 {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .mega-menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mega-menu-list li a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            padding: 8px 0;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .mega-menu-list li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .search-container {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .search-btn {
+            background-color: var(--royal-green);
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-btn:hover {
+            background-color: rgba(2, 48, 32, 0.9);
+        }
+
+        .search-btn i {
+            font-size: 16px;
+        }
+
+
+
+  .carousel-item {
+      position: relative;
+      height: 600px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 128, 0, 0.7);
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+    }
+     .custom-footer {
+      margin-top:100px;
+    background-color: #006E2E ; /* Replace with your desired color */
+}
+
+
+
+
+
   </style>
 </head>
 <body class="bg-light">
+
+  <section>
+    <nav class="navbar navbar-top">
+      <div class="container d-flex justify-content-between">
+        <div class="social-links">
+          <a href="#">f</a>
+          <a href="#">in</a>
+          <a href="#">yt</a>
+        </div>
+        <div class="utility-links">
+          <a href="#">CONNECT</a>
+          <a href="#">CAREERS</a>
+          <a href="#">INVESTORS RELATION</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Navbar -->
+    <nav class="navbar main-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="/tbl-logo.png" />
+        </a>
+        <div class="nav-items d-flex align-items-center">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row">
+            <li class="nav-item">
+              <a class="nav-link" href="#">FOR YOU</a>
+              <div class="mega-menu">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <h3>CONVENTIONAL BANKING</h3>
+                      <ul class="mega-menu-list">
+                        <li>
+                          <a href="/DepositProducts.html">Deposit Products</a>
+                        </li>
+                        <li><a href="/LOAN/Loans.html">Loan</a></li>
+                        <li>
+                          <a href="/LOAN/defence Personel loan.html"
+                            >Defence Personnel Loan</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/CARD/TBL Card.html">Trust Bank Cards</a>
+                        </li>
+                        <!-- <li><a href="#">Credit Card</a></li>
+                                          <li><a href="#">Student File</a></li>
+                                          <li><a href="#">Priority Banking: Monarch</a></li>
+                                          <li><a href="#">Neera</a></li> -->
+                      </ul>
+                    </div>
+                    <div class="col-md-3">
+                      <h3>ISLAMIC BANKING</h3>
+                      <ul class="mega-menu-list">
+                        <li>
+                          <a href="/ISLAMIC BANK/about Islamic Banking.html"
+                            >About</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/ISLAMIC BANK/diposite.html">Deposite </a>
+                        </li>
+                        <li>
+                          <a href="/ISLAMIC BANK/final Ratio.html"
+                            >Final Ratio</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/ISLAMIC BANK/investment.html"
+                            >Investment</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/ISLAMIC BANK/profit Sharing Ratio.html"
+                            >Profit Sharing Ratio</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-md-3">
+                      <h3>NRB BANKING</h3>
+                      <ul class="mega-menu-list">
+                        <li><a href="/NRB_Bond.html">NRB BONDS</a></li>
+                        <!-- <li><a href="#">Account Facilities for NRBs</a></li> -->
+                      </ul>
+                    </div>
+                    <div class="col-md-3">
+                      <h3>DIGITAL SOLUTION</h3>
+                      <ul class="mega-menu-list">
+                        <li>
+                          <a href="/ISLAMIC BANK/Trust_Money_App.html"
+                            >Trust Money App</a
+                          >
+                        </li>
+                        <!-- <li><a href="#">PrimePlus</a></li>
+                                          <li><a href="#">Prime Assist</a></li>
+                                          <li><a href="#">RemitPrime</a></li> -->
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">FOR YOUR BUSINESS</a>
+              <div class="mega-menu">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <h3>BUSINESS BANKING</h3>
+                      <ul class="mega-menu-list">
+                        <li>
+                          <a href="/SME_Financing.html">SME Financing</a>
+                        </li>
+                        <li>
+                          <a href="/SME_productBasedLoans.html"
+                            >SME Product Based Loans</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/Agriculture_loan.html"
+                            >Agriculture Loan</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/Trade_Financing.html">Trade Financing</a>
+                        </li>
+                        <!-- <li><a href="#">Corporate Banking</a></li> -->
+                      </ul>
+                    </div>
+                    <div class="col-md-3">
+                      <h3>CORPORATE SOLUTIONS</h3>
+                      <ul class="mega-menu-list">
+                        <li>
+                          <a href="/AnnualGeneralMeeting.html"
+                            >Annual General Meeting</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/AnnualReports.html">Annual Reports</a>
+                        </li>
+                        <li>
+                          <a href="/FinanceReports.html">Finance Reports</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-md-3">
+                      <h3>INDUSTRY EXPERTISE</h3>
+                      <ul class="mega-menu-list">
+                        <li>
+                          <a href="/InvestorRelations.html"
+                            >Investor Relations</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/Provisional_mudaraba_profit_rate.html"
+                            >Provisional Mudaraba Profit Rate</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/Islamic_Banking_Investment_rate.html"
+                            >Islamic Banking Investment Rate</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/Foreign_exchange_rate.html"
+                            >Foreign Exchange Rate</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/FormandDownloads.html"
+                            >Form and Downloads</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-md-3">
+                      <h3>SPECIALIZED SERVICES</h3>
+                      <ul class="mega-menu-list">
+                        <li>
+                          <a href="/Treasury_overview.html"
+                            >Treasury Overview</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/Sustainable_Green_product.html"
+                            >Sustainable Green Product</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/Sustainable_finance.html"
+                            >Sustainable Finance</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/Locker_service.html">Locker Service</a>
+                        </li>
+                        <li>
+                          <a href="/Green_Finance.html">Green Finance</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">ABOUT US</a>
+              <div class="mega-menu">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <h3>MEET Trust BANK</h3>
+                      <ul class="mega-menu-list">
+                        <li>
+                          <a href="/Whole About Page/About_page_body.html"
+                            >Overview</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/Whole About Page/About_page_body.html"
+                            >History</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/Whole About Page/About_page_body.html"
+                            >Mission & Vision</a
+                          >
+                        </li>
+                        <li><a href="/Contact_us.html">Contact us</a></li>
+                      </ul>
+                    
+                      
+                    </div>
+                    <div class="col-md-3">
+                      <h3>OUR TEAM</h3>
+                      <ul class="mega-menu-list">
+                        <li>
+                          <a href="/Whole About Page/board_of_directors.html"
+                            >Board of Directors</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/Whole About Page/executive_comm.html"
+                            >Executive Committee</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/Whole About Page/audit_comm.html"
+                            >Audit Committee</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/Whole About Page/risk_management.html"
+                            >Risk Management Committee</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/Whole About Page/snr_management.html"
+                            >SNR Management Committee</a
+                          >
+                        </li>
+                        <li><a href="#">Management</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h3>OUR SUBSIDIARIES</h3>
+                      <ul class="mega-menu-list">
+                        <li>
+                          <a href="/Whole About Page/board_of_directors.html"
+                            >Board of Directors</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/Whole About Page/board_of_directors.html"
+                            >Board of Directors</a
+                          >
+                        </li>
+                        <!-- <li><a href="#">Joint Ventures</a></li> -->
+                      </ul>
+                     
+                    </div>
+                    <div class="col-md-3">
+                      <h3>Executive Committees</h3>
+                      <ul class="mega-menu-list">
+                        <li>
+                          <a href="/Whole About Page/executive_comm.html"
+                            >Executive Committee</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/Whole About Page/risk_management.html"
+                            >Risk Management</a
+                          >
+                        </li>
+                      </ul>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="search-container">
+            <button class="search-btn">
+              <i class="fas fa-search"></i>
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </section>
+
+
+
+
 
 <div class="container mt-5">
   <h1 class="text-center mb-4">Trust Bank Loan Services</h1>
@@ -540,85 +1142,238 @@
     </div>
 </div>
 </div>
+<div class="loan-calculator">
+  <div class="top">
+      <div class="title">
+          <h2>Loan Calculator</h2>
+          <select name="loan-type" id="loan_type">
+              <option value="Custom">Select Loan Type</option>
+              <option value="House Building Loan For Govt. Employee">House Building Loan</option>
+              <option value="Apon Nibash Loan">Apon Nibash Loan</option>
+              <option value="Car Loan">Car Loan</option>
+              <option value="Doctor's Loan">Doctor's Loan</option>
+              <option value="Personal Loan">Personal Loan</option>
+              <option value="Loan Against Salary">Loan Against Salary</option>
+          </select>
+          </div>
+      <form action="#">
 
-<script>
- // JavaScript to handle button clicks, slider toggling, and smooth scrolling
- const sliders = Array.from(document.querySelectorAll('.slider'));
-  const sliderNav = document.querySelector('.slider-nav');
-  const loanSelect = document.getElementById('loanSelect');
-  let currentSliderIndex = 0;
+          <div class="group">
+              <div class="title">
+                  Amount
+              </div>
+              <input type="text" class="loan-amount" value="30000">
+          </div>
 
-  function showSlider(sliderId) {
-    // Hide all sliders
-    sliders.forEach(slider => {
-      slider.classList.remove('show');
-      slider.style.display = 'none';
-    });
+          <div class="group">
+              <div class="title">
+                  Interest Rate
+              </div>
+              <input type="text" class="interest-rate" value="8.5">
+          </div>
 
-    // Show the selected slider
-    const slider = document.getElementById(sliderId);
-    slider.style.display = 'block';
-    setTimeout(() => slider.classList.add('show'), 10);
+          <div class="group">
+              <div class="title">
+                  Tenure (in-months)
+              </div>
+              <input type="text" class="loan-tenure" value="24">
+          </div>
 
-    // Update current slider index
-    currentSliderIndex = sliders.indexOf(slider);
-    sliderNav.classList.add('active');
+      </form>
 
-    // Smooth scroll to the slider
-    slider.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
+  </div>
 
-  // Handle dropdown change
-  loanSelect.addEventListener('change', (e) => {
-    if (e.target.value) {
-      showSlider(e.target.value);
-      
-      // Update button styles
-      document.querySelectorAll('.loan-btn span.title').forEach(span => 
-        span.style.backgroundColor = 'rgba(2, 48, 32, 0.9)');
-      
-      const relatedButton = document.querySelector(`[data-slider="${e.target.value}"]`);
-      if (relatedButton) {
-        relatedButton.querySelector('span.title').style.backgroundColor = 'rgba(2, 48, 32, 1)';
-      }
-    }
-  });
+  <div class="result">
 
-  // Handle button clicks
-  document.querySelectorAll('.loan-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      // Reset all buttons to original style
-      document.querySelectorAll('.loan-btn span.title').forEach(span => 
-        span.style.backgroundColor = 'rgba(2, 48, 32, 0.9)');
+      <div class="left">
 
-      // Change clicked button style
-      button.querySelector('span.title').style.backgroundColor = 'rgba(2, 48, 32, 1)';
+          <div class="loan-emi">
+              <h3>Loan EMI</h3>
+              <div class="value">123</div>
+          </div>
 
-      // Show slider and scroll
-      const sliderId = button.getAttribute('data-slider');
-      showSlider(sliderId);
-      
-      // Update dropdown to match selection
-      loanSelect.value = sliderId;
-    });
-  });
+          <div class="total-interest">
+              <h3>Total Interest Payable</h3>
+              <div class="value">123</div>
+          </div>
 
-  // Handle navigation buttons
-  document.getElementById('prev-slider').addEventListener('click', () => {
-    const prevIndex = (currentSliderIndex - 1 + sliders.length) % sliders.length;
-    const prevSliderId = sliders[prevIndex].id;
-    showSlider(prevSliderId);
-    loanSelect.value = prevSliderId;
-  });
+          <div class="total-amount">
+              <h3>Total Amount</h3>
+              <div class="value">123</div>
+          </div>
 
-  document.getElementById('next-slider').addEventListener('click', () => {
-    const nextIndex = (currentSliderIndex + 1) % sliders.length;
-    const nextSliderId = sliders[nextIndex].id;
-    showSlider(nextSliderId);
-    loanSelect.value = nextSliderId;
-  });
-</script>
+          <div class="button">
+          <button class="calculate-btn">Calculate</button>
+          <button class="pdf-btn">Generate PDF</button>
+          </div>
+      </div>
 
+      <div class="right">
+          <canvas id="myChart"></canvas>
+      </div>
+
+  </div>
+</div>
+
+<footer class="custom-footer text-white py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Logo and Subscribe -->
+      <div class="col-lg-3 mb-4">
+        <div class="logo mb-4">LOGO</div>
+        <div class="subscribe-form">
+          <form class="d-flex">
+            <input
+              type="email"
+              class="form-control me-2"
+              placeholder="Enter your email to get the latest news"
+            />
+            <button class="btn btn-primary" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Column One -->
+      <div class="col-lg-3 mb-4">
+        <h5 class="mb-3">COLUMN ONE</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2">
+            <a href="#" class="text-white text-decoration-none"
+              >Twenty One</a
+            >
+          </li>
+          <li class="mb-2">
+            <a href="#" class="text-white text-decoration-none"
+              >Thirty Two</a
+            >
+          </li>
+          <li class="mb-2">
+            <a href="#" class="text-white text-decoration-none"
+              >Fourty Three</a
+            >
+          </li>
+          <li class="mb-2">
+            <a href="#" class="text-white text-decoration-none"
+              >Fifty Four</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column Two -->
+      <div class="col-lg-3 mb-4">
+        <h5 class="mb-3">COLUMN TWO</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2">
+            <a href="#" class="text-white text-decoration-none"
+              >Sixty Five</a
+            >
+          </li>
+          <li class="mb-2">
+            <a href="#" class="text-white text-decoration-none"
+              >Seventy Six</a
+            >
+          </li>
+          <li class="mb-2">
+            <a href="#" class="text-white text-decoration-none"
+              >Eighty Seven</a
+            >
+          </li>
+          <li class="mb-2">
+            <a href="#" class="text-white text-decoration-none"
+              >Ninety Eight</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column Three -->
+      <div class="col-lg-3 mb-4">
+        <h5 class="mb-3">COLUMN THREE</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2">
+            <a href="#" class="text-white text-decoration-none"
+              >One Two</a
+            >
+          </li>
+          <li class="mb-2">
+            <a href="#" class="text-white text-decoration-none"
+              >Three Four</a
+            >
+          </li>
+          <li class="mb-2">
+            <a href="#" class="text-white text-decoration-none"
+              >Five Six</a
+            >
+          </li>
+          <li class="mb-2">
+            <a href="#" class="text-white text-decoration-none"
+              >Seven Eight</a
+            >
+          </li>
+        </ul>
+        <div class="mt-4">
+          <h5 class="mb-3">COLUMN FOUR</h5>
+          <p class="mb-2">Join Us</p>
+          <div class="social-icons">
+            <a href="#" class="text-white me-3"
+              ><i class="bi bi-youtube"></i
+            ></a>
+            <a href="#" class="text-white me-3"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="#" class="text-white me-3"
+              ><i class="bi bi-twitter"></i
+            ></a>
+            <a href="#" class="text-white me-3"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="#" class="text-white"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="row mt-4 pt-4 border-top">
+      <div class="col-md-6">
+        <p class="mb-0">Greelogix © 2024. All rights reserved.</p>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-inline mb-0 text-md-end">
+          <li class="list-inline-item">
+            <a href="#" class="text-white text-decoration-none">Home</a>
+          </li>
+          <li class="list-inline-item ms-3">
+            <a href="#" class="text-white text-decoration-none"
+              >Services</a
+            >
+          </li>
+          <li class="list-inline-item ms-3">
+            <a href="#" class="text-white text-decoration-none">Blog</a>
+          </li>
+          <li class="list-inline-item ms-3">
+            <a href="#" class="text-white text-decoration-none"
+              >Help Center</a
+            >
+          </li>
+          <li class="list-inline-item ms-3">
+            <a href="#" class="text-white text-decoration-none">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="https://unpkg.com/jspdf-invoice-template@1.4.0/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/LOAN/Loans.js"></script>
+
 </body>
 </html>
