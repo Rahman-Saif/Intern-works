@@ -74,26 +74,70 @@
 
     .utility-links {
       margin-right: 10px;
+      margin-top: 10px;
     }
 
     .utility-links .imglink {
       margin-right: 10px;
     }
+
+    .mobile-nav {
+      padding-bottom: 20px;
+    }
+
+    @media (max-width: 576px) {
+      .sidebar {
+        /* height: 200px; */
+        /* width: 170px !important; */
+        padding: 20px; /* Reduced width for mobile screens */
+        /* margin-left:50px; */
+      }
+
+      .counter-section {
+        height: 900px;
+      }
+
+      .counter-section .counterDiv {
+        margin-bottom: 20px;
+      }
+    }
   </style>
   <body>
     <!-- saif -section  -->
 
-    <section>
+    <section class="">
       <nav class="navbar navbar-top">
         <div class="medialinks d-flex justify-content-between">
           <div class="social-links">
-            <a href="#">ATM/Branch Locations</a>
-            <a href="#">Bank Note Security</a>
-            <a href="#">Complaint Cell</a>
-            <a href="#">Tender</a>
-            <!-- <a href="#">Right to Act</a>
-            <a href="#">Unclaimed Deposits</a> -->
+            <!-- Dropdown button for mobile view -->
+            <button
+              class="btn w-100 d-md-none"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#socialLinksDropdown"
+              aria-expanded="false"
+              aria-controls="socialLinksDropdown"
+            >
+              <i class="bi bi-menu-button fs-2" style="color: white"></i>
+            </button>
+
+            <!-- Collapsible list -->
+            <div class="collapse" id="socialLinksDropdown">
+              <a href="#" class="d-block py-2">ATM/Branch Locations</a>
+              <a href="#" class="d-block py-2">Bank Note Security</a>
+              <a href="#" class="d-block py-2">Complaint Cell</a>
+              <a href="#" class="d-block py-2">Tender</a>
+            </div>
+
+            <!-- Links for larger screens -->
+            <div class="d-none d-md-block">
+              <a href="#" class="d-inline-block me-3">ATM/Branch Locations</a>
+              <a href="#" class="d-inline-block me-3">Bank Note Security</a>
+              <a href="#" class="d-inline-block me-3">Complaint Cell</a>
+              <a href="#" class="d-inline-block">Tender</a>
+            </div>
           </div>
+
           <div class="utility-links">
             <a href="#"
               ><img src="/imgs/web.png" alt="" class="imglink" /> iBanking
@@ -109,7 +153,7 @@
       </nav>
 
       <!-- Main Navbar -->
-      <nav class="navbar main-navbar">
+      <nav class="navbar main-navbar d-none d-lg-block">
         <div class="navback d-flex align-items-center justify-content-between">
           <a class="navbar-brand" href="/">
             <img src="/tbl-logo.png" class="trust-logo" />
@@ -136,10 +180,6 @@
                           <li>
                             <a href="/CARD/TBL Card.html">Trust Bank Cards</a>
                           </li>
-                          <!-- <li><a href="#">Credit Card</a></li>
-                                            <li><a href="#">Student File</a></li>
-                                            <li><a href="#">Priority Banking: Monarch</a></li>
-                                            <li><a href="#">Neera</a></li> -->
                         </ul>
                       </div>
                       <div class="col-md-3">
@@ -174,7 +214,6 @@
                         <h3>NRB BANKING</h3>
                         <ul class="mega-menu-list">
                           <li><a href="/NRB_Bond.html">NRB BONDS</a></li>
-                          <!-- <li><a href="#">Account Facilities for NRBs</a></li> -->
                         </ul>
                       </div>
                       <div class="col-md-3">
@@ -185,9 +224,6 @@
                               >Trust Money App</a
                             >
                           </li>
-                          <!-- <li><a href="#">PrimePlus</a></li>
-                                            <li><a href="#">Prime Assist</a></li>
-                                            <li><a href="#">RemitPrime</a></li> -->
                         </ul>
                       </div>
                     </div>
@@ -218,7 +254,6 @@
                           <li>
                             <a href="/Trade_Financing.html">Trade Financing</a>
                           </li>
-                          <!-- <li><a href="#">Corporate Banking</a></li> -->
                         </ul>
                       </div>
                       <div class="col-md-3">
@@ -304,98 +339,6 @@
                   >ABOUT US</a
                 >
               </li>
-
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="#">ABOUT US</a>
-                <div class="mega-menu">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-3">
-                        <h3>MEET Trust BANK</h3>
-                        <ul class="mega-menu-list">
-                          <li>
-                            <a href="/Whole About Page/About_page_body.html"
-                              >Overview</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/About_page_body.html"
-                              >History</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/About_page_body.html"
-                              >Mission & Vision</a
-                            >
-                          </li>
-                          <li><a href="/Contact_us.html">Contact us</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-3">
-                        <h3>OUR TEAM</h3>
-                        <ul class="mega-menu-list">
-                          <li>
-                            <a href="/board_of_directors.html"
-                              >Board of Directors</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/executive_comm.html"
-                              >Executive Committee</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/audit_comm.html"
-                              >Audit Committee</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/risk_management.html"
-                              >Risk Management Committee</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/snr_management.html"
-                              >SNR Management Committee</a
-                            >
-                          </li>
-                          <li><a href="#">Management</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-3">
-                        <h3>OUR SUBSIDIARIES</h3>
-                        <ul class="mega-menu-list">
-                          <li>
-                            <a href="/Whole About Page/board_of_directors.html"
-                              >Board of Directors</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/board_of_directors.html"
-                              >Board of Directors</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-md-3">
-                        <h3>Executive Committees</h3>
-                        <ul class="mega-menu-list">
-                          <li>
-                            <a href="/Whole About Page/executive_comm.html"
-                              >Executive Committee</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/risk_management.html"
-                              >Risk Management</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li> -->
             </ul>
             <div class="search-container">
               <button class="search-btn">
@@ -407,6 +350,69 @@
         </div>
       </nav>
     </section>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary d-lg-none mobile-nav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="/tbl-logo.png" class="trust-logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
     <!-- <section class="">
       <div class="d-flex align-items-center p-2 text-white">
         <img src="" alt="Logo" class="me-2 logo-img" />
@@ -533,7 +539,7 @@
       </div>
     </section> -->
 
-    <section>
+    <section class="d-none d-lg-block">
       <div class="d-flex slider-image">
         <!-- Sidebar -->
         <div class="sidebar">
@@ -618,6 +624,112 @@
             relationships with our customers, grounded in trust and integrity.
             Our commitment to providing reliable financial services is at the
             core of everything we do.
+          </p>
+          <button class="explore-button">Explore</button>
+        </div>
+        <div id="chatbot">
+          <div class="chatbot-header">
+            <span>Chatbot</span>
+            <button onclick="toggleChatbot()">✖</button>
+          </div>
+          <div class="chatbot-body" id="chatbot-body">
+            <p class="chatbot-message">Hi! How can I assist you?</p>
+          </div>
+          <div class="chatbot-footer">
+            <input
+              type="text"
+              id="chatbot-input"
+              placeholder="Type your message here..."
+              onkeydown="handleInput(event)"
+            />
+            <button onclick="sendMessage()">Send</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- mobile view -->
+    <section class="d-lg-none">
+      <div class="d-flex slider-image">
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <a href="/Foreign_exchange_rate.html"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-list"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+              /></svg
+          ></a>
+          <div id="chatbot-icon" onclick="toggleChatbot()">
+            <a href="#"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-search"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                /></svg
+            ></a>
+          </div>
+          <a href="#"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-grid-1x2-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1z"
+              /></svg
+          ></a>
+          <a href="#"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-person-circle"
+              viewBox="0 0 16 16"
+            >
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+              <path
+                fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+              /></svg
+          ></a>
+          <a href="#"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-person-vcard-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm9 1.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4a.5.5 0 0 0-.5.5M9 8a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4A.5.5 0 0 0 9 8m1 2.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-3a.5.5 0 0 0-.5.5m-1 2C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 0 2 13h6.96q.04-.245.04-.5M7 6a2 2 0 1 0-4 0 2 2 0 0 0 4 0"
+              /></svg
+          ></a>
+        </div>
+
+        <!-- Content -->
+        <div class="content slide-content">
+          <h1>Trust Bank</h1>
+          <p>
+            Building Strong Relationships, Powered by Integrity and Reliability.
           </p>
           <button class="explore-button">Explore</button>
         </div>
@@ -970,7 +1082,7 @@
         <div class="container">
           <div class="row">
             <!-- Counter 1 -->
-            <div class="col-md-3">
+            <div class="col-md-3 counterDiv">
               <div class="counter-box">
                 <div class="counter-number">1364894</div>
                 <div class="counter-text">Happy Customers</div>
@@ -978,7 +1090,7 @@
             </div>
 
             <!-- Counter 2 -->
-            <div class="col-md-3">
+            <div class="col-md-3 counterDiv">
               <div class="counter-box">
                 <div class="counter-number">1364894</div>
                 <div class="counter-text">Happy Customers</div>
@@ -986,7 +1098,7 @@
             </div>
 
             <!-- Counter 3 -->
-            <div class="col-md-3">
+            <div class="col-md-3 counterDiv">
               <div class="counter-box">
                 <div class="counter-number">1364894</div>
                 <div class="counter-text">Happy Customers</div>
@@ -994,7 +1106,7 @@
             </div>
 
             <!-- Counter 4 -->
-            <div class="col-md-3">
+            <div class="col-md-3 counterDiv">
               <div class="counter-box">
                 <div class="counter-number">1364894</div>
                 <div class="counter-text">Happy Customers</div>
