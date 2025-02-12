@@ -6,6 +6,7 @@
     <title>Reports & Financials</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/new.css">
     <style>
         .accordion-button {
             background-color: #023020 !important;
@@ -184,27 +185,61 @@
     </style>
 </head>
 <body>
-    <section>
+  
+
+
+<section class="">
       <nav class="navbar navbar-top">
-        <div class="container d-flex justify-content-between">
+        <div class="medialinks d-flex justify-content-between">
           <div class="social-links">
-            <a href="#">f</a>
-            <a href="#">in</a>
-            <a href="#">yt</a>
+            <!-- Dropdown button for mobile view -->
+            <button
+              class="btn w-100 d-md-none"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#socialLinksDropdown"
+              aria-expanded="false"
+              aria-controls="socialLinksDropdown"
+            >
+              <i class="bi bi-menu-button fs-2" style="color: white"></i>
+            </button>
+
+            <!-- Collapsible list -->
+            <div class="collapse" id="socialLinksDropdown">
+              <a href="#" class="d-block py-2">ATM/Branch Locations</a>
+              <a href="#" class="d-block py-2">Bank Note Security</a>
+              <a href="#" class="d-block py-2">Complaint Cell</a>
+              <a href="#" class="d-block py-2">Tender</a>
+            </div>
+
+            <!-- Links for larger screens -->
+            <div class="d-none d-md-block">
+              <a href="#" class="d-inline-block me-3">ATM/Branch Locations</a>
+              <a href="#" class="d-inline-block me-3">Bank Note Security</a>
+              <a href="#" class="d-inline-block me-3">Complaint Cell</a>
+              <a href="#" class="d-inline-block">Tender</a>
+            </div>
           </div>
+
           <div class="utility-links">
-            <a href="#">CONNECT</a>
-            <a href="#">CAREERS</a>
-            <a href="#">INVESTORS RELATION</a>
+            <a href="#"
+              ><img src="/imgs/web.png" alt="" class="imglink" /> iBanking
+            </a>
+            <a href="#"
+              ><img src="/imgs/tbl-ekyc.png" alt="" class="imglink" />ekYc</a
+            >
+            <a href="#"
+              ><img src="/imgs/tap-logo.png" alt="" class="imglink" />tap</a
+            >
           </div>
         </div>
       </nav>
 
       <!-- Main Navbar -->
-      <nav class="navbar main-navbar">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            <img src="/tbl-logo.png" />
+      <nav class="navbar main-navbar d-none d-lg-block">
+        <div class="navback d-flex align-items-center justify-content-between">
+          <a class="navbar-brand" href="/">
+            <img src="/tbl-logo.png" class="trust-logo" />
           </a>
           <div class="nav-items d-flex align-items-center">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row">
@@ -228,10 +263,6 @@
                           <li>
                             <a href="/CARD/TBL Card.html">Trust Bank Cards</a>
                           </li>
-                          <!-- <li><a href="#">Credit Card</a></li>
-                                            <li><a href="#">Student File</a></li>
-                                            <li><a href="#">Priority Banking: Monarch</a></li>
-                                            <li><a href="#">Neera</a></li> -->
                         </ul>
                       </div>
                       <div class="col-md-3">
@@ -266,7 +297,6 @@
                         <h3>NRB BANKING</h3>
                         <ul class="mega-menu-list">
                           <li><a href="/NRB_Bond.html">NRB BONDS</a></li>
-                          <!-- <li><a href="#">Account Facilities for NRBs</a></li> -->
                         </ul>
                       </div>
                       <div class="col-md-3">
@@ -277,9 +307,6 @@
                               >Trust Money App</a
                             >
                           </li>
-                          <!-- <li><a href="#">PrimePlus</a></li>
-                                            <li><a href="#">Prime Assist</a></li>
-                                            <li><a href="#">RemitPrime</a></li> -->
                         </ul>
                       </div>
                     </div>
@@ -310,7 +337,6 @@
                           <li>
                             <a href="/Trade_Financing.html">Trade Financing</a>
                           </li>
-                          <!-- <li><a href="#">Corporate Banking</a></li> -->
                         </ul>
                       </div>
                       <div class="col-md-3">
@@ -390,100 +416,11 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">ABOUT US</a>
-                <div class="mega-menu">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-3">
-                        <h3>MEET Trust BANK</h3>
-                        <ul class="mega-menu-list">
-                          <li>
-                            <a href="/Whole About Page/About_page_body.html"
-                              >Overview</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/About_page_body.html"
-                              >History</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/About_page_body.html"
-                              >Mission & Vision</a
-                            >
-                          </li>
-                          <li><a href="/Contact_us.html">Contact us</a></li>
-                        </ul>
-                      
-                        
-                      </div>
-                      <div class="col-md-3">
-                        <h3>OUR TEAM</h3>
-                        <ul class="mega-menu-list">
-                          <li>
-                            <a href="/Whole About Page/board_of_directors.html"
-                              >Board of Directors</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/executive_comm.html"
-                              >Executive Committee</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/audit_comm.html"
-                              >Audit Committee</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/risk_management.html"
-                              >Risk Management Committee</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/snr_management.html"
-                              >SNR Management Committee</a
-                            >
-                          </li>
-                          <li><a href="#">Management</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-3">
-                          <h3>OUR SUBSIDIARIES</h3>
-                        <ul class="mega-menu-list">
-                          <li>
-                            <a href="/Whole About Page/board_of_directors.html"
-                              >Board of Directors</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/board_of_directors.html"
-                              >Board of Directors</a
-                            >
-                          </li>
-                          <!-- <li><a href="#">Joint Ventures</a></li> -->
-                        </ul>
-                       
-                      </div>
-                      <div class="col-md-3">
-                        <h3>Executive Committees</h3>
-                        <ul class="mega-menu-list">
-                          <li>
-                            <a href="/Whole About Page/executive_comm.html"
-                              >Executive Committee</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/risk_management.html"
-                              >Risk Management</a
-                            >
-                          </li>
-                        </ul>
-                       
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <a
+                  class="nav-link"
+                  href="/Whole About Page/About_page_body.html"
+                  >ABOUT US</a
+                >
               </li>
             </ul>
             <div class="search-container">
@@ -496,6 +433,156 @@
         </div>
       </nav>
     </section>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary d-lg-none mobile-nav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="/tbl-logo.png" class="trust-logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                For You
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/DepositProducts.html"
+                    >Deposit Products</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/LOAN/Loans.html">Loan</a>
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/LOAN/defence Personel loan.html"
+                    >Defence Personnel Loan</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/CARD/TBL Card.html"
+                    >Trust Bank Cards</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/CARD/TBL Card.html"
+                    >Trust Bank Cards</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/ISLAMIC BANK/about Islamic Banking.html"
+                    >Islamic Banking</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/ISLAMIC BANK/diposite.html"
+                    >Islamic Banking Deposit</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/ISLAMIC BANK/final Ratio.html"
+                    >Islamic Banking Final Ratio</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                For Your Business
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/SME_Financing.html"
+                    >SME Financing</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/SME_productBasedLoans.html"
+                    >SME Product Loans</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/Agriculture_loan.html"
+                    >Agriculture Loans</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/Trade_Financing.html"
+                    >Trade Financing</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/AnnualGeneralMeeting.html"
+                    >Annual General Meeting</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/AnnualReports.html"
+                    >Annual Reports</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/FinanceReports.html"
+                    >Finance Reports</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/InvestorRelations.html"
+                    >Investor Relations</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/Whole About Page/About_page_body.html"
+                >About Us</a
+              >
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
     <section>
      <section>
         <div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -690,158 +777,108 @@
             </div>
         </div>
     </div>
-     <footer class="custom-footer text-white py-5">
-        <div class="container">
-          <div class="row">
-            <!-- Logo and Subscribe -->
-            <div class="col-lg-3 mb-4">
-              <div class="logo mb-4">LOGO</div>
-              <div class="subscribe-form">
-                <form class="d-flex">
-                  <input
-                    type="email"
-                    class="form-control me-2"
-                    placeholder="Enter your email to get the latest news"
-                  />
-                  <button class="btn btn-primary" type="submit">Search</button>
-                </form>
-              </div>
-            </div>
+     <footer class="footer">
+      <div class="container">
+        <div class="main-logo-section">
+          <img
+            src="img/tbl-logo-footer.png"
+            alt="Main Logo"
+            class="main-logo"
+          />
+          <!-- <div class="motto">Trust Bank PLC - A Bank for Financial Freedom</div> -->
+        </div>
 
-            <!-- Column One -->
-            <div class="col-lg-3 mb-4">
-              <h5 class="mb-3">COLUMN ONE</h5>
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Twenty One</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Thirty Two</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Fourty Three</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Fifty Four</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <!-- Column Two -->
-            <div class="col-lg-3 mb-4">
-              <h5 class="mb-3">COLUMN TWO</h5>
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Sixty Five</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Seventy Six</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Eighty Seven</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Ninety Eight</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <!-- Column Three -->
-            <div class="col-lg-3 mb-4">
-              <h5 class="mb-3">COLUMN THREE</h5>
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >One Two</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Three Four</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Five Six</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Seven Eight</a
-                  >
-                </li>
-              </ul>
-              <div class="mt-4">
-                <h5 class="mb-3">COLUMN FOUR</h5>
-                <p class="mb-2">Join Us</p>
-                <div class="social-icons">
-                  <a href="#" class="text-white me-3"
-                    ><i class="bi bi-youtube"></i
-                  ></a>
-                  <a href="#" class="text-white me-3"
-                    ><i class="bi bi-facebook"></i
-                  ></a>
-                  <a href="#" class="text-white me-3"
-                    ><i class="bi bi-twitter"></i
-                  ></a>
-                  <a href="#" class="text-white me-3"
-                    ><i class="bi bi-instagram"></i
-                  ></a>
-                  <a href="#" class="text-white"
-                    ><i class="bi bi-linkedin"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
+        <div class="row">
+          <div class="col-md-3 mb-4">
+            <h5 class="footer-heading">QUICK LINKS</h5>
+            <a href="#" class="footer-link">Home</a>
+            <a href="#" class="footer-link">About Us</a>
+            <a href="#" class="footer-link">Services</a>
+            <a href="#" class="footer-link">Contact</a>
           </div>
 
-          <!-- Bottom Footer -->
-          <div class="row mt-4 pt-4 border-top">
-            <div class="col-md-6">
-              <p class="mb-0">Greelogix © 2024. All rights reserved.</p>
+          <div class="col-md-3 mb-4">
+            <h5 class="footer-heading">SERVICES</h5>
+            <a href="#" class="footer-link">Banking</a>
+            <a href="#" class="footer-link">Loans</a>
+            <a href="#" class="footer-link">Credit Cards</a>
+            <a href="#" class="footer-link">Investments</a>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <h5 class="footer-heading">SUPPORT</h5>
+            <a href="#" class="footer-link">Board of Director</a>
+            <a href="#" class="footer-link">Executive Committee</a>
+            <a href="#" class="footer-link">Audit Committee</a>
+            <a href="#" class="footer-link">Senior Management Team</a>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <h5 class="footer-heading">NEWSLETTER</h5>
+            <div class="d-flex gap-2">
+              <input
+                type="email"
+                class="form-control email-input"
+                placeholder="Enter your email"
+              />
+              <button class="btn search-btn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
             </div>
-            <div class="col-md-6">
-              <ul class="list-inline mb-0 text-md-end">
-                <li class="list-inline-item">
-                  <a href="#" class="text-white text-decoration-none">Home</a>
-                </li>
-                <li class="list-inline-item ms-3">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Services</a
-                  >
-                </li>
-                <li class="list-inline-item ms-3">
-                  <a href="#" class="text-white text-decoration-none">Blog</a>
-                </li>
-                <li class="list-inline-item ms-3">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Help Center</a
-                  >
-                </li>
-                <li class="list-inline-item ms-3">
-                  <a href="#" class="text-white text-decoration-none">About</a>
-                </li>
-              </ul>
+            <div class="social-icons">
+              <a href="#" class="social-icon"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
             </div>
           </div>
         </div>
-      </footer>
+
+        <div class="footer-bottom">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <p class="mb-md-0">© 2024 Trust Bank PLC. All rights reserved.</p>
+            </div>
+            <div class="col-md-6">
+              <div class="credentials-section">
+                <div class="badge-container">
+                  <a href="https://www.bb.org.bd/en/index.php" target="_blank">
+                    <img
+                      src="img/passport.jpg"
+                      alt="Badge 1"
+                      class="badge-img"
+                    />
+                  </a>
+                  <a href="https://www.cse.com.bd/" target="_blank">
+                    <img src="img/cse.jpg" alt="Badge 2" class="badge-img" />
+                  </a>
+                  <a href="https://www.dsebd.org/" target="_blank">
+                    <img
+                      src="img/dhaka stock exchange.png"
+                      alt="Badge 3"
+                      class="badge-img"
+                    />
+                  </a>
+                  <a href="http://www.passport.gov.bd/" target="_blank">
+                    <img
+                      src="img/passport.png"
+                      alt="Badge 4"
+                      class="badge-img"
+                    />
+                  </a>
+                </div>
+                <a href="tel:16201" class="helpline">
+                  <i class="fas fa-phone-alt"></i> 16201
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -1,0 +1,344 @@
+:root {
+    --royal-green: #023020;
+}
+
+.navbar {
+    padding: 0;
+    z-index: 1000;
+}
+
+.navbar-top {
+    background-color: var(--royal-green);
+    padding: 8px 0;
+}
+
+.navbar-top a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.main-navbar {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--royal-green);
+}
+
+.nav-link {
+    color: var(--royal-green) !important;
+    padding: 20px !important;
+    font-weight: 500;
+}
+
+.mega-menu {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    background-color: var(--royal-green);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-item:hover .mega-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+.mega-menu h3 {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mega-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mega-menu-list li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    padding: 8px 0;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.mega-menu-list li a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+.search-container {
+    position: relative;
+    margin-left: 20px;
+}
+
+.search-btn {
+    background-color: var(--royal-green);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search-btn:hover {
+    background-color: rgba(2, 48, 32, 0.9);
+}
+
+.search-btn i {
+    font-size: 16px;
+}
+
+#banner .carousel-item {
+    position: relative;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+}
+
+#banner .carousel-caption {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 128, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+}
+
+.custom-footer {
+    background-color: #006e2e;
+    /* Replace with your desired color */
+}
+
+.navbar .medialinks {
+    width: 97%;
+}
+
+.utility-links {
+    margin-right: 10px;
+}
+
+.utility-links .imglink {
+    margin-right: 10px;
+}
+
+.navbar .medialinks {
+    width: 97%;
+}
+
+.utility-links {
+    margin-right: 10px;
+}
+
+.utility-links .imglink {
+    margin-right: 10px;
+}
+
+.main-navbar .navback {
+    width: 98%;
+
+    display: flex;
+    justify-content: space-between;
+    /* Push logo and nav items to corners */
+    align-items: center;
+    /* Center vertically */
+}
+
+.navbar-brand {
+    font-size: 44px;
+    font-weight: bold;
+    color: var(--royal-green);
+    margin-left: 20px;
+}
+
+.navbar-brand .trust-logo {
+    height: 75px;
+}
+
+:root {
+    --dark-green: #023020;
+    --white: #ffffff;
+    --light-green: #c8e6c9;
+    /* Added light green color */
+}
+
+.footer {
+    background: var(--dark-green);
+    color: var(--white);
+    padding: 2rem 0 0.5rem 0;
+    /* Reduced padding */
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ffffff66, transparent);
+}
+
+.main-logo-section {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    /* Reduced margin */
+    background-color: var(--white);
+    /* Light green background for logo section */
+    padding: 15px;
+    /* Added padding for better spacing */
+    border-radius: 8px;
+    /* Optional: Rounded corners */
+}
+
+.main-logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    padding: 10px;
+    /* Reduced padding */
+    border-radius: 5px;
+    background-color: transparent;
+    /* Make the logo's background transparent */
+}
+
+.motto {
+    font-size: 1rem;
+    font-style: italic;
+    color: #cccccc;
+    margin-bottom: 1rem;
+}
+
+.footer-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid #ffffff33;
+}
+
+.footer-link {
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    padding-left: 10px;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.footer-link::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s;
+}
+
+.footer-link:hover {
+    color: #e0e0e0;
+    padding-left: 15px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+}
+
+.credentials-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.badge-container {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.badge-img {
+    height: 30px;
+    /* Reduced badge size */
+    transition: transform 0.3s;
+}
+
+.badge-img:hover {
+    transform: translateY(-3px);
+}
+
+.helpline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #dc3545;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.helpline:hover {
+    transform: translateY(-3px);
+    color: white;
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+}
+
+.social-icon:hover {
+    color: #e0e0e0;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .credentials-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+.search-btn i {
+    color: #cccccc;
+    /* Light gray for visibility */
+}

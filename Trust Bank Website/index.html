@@ -43,7 +43,9 @@
         margin-right: 0;
         flex: 0 0 33.333333%;
         display: block;
+        width: 3000px;
       }
+
       #partner .carousel-inner {
         display: flex;
       }
@@ -84,13 +86,93 @@
     .mobile-nav {
       padding-bottom: 20px;
     }
+    .easybank {
+      width: 600px;
+      /* margin-left:-40px; */
+    }
+
+    .easimg {
+      width: 700px;
+    }
 
     @media (max-width: 576px) {
       .sidebar {
-        /* height: 200px; */
+        height: 400px !important;
         /* width: 170px !important; */
         padding: 20px; /* Reduced width for mobile screens */
         /* margin-left:50px; */
+        /* height:400px; */
+      }
+      #partner .carousel-inner {
+        padding: 0 rem;
+      }
+
+      .slide-content {
+        height: 400px;
+      }
+
+      .easybank {
+        width: 390px;
+        margin-left: -40px;
+      }
+
+      #partner .card {
+        height: 300px;
+        width: 250px;
+        text-align: center;
+      }
+
+      #partner .card-body {
+        align-items: center;
+        margin-top: 50px;
+      }
+
+      footer {
+        text-align: center;
+      }
+
+      footer i {
+        text-align: center;
+      }
+
+      footer .row {
+        text-align: center;
+        align-items: center;
+      }
+
+      .footer-link {
+        text-align: center;
+        align-items: center;
+      }
+
+      .footer-link::before {
+        content: "";
+        text-align: center;
+        position: block;
+        left: 90px;
+      }
+
+      .counter-section .row {
+        margin-top: 0px;
+      }
+
+      .your-one-partner {
+        /* margin-left:-85px; */
+        margin-bottom: 20px;
+        text-align: center;
+        /* margin-left:-20px; */
+        width: 250px;
+      }
+      .partner-lead {
+        width: 350px;
+        text-align: center;
+        margin-left: -55px;
+      }
+
+      .partbut {
+        align-items: left;
+        text-align: left;
+        margin-left: 45px;
       }
 
       .counter-section {
@@ -98,8 +180,118 @@
       }
 
       .counter-section .counterDiv {
-        margin-bottom: 20px;
+        /* margin-bottom: 220px; */
+        margin-bottom: 50px;
       }
+      .trust-logo {
+        width: 300px;
+        margin-left: -30px;
+      }
+      .mobslide {
+        height: 400px;
+      }
+      .helpline {
+        font-size: 0.3rem;
+      }
+
+      .mobile-nav form {
+        margin-left: 60px;
+      }
+    }
+
+    .modal {
+      color: black;
+    }
+
+    .foreign-link {
+      color: black;
+    }
+    #socialLinksDropdown {
+      transition: none !important; /* Disable unwanted animations */
+    }
+
+    .atmNav button[aria-expanded="true"] {
+      position: relative; /* Ensure it stays in place */
+      margin-left: -30px;
+    }
+
+    .mobile-atm {
+      background-color: transparent;
+    }
+
+    .atmNav {
+      margin-right: 20px;
+      background-color: transparent;
+      /* width: 0px; */
+      /* border: none; */
+    }
+
+    .mobileeNav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .team-member {
+      position: relative;
+      margin-bottom: 30px;
+      margin-right: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-10px);
+    }
+
+    .member-card {
+      background: white;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      height: 100%;
+    }
+
+    .member-image {
+      width: 200px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    @media screen and (max-width: 380px) and (max-height: 780px) {
+      /* Styles for devices smaller than or equal to 360x740 */
+      .utility-links .imglink {
+        margin-right: 3px;
+        /* margin-top: 10px; */
+      }
+      .partner-lead {
+        width: 200px;
+        text-align: left;
+      }
+      .your-one-partner {
+        text-align: left;
+      }
+      .team-member {
+        position: relative;
+        margin-bottom: 0px;
+        margin-right: 20px;
+        transition: transform 0.3s ease;
+      }
+    }
+    .easybankSection {
+      margin-top: -20px;
+    }
+    .partnerSection {
+      margin-top: -30px;
+      /* margin-bottom:-60px; */
+    }
+    .events-section {
+      margin-top: -70px;
+    }
+    .counter-section {
+      /* margin-top:-70px; */
     }
   </style>
   <body>
@@ -110,23 +302,39 @@
         <div class="medialinks d-flex justify-content-between">
           <div class="social-links">
             <!-- Dropdown button for mobile view -->
-            <button
-              class="btn w-100 d-md-none"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#socialLinksDropdown"
-              aria-expanded="false"
-              aria-controls="socialLinksDropdown"
-            >
-              <i class="bi bi-menu-button fs-2" style="color: white"></i>
-            </button>
+            <!-- Button -->
+            <div class="atmNav mt-6">
+              <!-- Mobile Dropdown Button -->
+              <button
+                class="btn btn-primary w-100 d-md-none mobile-atm"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#socialLinksDropdown"
+                aria-expanded="false"
+                aria-controls="socialLinksDropdown"
+                style="
+                  outline: none;
+                  box-shadow: none;
+                  border: none;
+                  background: none;
+                "
+              >
+                <i class="bi bi-list fs-4"></i>
+              </button>
 
-            <!-- Collapsible list -->
-            <div class="collapse" id="socialLinksDropdown">
-              <a href="#" class="d-block py-2">ATM/Branch Locations</a>
-              <a href="#" class="d-block py-2">Bank Note Security</a>
-              <a href="#" class="d-block py-2">Complaint Cell</a>
-              <a href="#" class="d-block py-2">Tender</a>
+              <!-- Collapsible Dropdown Content -->
+              <div class="collapse mt-2" id="socialLinksDropdown">
+                <a href="#" class="d-block py-2 border-bottom"
+                  >ATM/Branch Locations</a
+                >
+                <a href="#" class="d-block py-2 border-bottom"
+                  >Bank Note Security</a
+                >
+                <a href="#" class="d-block py-2 border-bottom"
+                  >Complaint Cell</a
+                >
+                <a href="#" class="d-block py-2">Tender</a>
+              </div>
             </div>
 
             <!-- Links for larger screens -->
@@ -140,13 +348,13 @@
 
           <div class="utility-links">
             <a href="#"
-              ><img src="/imgs/web.png" alt="" class="imglink" /> iBanking
+              ><img src="imgs/web.png" alt="" class="imglink" /> iBanking
             </a>
             <a href="#"
-              ><img src="/imgs/tbl-ekyc.png" alt="" class="imglink" />ekYc</a
+              ><img src="imgs/tbl-ekyc.png" alt="" class="imglink" />ekYc</a
             >
             <a href="#"
-              ><img src="/imgs/tap-logo.png" alt="" class="imglink" />tap</a
+              ><img src="imgs/tap-logo.png" alt="" class="imglink" />tap</a
             >
           </div>
         </div>
@@ -156,7 +364,7 @@
       <nav class="navbar main-navbar d-none d-lg-block">
         <div class="navback d-flex align-items-center justify-content-between">
           <a class="navbar-brand" href="/">
-            <img src="/tbl-logo.png" class="trust-logo" />
+            <img src="tbl-logo.png" class="trust-logo" />
           </a>
           <div class="nav-items d-flex align-items-center">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row">
@@ -333,9 +541,7 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/Whole About Page/About_page_body.html"
+                <a class="nav-link" href="Whole About Page/About_page_body.php"
                   >ABOUT US</a
                 >
               </li>
@@ -352,63 +558,157 @@
     </section>
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary d-lg-none mobile-nav">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-          <img src="/tbl-logo.png" class="trust-logo" />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+      <div class="container-fluid mobileeNav">
+        <div>
+          <a class="navbar-brand" href="/">
+            <img src="tbl-logo.png" class="trust-logo" />
+          </a>
+        </div>
+        <div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  For You
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/DepositProducts.html"
+                      >Deposit Products</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/LOAN/Loans.html">Loan</a>
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/LOAN/defence Personel loan.html"
+                      >Defence Personnel Loan</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/CARD/TBL Card.html"
+                      >Trust Bank Cards</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/CARD/TBL Card.html"
+                      >Trust Bank Cards</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/ISLAMIC BANK/about Islamic Banking.html"
+                      >Islamic Banking</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/ISLAMIC BANK/diposite.html"
+                      >Islamic Banking Deposit</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/ISLAMIC BANK/final Ratio.html"
+                      >Islamic Banking Final Ratio</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  For Your Business
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/SME_Financing.html"
+                      >SME Financing</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/SME_productBasedLoans.html"
+                      >SME Product Loans</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/Agriculture_loan.html"
+                      >Agriculture Loans</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/Trade_Financing.html"
+                      >Trade Financing</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/AnnualGeneralMeeting.html"
+                      >Annual General Meeting</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/AnnualReports.html"
+                      >Annual Reports</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/FinanceReports.html"
+                      >Finance Reports</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/InvestorRelations.html"
+                      >Investor Relations</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/Whole About Page/About_page_body.php"
+                  >About Us</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </nav>
@@ -539,12 +839,12 @@
       </div>
     </section> -->
 
-    <section class="d-none d-lg-block">
+    <section class="d-none d-lg-block mobslide">
       <div class="d-flex slider-image">
         <!-- Sidebar -->
         <div class="sidebar">
-          <a href="/Foreign_exchange_rate.html"
-            ><svg
+          <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
@@ -555,8 +855,9 @@
               <path
                 fill-rule="evenodd"
                 d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
-              /></svg
-          ></a>
+              />
+            </svg>
+          </a>
           <div id="chatbot-icon" onclick="toggleChatbot()">
             <a href="#"
               ><svg
@@ -615,6 +916,46 @@
           ></a>
         </div>
 
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Foreign Exchange Rate
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">Today Foreign Exchange Rate:34 USD</div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                  <a href="/Foreign_exchange_rate.html" class="foreign-link">
+                    Know More
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Content -->
         <div class="content slide-content">
           <h1>Trust Bank</h1>
@@ -627,6 +968,7 @@
           </p>
           <button class="explore-button">Explore</button>
         </div>
+
         <div id="chatbot">
           <div class="chatbot-header">
             <span>Chatbot</span>
@@ -729,7 +1071,9 @@
         <div class="content slide-content">
           <h1>Trust Bank</h1>
           <p>
-            Building Strong Relationships, Powered by Integrity and Reliability.
+            Building Strong Relationships, Powered by Integrity and
+            Reliability.At Trust Bank, we believe in strong, lasting
+            relationships with our customers.
           </p>
           <button class="explore-button">Explore</button>
         </div>
@@ -753,6 +1097,39 @@
         </div>
       </div>
     </section>
+
+    <!-- <section>
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      < Carousel Image -->
+    <!-- <img src="./imgs/Corporate-Banking_0.jpg" class="d-block w-100" alt="..."> -->
+    <!-- Text Overlay on top of the carousel -->
+    <!-- <div class="content slide-content">
+        <h1>Trust Bank</h1>
+        <p>
+          Building Strong Relationships, Powered by Integrity and Reliability. 
+          At Trust Bank, we believe in building strong, lasting relationships 
+          with our customers, grounded in trust and integrity. Our commitment 
+          to providing reliable financial services is at the core of everything 
+          we do.
+        </p>
+        <button class="explore-button">Explore</button>
+      </div>
+    </div> -->
+    <!-- You can add more carousel items here if needed -->
+    <!-- </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+    </section> -->
 
     <!-- Tabeeb Section -->
     <section class="tabz-carousel">
@@ -822,21 +1199,25 @@
         <div class="container">
           <div class="row align-items-center justify-content-between">
             <div class="col-md-6">
-              <img src="imgs/bank_woman.jpg" alt="" class="img-fluid" />
+              <img src="imgs/bank_woman.jpg" alt="" class="easybank" />
             </div>
             <div class="col-md-6 p-5">
-              <h2>Your One Partner For All Banking Services</h2>
-              <p class="lead">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                corrupti voluptatem deserunt perferendis quasi blanditiis!
-              </p>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Aliquam, mollitia a corporis quaerat, in doloremque dignissimos
-                delectus, accusamus quis suscipit ipsum nobis odit labore sit
-                accusantium ullam ea sequi deleniti!
-              </p>
-              <a href="#" class="btn btn-light mt-3 px-3">
+              <h2 class="your-one-partner">
+                Your One Partner For All Banking Services
+              </h2>
+              <div class="partner-lead">
+                <p class="lead">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+                  corrupti voluptatem deserunt perferendis quasi blanditiis!
+                </p>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Aliquam, mollitia a corporis quaerat, in doloremque
+                  dignissimos delectus, accusamus quis suscipit ipsum nobis odit
+                  labore sit accusantium ullam ea sequi deleniti!
+                </p>
+              </div>
+              <a href="#" class="btn btn-light partbut mt-3 px-3">
                 <i class="bi bi-chevron-right"></i> Read More
               </a>
             </div>
@@ -845,27 +1226,35 @@
       </section>
 
       <!-- slip section 2 -->
-      <section class="p-5">
+      <section class="p-5 easybankSection">
         <div class="container">
           <div
             class="row flex-row-reverse align-items-center justify-content-between"
           >
             <div class="col-md-6">
-              <img src="/imgs/Trust_money_apps.jpg" alt="" class="img-fluid" />
+              <img
+                src="imgs/Trust_money_apps.jpg"
+                alt=""
+                class="easybank easimg"
+              />
             </div>
             <div class="col-md-6 p-5">
-              <h2>Banking Made Easy Through Our App</h2>
-              <p class="lead">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                corrupti voluptatem deserunt perferendis quasi blanditiis!
-              </p>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Laborum soluta quam saepe rem culpa et natus incidunt ea
-                suscipit. Consequuntur impedit exercitationem nesciunt nihil cum
-                facilis ut, quis nemo eum!
-              </p>
-              <a href="#" class="btn btn-success mt-3 px-3">
+              <h2 class="your-one-partner">
+                Banking Made Easy Through Our App
+              </h2>
+              <div class="partner-lead">
+                <p class="lead">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+                  corrupti voluptatem deserunt perferendis quasi blanditiis!
+                </p>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Laborum soluta quam saepe rem culpa et natus incidunt ea
+                  suscipit. Consequuntur impedit exercitationem nesciunt nihil
+                  cum facilis ut, quis nemo eum!
+                </p>
+              </div>
+              <a href="#" class="btn btn-success mt-3 px-3 partbut">
                 <i class="bi bi-chevron-right"></i> Read More
               </a>
             </div>
@@ -873,107 +1262,115 @@
         </div>
       </section>
 
-      <section class="p-5 bg-success-subtle">
+      <section class="p-5 bg-success-subtle partnerSection">
         <h2 class="pb-3 text-success text-center">Our Partners</h2>
         <div class="container" id="partner">
           <div id="carouselExampleControls" class="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title 1</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
+                <div class="team-member">
+                  <div class="member-card">
+                    <img
+                      src="Brand_images/490px-Aarong_logo_0.jpg"
+                      class="member-image img-fluid"
+                      style="margin: 10px 0; width: 300px"
+                    />
+                    <div class="product-name">Arong</div>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title 2</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
+                <div class="team-member">
+                  <div class="member-card">
+                    <img
+                      src="Brand_images/3.png"
+                      class="member-image img-fluid"
+                      style="margin: 10px 0; width: 300px"
+                    />
+                    <div class="product-name">Electra</div>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title 3</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
+                <div class="team-member">
+                  <div class="member-card">
+                    <img
+                      src="Brand_images/apple_gadgets.jpg"
+                      class="member-image img-fluid"
+                      style="margin: 10px 0; width: 300px"
+                    />
+                    <div class="product-name">Apple Gadgets</div>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title 4</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
+                <div class="team-member">
+                  <div class="member-card">
+                    <img
+                      src="Brand_images/Care Box.png"
+                      class="member-image img-fluid"
+                      style="margin: 10px 0; width: 300px"
+                    />
+                    <div class="product-name">Care Box</div>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title 5</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
+                <div class="team-member">
+                  <div class="member-card">
+                    <img
+                      src="Brand_images/Farazy-Hospital-Ltd.jpg"
+                      class="member-image img-fluid"
+                      style="margin: 10px 0; width: 300px"
+                    />
+                    <div class="product-name">Farazy Hospital</div>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title 6</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
+                <div class="team-member">
+                  <div class="member-card">
+                    <img
+                      src="Brand_images/Capture.jpeg"
+                      class="member-image img-fluid"
+                      style="margin: 10px 0; width: 300px"
+                    />
+                    <div class="product-name">Capture</div>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title 7</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
+                <div class="team-member">
+                  <div class="member-card">
+                    <img
+                      src="Brand_images/long beach hotel cox.png"
+                      class="member-image img-fluid"
+                      style="margin: 10px 0; width: 300px"
+                    />
+                    <div class="product-name">Long Beach Hotel</div>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title 8</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
+                <div class="team-member">
+                  <div class="member-card">
+                    <img
+                      src="Brand_images/Fit Elegance.jpg"
+                      class="member-image img-fluid"
+                      style="margin: 10px 0; width: 300px"
+                    />
+                    <div class="product-name">Fit Elegance</div>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
-                <div class="card">
+                <div class="card" style="height: 312px">
                   <a
-                    href="/Trust_Partners.html"
+                    href="Trust_Partners_2.php"
                     id="partner_show"
                     class="text-success"
                   >
-                    <div class="card-body">
+                    <div class="card-body my-auto">
                       <h5 class="card-title text-center">Show More</h5>
                       <h2 class="text-center">
                         <i class="bi-box-arrow-right"></i>
@@ -984,7 +1381,7 @@
               </div>
             </div>
             <button
-              class="carousel-control-prev"
+              class="carousel-control-prev bg-success"
               type="button"
               data-bs-target="#carouselExampleControls"
               data-bs-slide="prev"
@@ -996,7 +1393,7 @@
               <span class="visually-hidden">Previous</span>
             </button>
             <button
-              class="carousel-control-next"
+              class="carousel-control-next bg-success"
               type="button"
               data-bs-target="#carouselExampleControls"
               data-bs-slide="next"
@@ -1022,7 +1419,7 @@
             <div class="col-md-4">
               <div class="card">
                 <img
-                  src="/imgs/payroll-1.jpg"
+                  src="imgs/payroll-1.jpg"
                   class="card-img-top"
                   alt="Trust Payroll Event 1"
                 />
@@ -1041,7 +1438,7 @@
             <div class="col-md-4">
               <div class="card">
                 <img
-                  src="/imgs/payroll-2.jpg"
+                  src="imgs/payroll-2.jpg"
                   class="card-img-top"
                   alt="Trust Payroll Event 2"
                 />
@@ -1060,7 +1457,7 @@
             <div class="col-md-4">
               <div class="card">
                 <img
-                  src="/imgs/payroll-3.jpeg"
+                  src="imgs/payroll-3.jpeg"
                   class="card-img-top"
                   alt="Trust Payroll Event 3"
                 />
@@ -1218,7 +1615,12 @@
                     </a>
                   </div>
                   <a href="tel:16201" class="helpline">
-                    <i class="fas fa-phone-alt"></i> 16201
+                    <!-- <i class="fas fa-phone-alt"></i> 16201 -->
+                    <img
+                      src="img/call-center.jpg"
+                      alt="Badge 4"
+                      class="badge-img"
+                    />
                   </a>
                 </div>
               </div>

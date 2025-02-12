@@ -1,640 +1,2017 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            background-color: #e8f5e9;
-        }
-        
-        .trade-title {
-            color: #1b5e20;
-            font-size: 2.5rem;
-            font-weight: 500;
-            text-align: center;
-            margin: 2rem 0;
-        }
-        
-        .main-content {
-            color: #2e7d32;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-        
-        .products-title {
-            color: #1b5e20;
-            font-size: 2rem;
-            font-weight: 500;
-            margin: 2rem 0;
-        }
-        
-        .products-content {
-            color: #2e7d32;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-        
-        .terminal-image {
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            max-width: 100%;
-            height: auto;
-        }
+      body {
+        background-color: #e8f5e9;
+      }
 
-            body {
-      background-color: #e9f7df; /* Light green background */
-    }
-    .table thead th {
-      background-color: #276a39; /* Dark green header */
-      color: white; /* White text for header */
-    }
-    .table tbody tr {
-      background-color: #f4fbf1; /* Light green rows */
-    }
+      .trade-title {
+        color: #1b5e20;
+        font-size: 2.5rem;
+        font-weight: 500;
+        text-align: center;
+        margin: 2rem 0;
+      }
 
-    .header-color{
-  background-color: #006E2E;;
-}
-     :root {
-            --royal-green: #023020;
-        }
+      .main-content {
+        color: #2e7d32;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
 
-        .navbar {
-            padding: 0;
-            z-index: 1000;
-        }
+      .products-title {
+        color: #1b5e20;
+        font-size: 2rem;
+        font-weight: 500;
+        margin: 2rem 0;
+      }
 
-        .navbar-top {
-            background-color: var(--royal-green);
-            padding: 8px 0;
-        }
+      .products-content {
+        color: #2e7d32;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
 
-        .navbar-top a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            margin-left: 20px;
-        }
+      .terminal-image {
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 100%;
+        height: auto;
+      }
 
-        .main-navbar {
-            background-color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+      body {
+        background-color: #e9f7df; /* Light green background */
+      }
+      .table thead th {
+        background-color: #276a39; /* Dark green header */
+        color: white; /* White text for header */
+      }
+      .table tbody tr {
+        background-color: #f4fbf1; /* Light green rows */
+      }
 
-        .navbar-brand {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--royal-green);
-        }
+      .header-color {
+        background-color: #006e2e;
+      }
+      :root {
+        --royal-green: #023020;
+      }
 
-        .nav-link {
-            color: var(--royal-green) !important;
-            padding: 20px !important;
-            font-weight: 500;
-        }
+      .navbar {
+        padding: 0;
+        z-index: 1000;
+      }
 
-        .mega-menu {
-            position: absolute;
-            width: 100%;
-            left: 0;
-            right: 0;
-            padding: 30px;
-            background-color: var(--royal-green);
-            visibility: hidden;
-            opacity: 0;
-            transition: all 0.3s ease;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
+      .navbar-top {
+        background-color: var(--royal-green);
+        padding: 8px 0;
+      }
 
-        .nav-item:hover .mega-menu {
-            visibility: visible;
-            opacity: 1;
-        }
+      .navbar-top a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        margin-left: 20px;
+      }
 
-        .mega-menu h3 {
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
+      .main-navbar {
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
 
-        .mega-menu-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+      .navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--royal-green);
+      }
 
-        .mega-menu-list li a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            padding: 8px 0;
-            display: block;
-            transition: all 0.3s ease;
-        }
+      .nav-link {
+        color: var(--royal-green) !important;
+        padding: 20px !important;
+        font-weight: 500;
+      }
 
-        .mega-menu-list li a:hover {
-            color: white;
-            padding-left: 5px;
-        }
+      .mega-menu {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 30px;
+        background-color: var(--royal-green);
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
 
-        .search-container {
-            position: relative;
-            margin-left: 20px;
-        }
+      .nav-item:hover .mega-menu {
+        visibility: visible;
+        opacity: 1;
+      }
 
-        .search-btn {
-            background-color: var(--royal-green);
-            border: none;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
+      .mega-menu h3 {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
 
-        .search-btn:hover {
-            background-color: rgba(2, 48, 32, 0.9);
-        }
+      .mega-menu-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
 
-        .search-btn i {
-            font-size: 16px;
-        }
+      .mega-menu-list li a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        padding: 8px 0;
+        display: block;
+        transition: all 0.3s ease;
+      }
 
+      .mega-menu-list li a:hover {
+        color: white;
+        padding-left: 5px;
+      }
 
+      .search-container {
+        position: relative;
+        margin-left: 20px;
+      }
 
-  .carousel-item {
-      position: relative;
-      height: 600px;
-      background-size: cover;
-      background-position: center;
-    }
+      .search-btn {
+        background-color: var(--royal-green);
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
 
-    .carousel-caption {
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(0, 128, 0, 0.7);
-      padding: 10px 20px;
-      border-radius: 5px;
-      color: white;
-    }
-     .custom-footer {
-    background-color: #006E2E ; /* Replace with your desired color */
-}
-.team-grid {
-            background-color: #e8f5e9;
-            padding: 50px 0;
-        }
+      .search-btn:hover {
+        background-color: rgba(2, 48, 32, 0.9);
+      }
 
-        .team-member {
-            position: relative;
-            margin-bottom: 30px;
-            transition: transform 0.3s ease;
-        }
+      .search-btn i {
+        font-size: 16px;
+      }
 
-        .team-member:hover {
-            transform: translateY(-10px);
-        }
+      .carousel-item {
+        position: relative;
+        height: 600px;
+        background-size: cover;
+        background-position: center;
+      }
 
-        .member-card {
-            background: white;
-            border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            height: 100%;
-        }
+      .carousel-caption {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 128, 0, 0.7);
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: white;
+      }
+      .custom-footer {
+        background-color: #006e2e; /* Replace with your desired color */
+      }
+      .team-grid {
+        background-color: #e8f5e9;
+        padding: 50px 0;
+      }
 
+      .team-member {
+        position: relative;
+        margin-bottom: 30px;
+        transition: transform 0.3s ease;
+      }
+
+      .team-member:hover {
+        transform: translateY(-10px);
+      }
+
+      .member-card {
+        background: white;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        height: 100%;
+      }
+
+      .member-image {
+        width: 200px;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+
+      .member-name {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #333;
+        line-height: 1.4;
+      }
+
+      .member-position {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 768px) {
         .member-image {
-            width: 200px;
-            height: 240px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 15px;
+          width: 150px;
+          height: 180px;
+        }
+      }
+      #board_of_directors .accordion-body {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      #board_of_directors img {
+        margin: auto;
+        height: 300px;
+        width: 230px;
+      }
+
+      .writting h5 {
+        font-weight: 400;
+      }
+      :root {
+        --dark-green: #023020;
+        --white: #ffffff;
+        --light-green: #c8e6c9; /* Added light green color */
+      }
+
+      .footer {
+        background: var(--dark-green);
+        color: var(--white);
+        padding: 2rem 0 0.5rem 0; /* Reduced padding */
+        position: relative;
+        overflow: hidden;
+      }
+
+      .footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #ffffff66, transparent);
+      }
+
+      .main-logo-section {
+        text-align: center;
+        margin-bottom: 1.5rem; /* Reduced margin */
+        background-color: var(
+          --white
+        ); /* Light green background for logo section */
+        padding: 15px; /* Added padding for better spacing */
+        border-radius: 8px; /* Optional: Rounded corners */
+      }
+
+      .main-logo {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+        padding: 10px; /* Reduced padding */
+        border-radius: 5px;
+        background-color: transparent; /* Make the logo's background transparent */
+      }
+
+      .motto {
+        font-size: 1rem;
+        font-style: italic;
+        color: #cccccc;
+        margin-bottom: 1rem;
+      }
+
+      .footer-heading {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        padding-bottom: 0.3rem;
+        border-bottom: 2px solid #ffffff33;
+      }
+
+      .footer-link {
+        color: var(--white);
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.5rem;
+        padding-left: 10px;
+        position: relative;
+        transition: all 0.3s;
+      }
+
+      .footer-link::before {
+        content: "›";
+        position: absolute;
+        left: 0;
+        transition: transform 0.3s;
+      }
+
+      .footer-link:hover {
+        color: #e0e0e0;
+        padding-left: 15px;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+      }
+
+      .credentials-section {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1rem;
+      }
+
+      .badge-container {
+        display: flex;
+        gap: 0.8rem;
+        align-items: center;
+      }
+
+      .badge-img {
+        height: 30px; /* Reduced badge size */
+        transition: transform 0.3s;
+      }
+
+      .badge-img:hover {
+        transform: translateY(-3px);
+      }
+
+      .helpline {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #dc3545;
+        color: white;
+        padding: 0.3rem 1rem;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        transition: transform 0.3s;
+      }
+
+      .helpline:hover {
+        transform: translateY(-3px);
+        color: white;
+        text-decoration: none;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 0.8rem;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+        transition: all 0.3s;
+      }
+
+      .social-icon:hover {
+        color: #e0e0e0;
+        transform: translateY(-3px);
+      }
+
+      @media (max-width: 768px) {
+        .credentials-section {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+      }
+      .search-btn i {
+        color: #cccccc; /* Light gray for visibility */
+      }
+
+      :root {
+        --royal-green: #023020;
+      }
+
+      .navbar {
+        padding: 0;
+        z-index: 1000;
+      }
+
+      .navbar-top {
+        background-color: var(--royal-green);
+        padding: 8px 0;
+      }
+
+      .navbar-top a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        margin-left: 20px;
+      }
+
+      .main-navbar {
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--royal-green);
+      }
+
+      .nav-link {
+        color: var(--royal-green) !important;
+        padding: 20px !important;
+        font-weight: 500;
+      }
+
+      .mega-menu {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 30px;
+        background-color: var(--royal-green);
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-item:hover .mega-menu {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .mega-menu h3 {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .mega-menu-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .mega-menu-list li a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        padding: 8px 0;
+        display: block;
+        transition: all 0.3s ease;
+      }
+
+      .mega-menu-list li a:hover {
+        color: white;
+        padding-left: 5px;
+      }
+
+      .search-container {
+        position: relative;
+        margin-left: 20px;
+      }
+
+      .search-btn {
+        background-color: var(--royal-green);
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .search-btn:hover {
+        background-color: rgba(2, 48, 32, 0.9);
+      }
+
+      .search-btn i {
+        font-size: 16px;
+      }
+
+      #banner .carousel-item {
+        position: relative;
+        height: 600px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      #banner .carousel-caption {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 128, 0, 0.7);
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: white;
+      }
+      .custom-footer {
+        background-color: #006e2e; /* Replace with your desired color */
+      }
+
+      .navbar .medialinks {
+        width: 97%;
+      }
+
+      .utility-links {
+        margin-right: 10px;
+      }
+
+      .utility-links .imglink {
+        margin-right: 10px;
+      }
+
+      .navbar .medialinks {
+        width: 97%;
+      }
+
+      .utility-links {
+        margin-right: 10px;
+      }
+
+      .utility-links .imglink {
+        margin-right: 10px;
+      }
+
+      .main-navbar .navback {
+        width: 98%;
+
+        display: flex;
+        justify-content: space-between;
+        /* Push logo and nav items to corners */
+        align-items: center;
+        /* Center vertically */
+      }
+
+      .navbar-brand {
+        font-size: 44px;
+        font-weight: bold;
+        color: var(--royal-green);
+        margin-left: 20px;
+      }
+
+      .navbar-brand .trust-logo {
+        height: 75px;
+      }
+
+      #partner .carousel-inner {
+        padding: 1em;
+      }
+      #partner .card {
+        margin: 0 0.5em;
+        box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+        border: none;
+      }
+      #partner .carousel-control-prev,
+      .carousel-control-next {
+        background-color: #e1e1e1;
+        width: 6vh;
+        height: 6vh;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      @media (min-width: 768px) {
+        #partner .carousel-item {
+          margin-right: 0;
+          flex: 0 0 33.333333%;
+          display: block;
+          width: 3000px;
         }
 
-        .member-name {
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: #333;
-            line-height: 1.4;
+        #partner .carousel-inner {
+          display: flex;
+        }
+      }
+      #partner .card .img-wrapper {
+        max-width: 100%;
+        height: 13em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .card img {
+        max-height: 100%;
+      }
+      #partner_show {
+        text-decoration: none;
+      }
+
+      @media (max-width: 767px) {
+        #partner .card .img-wrapper {
+          height: 17em;
+        }
+      }
+
+      .navbar .medialinks {
+        width: 97%;
+      }
+
+      .utility-links {
+        margin-right: 10px;
+        margin-top: 10px;
+      }
+
+      .utility-links .imglink {
+        margin-right: 10px;
+      }
+
+      .mobile-nav {
+        padding-bottom: 20px;
+      }
+
+      @media (max-width: 576px) {
+        .sidebar {
+          /* height: 200px; */
+          /* width: 170px !important; */
+          padding: 20px; /* Reduced width for mobile screens */
+          /* margin-left:50px; */
+        }
+        #partner .carousel-inner {
+          padding: 0 rem;
         }
 
-        .member-position {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 10px;
+        #partner .card {
+          height: 300px;
+          width: 250px;
+          text-align: center;
         }
 
-        @media (max-width: 768px) {
-            .member-image {
-                width: 150px;
-                height: 180px;
-            }
+        #partner .card-body {
+          align-items: center;
+          margin-top: 50px;
         }
-        #board_of_directors .accordion-body{
-    display: flex;
-    justify-content: space-evenly;
-}
-#board_of_directors img{
-    margin: auto;
-    height: 300px;
-    width: 230px;
-}
 
-.writting h5{
-    font-weight: 400;
-}
+        footer {
+          text-align: center;
+        }
+
+        footer i {
+          text-align: center;
+        }
+
+        footer .row {
+          text-align: center;
+          align-items: center;
+        }
+
+        .footer-link {
+          text-align: center;
+          align-items: center;
+        }
+
+        .footer-link::before {
+          content: "";
+          text-align: center;
+          position: block;
+          left: 90px;
+        }
+
+        .your-one-partner {
+          text-align: left;
+        }
+        .partner-lead {
+          width: 250px;
+          text-align: left;
+        }
+
+        .partbut {
+          align-items: center;
+          text-align: left;
+          margin-left: 45px;
+        }
+
+        .counter-section {
+          height: 900px;
+        }
+
+        .counter-section .counterDiv {
+          margin-bottom: 20px;
+        }
+        .trust-logo {
+          width: 200px;
+        }
+      }
+
+      .modal {
+        color: black;
+      }
+
+      .foreign-link {
+        color: black;
+      }
+      #socialLinksDropdown {
+        transition: none !important; /* Disable unwanted animations */
+      }
+
+      .atmNav button[aria-expanded="true"] {
+        position: relative; /* Ensure it stays in place */
+        margin-left: -30px;
+      }
+
+      .mobile-atm {
+        background-color: transparent;
+      }
+
+      .atmNav {
+        margin-right: 20px;
+        background-color: transparent;
+        /* width: 0px; */
+        /* border: none; */
+      }
+
+      .mobileeNav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      @media screen and (max-width: 380px) and (max-height: 780px) {
+        /* Styles for devices smaller than or equal to 360x740 */
+        .utility-links .imglink {
+          margin-right: 3px;
+          /* margin-top: 10px; */
+        }
+        .partner-lead {
+          width: 200px;
+          text-align: left;
+        }
+        .your-one-partner {
+          text-align: left;
+        }
+      }
     </style>
     <title>Document</title>
-</head>
-<body>
-         <div class="team-grid">
-            <div class="container">
-                <h2 class="text-center">Meet Our Directors</h2>
-                <h2 class="text-center pt-5 pb-3">Chairman</h2>
-                <div class="row g-1 justify-content-around">
-                    <div class="col-lg-3 col-md-3 col-sm-6">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal-1" style="text-decoration: none;">
-                          <div class="team-member">
-                              <div class="member-card">
-                                  <img src="img/Gen-Waker-Uz- Zaman_0.jpg" alt="Team Member" class="member-image" style=" margin: 10px 0;">
-                                  <div class="member-name">General Waker-Uz-Zaman</div>
-                                  <div class="member-position">SBP, OSP, SGP, PSC</div>
-                              </div>
-                          </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="modal fade" id="modal-1">
-                    <div class="modal-dialog modal-lg" >
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="exampleModalLabel">Chairman</h1>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body py-3">
-                          <div class="box" style="display: flex;">
-                            <div class="image my-auto me-4">
-                              <img src="img/Gen-Waker-Uz- Zaman_0.jpg" class="rounded-start img-fluid" alt="...">
-                            </div>
-                            <div class="writting">
-                              <div class="card-body" style="width: 510px;">
-                                <h4 class="mb-1 card-title">General Waker-Uz-Zaman</h4>
-                                <h5>SBP, OSP, SGP, PSC</h5>
-                                <h5>Chief of Army Staff</h5>
-                                <p class="card-text">General Waker-Uz-Zaman, SBP, OSP, SGP, psc assumed the role of Chief of Army Staff of the Bangladesh Army on 23 June 2024, bringing over three decades of distinguished military experience. He has held key command, staff, and instructional roles, including Chief of General Staff, Military Secretary, and Principal Staff Officer to the Prime Minister. An alumnus of prestigious institutions like King’s College London and the UK’s Joint Services Command and Staff College, he has contributed significantly to UN peacekeeping, military modernization, and national events. He was honored with the Extraordinary Service Medal and Army Medal of Glory.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                <h2 class="text-center pt-5 pb-3">Vice-Chairman</h2>
-                <div class="row g-2 justify-content-around">
-                    <div class="col-lg-3 col-md-3 col-sm-6">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal-2" style="text-decoration: none;">
-                          <div class="team-member">
-                              <div class="member-card">
-                                  <img src="img/WhatsApp Image 2024-08-27 at 8.12.06 PM.jpeg" alt="Team Member" class="member-image" style=" margin: 10px 0;">
-                                  <div class="member-name"> Major General Md Masudur Rahman</div>
-                                  <div class="member-position">NDC, PSC</div>
-                              </div>
-                          </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="modal fade" id="modal-2">
-                    <div class="modal-dialog modal-lg" >
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="exampleModalLabel">Vice Chairman</h1>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body py-3">
-                          <div class="box" style="display: flex;">
-                            <div class="image my-auto me-4">
-                              <img src="img/WhatsApp Image 2024-08-27 at 8.12.06 PM.jpeg" class="rounded-start img-fluid" alt="...">
-                            </div>
-                            <div class="writting">
-                              <div class="card-body" style="width: 510px;">
-                                <h4 class="mb-1 card-title">Major General Md Masudur Rahman</h4>
-                                <h5>NDC, PSC</h5>
-                                <h5>Adjutant General, Bangladesh Army</h5>
-                                <p class="card-text">Major General Md Masudur Rahman, ndc, psc recently completed a successful tenure as GOC of 10 Infantry Division and Area Commander in Cox's Bazar. Commissioned in 1991 into the Infantry Corps, he has held key command, staff, and instructional roles, including Defence Attaché in Myanmar and service in UN missions (UNIKOM and UNMIL). A distinguished academic, he holds multiple advanced degrees, including from King's College London and BUP, and has completed strategic and language training in various countries. His career spans assignments and training across over 15 nations.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                <h2 class="text-center pt-5 pb-5">Directors</h2>
-                <div class="row g-lg-3 px-3 justify-content-center">
-                    <div class="col-lg-3 col-md-3 col-sm-6">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal-3" style="text-decoration: none;">
-                          <div class="team-member">
-                              <div class="member-card">
-                                  <img src="img/Brig-Gen-Nishat-new.png" alt="Team Member" class="member-image" style=" margin: 10px 0;">
-                                  <div class="member-name">Brig. Gen. Md. Nishatul Islam Khan</div>
-                                  <div class="member-position">NDC, PSC</div>
-                              </div>
-                          </div>
-                        </a>
-                      </div> 
-                      <div class="modal fade" id="modal-3">
-                        <div class="modal-dialog modal-lg" >
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h1 class="modal-title fs-5" id="exampleModalLabel">Director</h1>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body py-3">
-                              <div class="box" style="display: flex;">
-                                <div class="image my-auto me-4">
-                                  <img src="img/Brig-Gen-Nishat-new.png" class="rounded-start img-fluid" alt="...">
-                                </div>
-                                <div class="writting">
-                                  <div class="card-body" style="width: 510px;">
-                                    <h4 class="mb-1 card-title">Brig. Gen. Md. Nishatul Islam Khan</h4>
-                                    <h5>NDC, PSC</h5>
-                                    <p class="card-text">Brig Gen Md Nishatul Islam Khan, commissioned in 1993, has held diverse command, staff, and instructional roles across regiments, headquarters, and training institutions, including the National Defence College and DGFI. He commanded an infantry regiment and brigade, served in key positions such as Deputy Commander of the President Guard Regiment, and contributed as Directing Staff for the Armed Forces War Course. A graduate of prestigious institutions like the National Defence College, Mirpur, and UK Defence Academy, he also earned a Master's in Security and Strategic Studies from Tanzania. He participated in UN missions in Sierra Leone and Sudan and visited 32 countries. Currently, he serves as Director, Internal Affairs Bureau at HQ DGFI.
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6">
-                      <a href="#" data-bs-toggle="modal" data-bs-target="#modal-4" style="text-decoration: none;">
-                        <div class="team-member">
-                            <div class="member-card">
-                                <img src="img/Brig Gen Md Sajjad Hossain, SUP, ndc, afwc, psc.jpeg" alt="Team Member" class="member-image" style=" margin: 10px 0;">
-                                <div class="member-name">Brig. Gen. Md. Sajjad Hossain</div>
-                                <div class="member-position">SUP, NDC, AFWC, PSC</div>
-                            </div>
-                        </div>
-                      </a>
-                    </div> 
-                    <div class="modal fade" id="modal-4">
-                      <div class="modal-dialog modal-lg" >
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Executive Committee Member</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body py-3">
-                            <div class="box" style="display: flex;">
-                              <div class="image my-auto me-4">
-                                <img src="img/Brig Gen Md Sajjad Hossain, SUP, ndc, afwc, psc.jpeg" class="rounded-start img-fluid" alt="...">
-                              </div>
-                              <div class="writting">
-                                <div class="card-body" style="width: 510px;">
-                                  <h4 class="mb-1 card-title">Brig. Gen. Md. Sajjad Hossain</h4>
-                                  <h5>SUP, NDC, AFWC, PSC</h5>
-                                  <p class="card-text">Brig Gen Sajjad of the Bangladesh Army, born on 22 November 1972 in Rangamati, was commissioned on 16 December 1993. He holds three master's degrees in national security, strategy and development, and defense studies from prestigious institutions, along with diplomas and certifications in supply chain, operations, HR, project management, and strategic leadership. His diverse career includes commanding regimental units, serving as an instructor at ASC Centre and School and Bangladesh Military Academy, and holding staff roles such as ADC to CAS and Director of Welfare and Rehabilitations. He has also contributed significantly in three UN missions in logistics and training roles.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6">
-                      <a href="#" data-bs-toggle="modal" data-bs-target="#modal-5" style="text-decoration: none;">
-                        <div class="team-member">
-                            <div class="member-card">
-                                <img src="img/Brig-Gen-Selim-Azad.png" alt="Team Member" class="member-image" style=" margin: 10px 0;">
-                                <div class="member-name">Brig. Gen. Selim Azad</div>
-                                <div class="member-position">HDMC, PSC</div>
-                            </div>
-                        </div>
-                      </a>
-                    </div> 
-                    <div class="modal fade" id="modal-5">
-                      <div class="modal-dialog modal-lg" >
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Director</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body py-3">
-                            <div class="box" style="display: flex;">
-                              <div class="image my-auto me-4">
-                                <img src="img/Brig-Gen-Selim-Azad.png" class="rounded-start img-fluid" alt="...">
-                              </div>
-                              <div class="writting">
-                                <div class="card-body" style="width: 510px;">
-                                  <h4 class="mb-1 card-title">Brig. Gen. Selim Azad</h4>
-                                  <h5>HDMC, PSC</h5>
-                                  <p class="card-text">Brigadier General Selim Azad, hdmc, psc was born on 22 March 1976 in a reputed Muslim family in Dhaka. He was commissioned with 34 BMA Long Course on 07 June 1996 in the corps of Infantry. In a span of 28 years with Bangladesh Army, the officer has held a variety of important command, instructional and staff appointments. In his personal life, Brigadier General Selim Azad is happily married and blessed with two sons.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-                  </div>
-                  <div class="row g-lg-3 px-3 justify-content-center">
-                    <div class="col-lg-3 col-md-3 col-sm-6">
-                      <a href="#" data-bs-toggle="modal" data-bs-target="#modal-6" style="text-decoration: none;">
-                        <div class="team-member">
-                            <div class="member-card">
-                                <img src="img/Brig-Gen-Shams-Mohammad-Mamun.png" alt="Team Member" class="member-image" style=" margin: 10px 0;">
-                                <div class="member-name">Brig. Gen. Shams Mohammad</div>
-                                <div class="member-position">NDU, PSC</div>
-                            </div>
-                        </div>
-                      </a>
-                    </div> 
-                    <div class="modal fade" id="modal-6">
-                      <div class="modal-dialog modal-lg" >
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Director</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body py-3">
-                            <div class="box" style="display: flex;">
-                              <div class="image my-auto me-4">
-                                <img src="img/Brig-Gen-Shams-Mohammad-Mamun.png" class="rounded-start img-fluid" alt="...">
-                              </div>
-                              <div class="writting">
-                                <div class="card-body" style="width: 510px;">
-                                  <h4 class="mb-1 card-title">Brig. Gen. Shams Mohammad Mamun</h4>
-                                  <h5>NDU, PSC</h5>
-                                  <p class="card-text">Brig Gen Shams Mohammad Mamun, ndu, psc, born on 15 July 1976 in Chattogram, excelled academically, ranking in the top ten in SSC and HSC exams from Cumilla Cadet College. Commissioned in 1996 with the 35 BMA Long Course, he received the prestigious `Sword of Honour. He is a graduate of DSCSC, Bangladesh, and US Army CGSC, Fort Leavenworth, with further training at Cranfield University, UK, and NDU, China, among others. Holding two master's degrees, he earned the 'Chancellor's Award' for his MBA. With a distinguished career as an instructor, staff officer, and commander, he currently serves as Commandant of ASU since August 2024.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-6">
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#modal-7" style="text-decoration: none;">
-                      <div class="team-member">
-                          <div class="member-card">
-                              <img src="img/Mohashin-Reza_0.jpg" alt="Team Member" class="member-image" style=" margin: 10px 0;">
-                              <div class="member-name">Brig. Gen. Md. Mohashin Reza</div>
-                              <div class="member-position">OSP, AFWC, PSC</div>
-                          </div>
-                      </div>
-                    </a>
-                  </div> 
-                  <div class="modal fade" id="modal-7">
-                    <div class="modal-dialog modal-lg" >
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="exampleModalLabel">Director</h1>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body py-3">
-                          <div class="box" style="display: flex;">
-                            <div class="image my-auto me-4">
-                              <img src="img/Mohashin-Reza_0.jpg" class="rounded-start img-fluid" alt="...">
-                            </div>
-                            <div class="writting">
-                              <div class="card-body" style="width: 510px;">
-                                <h4 class="mb-1 card-title">Brig. Gen. Md. Mohashin Reza</h4>
-                                <h5>OSP, AFWC, PSC</h5>
-                                <p class="card-text">Brigadier General Md Mohashin Reza, OSP, afwc, psc, commissioned in 1997, has commanded various units in the Bangladesh Army and served in key staff and instructional roles, including at DSCSC, Dhaka. A graduate of DSCSC Bangladesh and the Royal Saudi Arabian Combined Staff College, he also completed the Armed Forces War Course at NDC, Bangladesh, earning a master's in defense studies. He participated in three UN missions, commanding a multinational task force in MINUSMA, Mali, and was awarded the Outstanding Service Medal for a successful operation. He enjoys music and reading.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                </div>
-                <div class="row g-lg-3 px-3 pt-5 justify-content-center">
-                  <div class="col-lg-3 col-md-3 col-sm-6">
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#modal-8" style="text-decoration: none;">
-                      <div class="team-member">
-                          <div class="member-card">
-                              <img src="img/Anisuddin Ahmed Khan.jpg" alt="Team Member" class="member-image" style=" margin: 10px 0">
-                              <div class="member-name">Mr. Anisuddin Ahmed Khan</div>
-                              <div class="member-position">Independent Direcetor</div>
-                          </div>
-                      </div>
-                    </a>
-                  </div> 
-                  <div class="modal fade" id="modal-8">
-                    <div class="modal-dialog modal-lg" >
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="exampleModalLabel">Independent Director</h1>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body py-3">
-                          <div class="box" style="display: flex;">
-                            <div class="image my-auto me-4">
-                              <img src="img/Anisuddin Ahmed Khan.jpg" class="rounded-start img-fluid" alt="...">
-                            </div>
-                            <div class="writting">
-                              <div class="card-body" style="width: 510px;">
-                                <h4 class="mb-1 card-title">Mr. Anisuddin Ahmed Khan</h4>
-                                <p class="card-text">Mr. Anisuddin Ahmed Khan, a Fellow of the Institute of Bankers, Bangladesh, is a seasoned banker and former Managing Director & CEO of Mutual Trust Bank Limited (2009-2019). With over 38 years of experience across leading financial institutions, he specializes in corporate banking, credit operations, risk management, and financial inclusion. He has presented papers at Harvard and Yale, attended leadership training at Cambridge and INSEAD, and served as Chairman of ABB and PDBL. Currently, he is an Adjunct Professor at IUB, Independent Director at Berger Paints, and involved in multiple corporate and philanthropic organizations.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-6">
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#modal-9" style="text-decoration: none;">
-                      <div class="team-member">
-                          <div class="member-card">
-                              <img src="img/Nusrat Khan_Updated.jpg" alt="Team Member" class="member-image" style=" margin: 10px 0;">
-                              <div class="member-name">Nusrat Khan</div>
-                              <div class="member-position">Independent Director</div>
-                          </div>
-                      </div>
-                    </a>
-                  </div> 
-                  <div class="modal fade" id="modal-9">
-                    <div class="modal-dialog modal-lg" >
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="exampleModalLabel">Independent Direcetor</h1>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body py-3">
-                          <div class="box" style="display: flex;">
-                            <div class="image my-auto me-4">
-                              <img src="img/Nusrat Khan_Updated.jpg" class="rounded-start img-fluid" alt="...">
-                            </div>
-                            <div class="writting">
-                              <div class="card-body" style="width: 510px;">
-                                <h4 class="mb-1 card-title">Nusrat Khan</h4>
-                                <p class="card-text">Nusrat Khan, born on 13 March 1983 in Dhaka, is a charismatic and hardworking leader who inspires peers with her dedication and excellence. She began her career as a lecturer at East West University and later joined the Department of Finance at the University of Dhaka, where she is now an Associate Professor. With an MSc in Management of Risks (distinction) from St. John's University, New York, she is a Fulbright Scholar and a member of the Beta Gamma Sigma honor society. Renowned for her academic excellence and numerous journal publications, she also serves as an independent director of Bangladesh Welding Electrodes Ltd. Her achievements have earned her widespread admiration in academia and beyond.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                </div>
+  </head>
+  <body>
+    <section class="">
+      <nav class="navbar navbar-top">
+        <div class="medialinks d-flex justify-content-between">
+          <div class="social-links">
+            <!-- Dropdown button for mobile view -->
+            <button
+              class="btn w-100 d-md-none"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#socialLinksDropdown"
+              aria-expanded="false"
+              aria-controls="socialLinksDropdown"
+            >
+              <i class="bi bi-menu-button fs-2" style="color: white"></i>
+            </button>
+
+            <!-- Collapsible list -->
+            <div class="collapse" id="socialLinksDropdown">
+              <a href="#" class="d-block py-2">ATM/Branch Locations</a>
+              <a href="#" class="d-block py-2">Bank Note Security</a>
+              <a href="#" class="d-block py-2">Complaint Cell</a>
+              <a href="#" class="d-block py-2">Tender</a>
             </div>
-            <div class="row g-lg-3 px-3 justify-content-center">
-              <div class="col-lg-3 col-md-3 col-sm-6">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#mymodal" style="text-decoration: none;">
-                  <div class="team-member">
-                      <div class="member-card">
-                          <img src="img/WhatsApp Image 2024-04-09 at 1.29.48 PM.jpeg" alt="Team Member" class="member-image" style="height: 250px; margin: 10px 0">
-                          <div class="member-name">Ahsan Zaman Chowdhury</div>
-                          <div class="member-position">DMD & CEO</div>
+
+            <!-- Links for larger screens -->
+            <div class="d-none d-md-block">
+              <a href="#" class="d-inline-block me-3">ATM/Branch Locations</a>
+              <a href="#" class="d-inline-block me-3">Bank Note Security</a>
+              <a href="#" class="d-inline-block me-3">Complaint Cell</a>
+              <a href="#" class="d-inline-block">Tender</a>
+            </div>
+          </div>
+
+          <div class="utility-links">
+            <a href="#"
+              ><img src="/imgs/web.png" alt="" class="imglink" /> iBanking
+            </a>
+            <a href="#"
+              ><img src="/imgs/tbl-ekyc.png" alt="" class="imglink" />ekYc</a
+            >
+            <a href="#"
+              ><img src="/imgs/tap-logo.png" alt="" class="imglink" />tap</a
+            >
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Navbar -->
+      <nav class="navbar main-navbar d-none d-lg-block">
+        <div class="navback d-flex align-items-center justify-content-between">
+          <a class="navbar-brand" href="/">
+            <img src="/tbl-logo.png" class="trust-logo" />
+          </a>
+          <div class="nav-items d-flex align-items-center">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row">
+              <li class="nav-item">
+                <a class="nav-link" href="#">FOR YOU</a>
+                <div class="mega-menu">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <h3>CONVENTIONAL BANKING</h3>
+                        <ul class="mega-menu-list">
+                          <li>
+                            <a href="/DepositProducts.html">Deposit Products</a>
+                          </li>
+                          <li><a href="/LOAN/Loans.html">Loan</a></li>
+                          <li>
+                            <a href="/LOAN/defence Personel loan.html"
+                              >Defence Personnel Loan</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/CARD/TBL Card.html">Trust Bank Cards</a>
+                          </li>
+                        </ul>
                       </div>
-                  </div>
-                </a>
-              </div> 
-              <div class="modal fade" id="mymodal">
-                <div class="modal-dialog modal-lg" >
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="exampleModalLabel">Chairman</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <div class="col-md-3">
+                        <h3>ISLAMIC BANKING</h3>
+                        <ul class="mega-menu-list">
+                          <li>
+                            <a href="/ISLAMIC BANK/about Islamic Banking.html"
+                              >About</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/ISLAMIC BANK/diposite.html">Deposite </a>
+                          </li>
+                          <li>
+                            <a href="/ISLAMIC BANK/final Ratio.html"
+                              >Final Ratio</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/ISLAMIC BANK/investment.html"
+                              >Investment</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/ISLAMIC BANK/profit Sharing Ratio.html"
+                              >Profit Sharing Ratio</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-md-3">
+                        <h3>NRB BANKING</h3>
+                        <ul class="mega-menu-list">
+                          <li><a href="/NRB_Bond.html">NRB BONDS</a></li>
+                        </ul>
+                      </div>
+                      <div class="col-md-3">
+                        <h3>DIGITAL SOLUTION</h3>
+                        <ul class="mega-menu-list">
+                          <li>
+                            <a href="/ISLAMIC BANK/Trust_Money_App.html"
+                              >Trust Money App</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
                     </div>
-                    <div class="modal-body py-3">
-                      <div class="box" style="display: flex;">
-                        <div class="image my-auto me-4">
-                          <img src="img/WhatsApp Image 2024-04-09 at 1.29.48 PM.jpeg" class="rounded-start" alt="..." style="height: 250px;">
-                        </div>
-                        <div class="writting">
-                          <div class="card-body" style="width: 510px;">
-                            <h4 class="card-title">Ahsan Zaman Chowdhury</h4>
-                            <p class="card-text">Mr. Ahsan Zaman Chowdhury, a seasoned banking professional with nearly four decades of experience, has held key roles at AB Bank, Eastern Bank Limited, and Trust Bank PLC. Joining Trust Bank in 2016, he rose to Deputy Managing Director and Chief Business Officer in 2020 and later served as Managing Director (In-Charge). Renowned for his expertise in business development, corporate banking, and strategic decision-making, he has driven profitability and excellence at Trust Bank. A graduate of the University of Chittagong, he is also an avid golfer, traveler, and active member of socio-cultural organizations, embodying leadership and dedication in all facets of his life.</p>
-                          </div>
-                        </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">FOR YOUR BUSINESS</a>
+                <div class="mega-menu">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <h3>BUSINESS BANKING</h3>
+                        <ul class="mega-menu-list">
+                          <li>
+                            <a href="/SME_Financing.html">SME Financing</a>
+                          </li>
+                          <li>
+                            <a href="/SME_productBasedLoans.html"
+                              >SME Product Based Loans</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Agriculture_loan.html"
+                              >Agriculture Loan</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Trade_Financing.html">Trade Financing</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-md-3">
+                        <h3>CORPORATE SOLUTIONS</h3>
+                        <ul class="mega-menu-list">
+                          <li>
+                            <a href="/AnnualGeneralMeeting.html"
+                              >Annual General Meeting</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/AnnualReports.html">Annual Reports</a>
+                          </li>
+                          <li>
+                            <a href="/FinanceReports.html">Finance Reports</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-md-3">
+                        <h3>INDUSTRY EXPERTISE</h3>
+                        <ul class="mega-menu-list">
+                          <li>
+                            <a href="/InvestorRelations.html"
+                              >Investor Relations</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Provisional_mudaraba_profit_rate.html"
+                              >Provisional Mudaraba Profit Rate</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Islamic_Banking_Investment_rate.html"
+                              >Islamic Banking Investment Rate</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Foreign_exchange_rate.html"
+                              >Foreign Exchange Rate</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/FormandDownloads.html"
+                              >Form and Downloads</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-md-3">
+                        <h3>SPECIALIZED SERVICES</h3>
+                        <ul class="mega-menu-list">
+                          <li>
+                            <a href="/Treasury_overview.html"
+                              >Treasury Overview</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Sustainable_Green_product.html"
+                              >Sustainable Green Product</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Sustainable_finance.html"
+                              >Sustainable Finance</a
+                            >
+                          </li>
+                          <li>
+                            <a href="/Locker_service.html">Locker Service</a>
+                          </li>
+                          <li>
+                            <a href="/Green_Finance.html">Green Finance</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="/Whole About Page/About_page_body.html"
+                  >ABOUT US</a
+                >
+              </li>
+            </ul>
+            <div class="search-container">
+              <button class="search-btn">
+                <i class="fas fa-search"></i>
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary d-lg-none mobile-nav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="/tbl-logo.png" class="trust-logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                For You
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/DepositProducts.html"
+                    >Deposit Products</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/LOAN/Loans.html">Loan</a>
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/LOAN/defence Personel loan.html"
+                    >Defence Personnel Loan</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/CARD/TBL Card.html"
+                    >Trust Bank Cards</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/CARD/TBL Card.html"
+                    >Trust Bank Cards</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/ISLAMIC BANK/about Islamic Banking.html"
+                    >Islamic Banking</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/ISLAMIC BANK/diposite.html"
+                    >Islamic Banking Deposit</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/ISLAMIC BANK/final Ratio.html"
+                    >Islamic Banking Final Ratio</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                For Your Business
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/SME_Financing.html"
+                    >SME Financing</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/SME_productBasedLoans.html"
+                    >SME Product Loans</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/Agriculture_loan.html"
+                    >Agriculture Loans</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/Trade_Financing.html"
+                    >Trade Financing</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/AnnualGeneralMeeting.html"
+                    >Annual General Meeting</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/AnnualReports.html"
+                    >Annual Reports</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/FinanceReports.html"
+                    >Finance Reports</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/InvestorRelations.html"
+                    >Investor Relations</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/Whole About Page/About_page_body.html"
+                >About Us</a
+              >
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="team-grid">
+      <div class="container">
+        <h2 class="text-center">Meet Our Directors</h2>
+        <h2 class="text-center pt-5 pb-3">Chairman</h2>
+        <div class="row g-1 justify-content-around">
+          <div class="col-lg-3 col-md-3 col-sm-6">
+            <a
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-1"
+              style="text-decoration: none"
+            >
+              <div class="team-member">
+                <div class="member-card">
+                  <img
+                    src="img/Gen-Waker-Uz- Zaman_0.jpg"
+                    alt="Team Member"
+                    class="member-image"
+                    style="margin: 10px 0"
+                  />
+                  <div class="member-name">General Waker-Uz-Zaman</div>
+                  <div class="member-position">SBP, OSP, SGP, PSC</div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="modal fade" id="modal-1">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Chairman
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body py-3">
+                <div class="box" style="display: flex">
+                  <div class="image my-auto me-4">
+                    <img
+                      src="img/Gen-Waker-Uz- Zaman_0.jpg"
+                      class="rounded-start img-fluid"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="writting">
+                    <div class="card-body" style="width: 510px">
+                      <h4 class="mb-1 card-title">General Waker-Uz-Zaman</h4>
+                      <h5>SBP, OSP, SGP, PSC</h5>
+                      <h5>Chief of Army Staff</h5>
+                      <p class="card-text">
+                        General Waker-Uz-Zaman, SBP, OSP, SGP, psc assumed the
+                        role of Chief of Army Staff of the Bangladesh Army on 23
+                        June 2024, bringing over three decades of distinguished
+                        military experience. He has held key command, staff, and
+                        instructional roles, including Chief of General Staff,
+                        Military Secretary, and Principal Staff Officer to the
+                        Prime Minister. An alumnus of prestigious institutions
+                        like King’s College London and the UK’s Joint Services
+                        Command and Staff College, he has contributed
+                        significantly to UN peacekeeping, military
+                        modernization, and national events. He was honored with
+                        the Extraordinary Service Medal and Army Medal of Glory.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="text-center pt-5 pb-3">Vice-Chairman</h2>
+        <div class="row g-2 justify-content-around">
+          <div class="col-lg-3 col-md-3 col-sm-6">
+            <a
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-2"
+              style="text-decoration: none"
+            >
+              <div class="team-member">
+                <div class="member-card">
+                  <img
+                    src="img/WhatsApp Image 2024-08-27 at 8.12.06 PM.jpeg"
+                    alt="Team Member"
+                    class="member-image"
+                    style="margin: 10px 0"
+                  />
+                  <div class="member-name">Major General Md Masudur Rahman</div>
+                  <div class="member-position">NDC, PSC</div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="modal fade" id="modal-2">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Vice Chairman
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body py-3">
+                <div class="box" style="display: flex">
+                  <div class="image my-auto me-4">
+                    <img
+                      src="img/WhatsApp Image 2024-08-27 at 8.12.06 PM.jpeg"
+                      class="rounded-start img-fluid"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="writting">
+                    <div class="card-body" style="width: 510px">
+                      <h4 class="mb-1 card-title">
+                        Major General Md Masudur Rahman
+                      </h4>
+                      <h5>NDC, PSC</h5>
+                      <h5>Adjutant General, Bangladesh Army</h5>
+                      <p class="card-text">
+                        Major General Md Masudur Rahman, ndc, psc recently
+                        completed a successful tenure as GOC of 10 Infantry
+                        Division and Area Commander in Cox's Bazar. Commissioned
+                        in 1991 into the Infantry Corps, he has held key
+                        command, staff, and instructional roles, including
+                        Defence Attaché in Myanmar and service in UN missions
+                        (UNIKOM and UNMIL). A distinguished academic, he holds
+                        multiple advanced degrees, including from King's College
+                        London and BUP, and has completed strategic and language
+                        training in various countries. His career spans
+                        assignments and training across over 15 nations.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="text-center pt-5 pb-5">Directors</h2>
+        <div class="row g-lg-3 px-3 justify-content-center">
+          <div class="col-lg-3 col-md-3 col-sm-6">
+            <a
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-3"
+              style="text-decoration: none"
+            >
+              <div class="team-member">
+                <div class="member-card">
+                  <img
+                    src="img/Brig-Gen-Nishat-new.png"
+                    alt="Team Member"
+                    class="member-image"
+                    style="margin: 10px 0"
+                  />
+                  <div class="member-name">
+                    Brig. Gen. Md. Nishatul Islam Khan
+                  </div>
+                  <div class="member-position">NDC, PSC</div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="modal fade" id="modal-3">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Director
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body py-3">
+                  <div class="box" style="display: flex">
+                    <div class="image my-auto me-4">
+                      <img
+                        src="img/Brig-Gen-Nishat-new.png"
+                        class="rounded-start img-fluid"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="writting">
+                      <div class="card-body" style="width: 510px">
+                        <h4 class="mb-1 card-title">
+                          Brig. Gen. Md. Nishatul Islam Khan
+                        </h4>
+                        <h5>NDC, PSC</h5>
+                        <p class="card-text">
+                          Brig Gen Md Nishatul Islam Khan, commissioned in 1993,
+                          has held diverse command, staff, and instructional
+                          roles across regiments, headquarters, and training
+                          institutions, including the National Defence College
+                          and DGFI. He commanded an infantry regiment and
+                          brigade, served in key positions such as Deputy
+                          Commander of the President Guard Regiment, and
+                          contributed as Directing Staff for the Armed Forces
+                          War Course. A graduate of prestigious institutions
+                          like the National Defence College, Mirpur, and UK
+                          Defence Academy, he also earned a Master's in Security
+                          and Strategic Studies from Tanzania. He participated
+                          in UN missions in Sierra Leone and Sudan and visited
+                          32 countries. Currently, he serves as Director,
+                          Internal Affairs Bureau at HQ DGFI.
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6">
+            <a
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-4"
+              style="text-decoration: none"
+            >
+              <div class="team-member">
+                <div class="member-card">
+                  <img
+                    src="img/Brig Gen Md Sajjad Hossain, SUP, ndc, afwc, psc.jpeg"
+                    alt="Team Member"
+                    class="member-image"
+                    style="margin: 10px 0"
+                  />
+                  <div class="member-name">Brig. Gen. Md. Sajjad Hossain</div>
+                  <div class="member-position">SUP, NDC, AFWC, PSC</div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="modal fade" id="modal-4">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Executive Committee Member
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body py-3">
+                  <div class="box" style="display: flex">
+                    <div class="image my-auto me-4">
+                      <img
+                        src="img/Brig Gen Md Sajjad Hossain, SUP, ndc, afwc, psc.jpeg"
+                        class="rounded-start img-fluid"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="writting">
+                      <div class="card-body" style="width: 510px">
+                        <h4 class="mb-1 card-title">
+                          Brig. Gen. Md. Sajjad Hossain
+                        </h4>
+                        <h5>SUP, NDC, AFWC, PSC</h5>
+                        <p class="card-text">
+                          Brig Gen Sajjad of the Bangladesh Army, born on 22
+                          November 1972 in Rangamati, was commissioned on 16
+                          December 1993. He holds three master's degrees in
+                          national security, strategy and development, and
+                          defense studies from prestigious institutions, along
+                          with diplomas and certifications in supply chain,
+                          operations, HR, project management, and strategic
+                          leadership. His diverse career includes commanding
+                          regimental units, serving as an instructor at ASC
+                          Centre and School and Bangladesh Military Academy, and
+                          holding staff roles such as ADC to CAS and Director of
+                          Welfare and Rehabilitations. He has also contributed
+                          significantly in three UN missions in logistics and
+                          training roles.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6">
+            <a
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-5"
+              style="text-decoration: none"
+            >
+              <div class="team-member">
+                <div class="member-card">
+                  <img
+                    src="img/Brig-Gen-Selim-Azad.png"
+                    alt="Team Member"
+                    class="member-image"
+                    style="margin: 10px 0"
+                  />
+                  <div class="member-name">Brig. Gen. Selim Azad</div>
+                  <div class="member-position">HDMC, PSC</div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="modal fade" id="modal-5">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Director
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body py-3">
+                  <div class="box" style="display: flex">
+                    <div class="image my-auto me-4">
+                      <img
+                        src="img/Brig-Gen-Selim-Azad.png"
+                        class="rounded-start img-fluid"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="writting">
+                      <div class="card-body" style="width: 510px">
+                        <h4 class="mb-1 card-title">Brig. Gen. Selim Azad</h4>
+                        <h5>HDMC, PSC</h5>
+                        <p class="card-text">
+                          Brigadier General Selim Azad, hdmc, psc was born on 22
+                          March 1976 in a reputed Muslim family in Dhaka. He was
+                          commissioned with 34 BMA Long Course on 07 June 1996
+                          in the corps of Infantry. In a span of 28 years with
+                          Bangladesh Army, the officer has held a variety of
+                          important command, instructional and staff
+                          appointments. In his personal life, Brigadier General
+                          Selim Azad is happily married and blessed with two
+                          sons.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-lg-3 px-3 justify-content-center">
+          <div class="col-lg-3 col-md-3 col-sm-6">
+            <a
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-6"
+              style="text-decoration: none"
+            >
+              <div class="team-member">
+                <div class="member-card">
+                  <img
+                    src="img/Brig-Gen-Shams-Mohammad-Mamun.png"
+                    alt="Team Member"
+                    class="member-image"
+                    style="margin: 10px 0"
+                  />
+                  <div class="member-name">Brig. Gen. Shams Mohammad</div>
+                  <div class="member-position">NDU, PSC</div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="modal fade" id="modal-6">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Director
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body py-3">
+                  <div class="box" style="display: flex">
+                    <div class="image my-auto me-4">
+                      <img
+                        src="img/Brig-Gen-Shams-Mohammad-Mamun.png"
+                        class="rounded-start img-fluid"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="writting">
+                      <div class="card-body" style="width: 510px">
+                        <h4 class="mb-1 card-title">
+                          Brig. Gen. Shams Mohammad Mamun
+                        </h4>
+                        <h5>NDU, PSC</h5>
+                        <p class="card-text">
+                          Brig Gen Shams Mohammad Mamun, ndu, psc, born on 15
+                          July 1976 in Chattogram, excelled academically,
+                          ranking in the top ten in SSC and HSC exams from
+                          Cumilla Cadet College. Commissioned in 1996 with the
+                          35 BMA Long Course, he received the prestigious `Sword
+                          of Honour. He is a graduate of DSCSC, Bangladesh, and
+                          US Army CGSC, Fort Leavenworth, with further training
+                          at Cranfield University, UK, and NDU, China, among
+                          others. Holding two master's degrees, he earned the
+                          'Chancellor's Award' for his MBA. With a distinguished
+                          career as an instructor, staff officer, and commander,
+                          he currently serves as Commandant of ASU since August
+                          2024.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6">
+            <a
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-7"
+              style="text-decoration: none"
+            >
+              <div class="team-member">
+                <div class="member-card">
+                  <img
+                    src="img/Mohashin-Reza_0.jpg"
+                    alt="Team Member"
+                    class="member-image"
+                    style="margin: 10px 0"
+                  />
+                  <div class="member-name">Brig. Gen. Md. Mohashin Reza</div>
+                  <div class="member-position">OSP, AFWC, PSC</div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="modal fade" id="modal-7">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Director
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body py-3">
+                  <div class="box" style="display: flex">
+                    <div class="image my-auto me-4">
+                      <img
+                        src="img/Mohashin-Reza_0.jpg"
+                        class="rounded-start img-fluid"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="writting">
+                      <div class="card-body" style="width: 510px">
+                        <h4 class="mb-1 card-title">
+                          Brig. Gen. Md. Mohashin Reza
+                        </h4>
+                        <h5>OSP, AFWC, PSC</h5>
+                        <p class="card-text">
+                          Brigadier General Md Mohashin Reza, OSP, afwc, psc,
+                          commissioned in 1997, has commanded various units in
+                          the Bangladesh Army and served in key staff and
+                          instructional roles, including at DSCSC, Dhaka. A
+                          graduate of DSCSC Bangladesh and the Royal Saudi
+                          Arabian Combined Staff College, he also completed the
+                          Armed Forces War Course at NDC, Bangladesh, earning a
+                          master's in defense studies. He participated in three
+                          UN missions, commanding a multinational task force in
+                          MINUSMA, Mali, and was awarded the Outstanding Service
+                          Medal for a successful operation. He enjoys music and
+                          reading.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-lg-3 px-3 pt-5 justify-content-center">
+          <div class="col-lg-3 col-md-3 col-sm-6">
+            <a
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-8"
+              style="text-decoration: none"
+            >
+              <div class="team-member">
+                <div class="member-card">
+                  <img
+                    src="img/Anisuddin Ahmed Khan.jpg"
+                    alt="Team Member"
+                    class="member-image"
+                    style="margin: 10px 0"
+                  />
+                  <div class="member-name">Mr. Anisuddin Ahmed Khan</div>
+                  <div class="member-position">Independent Direcetor</div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="modal fade" id="modal-8">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Independent Director
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body py-3">
+                  <div class="box" style="display: flex">
+                    <div class="image my-auto me-4">
+                      <img
+                        src="img/Anisuddin Ahmed Khan.jpg"
+                        class="rounded-start img-fluid"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="writting">
+                      <div class="card-body" style="width: 510px">
+                        <h4 class="mb-1 card-title">
+                          Mr. Anisuddin Ahmed Khan
+                        </h4>
+                        <p class="card-text">
+                          Mr. Anisuddin Ahmed Khan, a Fellow of the Institute of
+                          Bankers, Bangladesh, is a seasoned banker and former
+                          Managing Director & CEO of Mutual Trust Bank Limited
+                          (2009-2019). With over 38 years of experience across
+                          leading financial institutions, he specializes in
+                          corporate banking, credit operations, risk management,
+                          and financial inclusion. He has presented papers at
+                          Harvard and Yale, attended leadership training at
+                          Cambridge and INSEAD, and served as Chairman of ABB
+                          and PDBL. Currently, he is an Adjunct Professor at
+                          IUB, Independent Director at Berger Paints, and
+                          involved in multiple corporate and philanthropic
+                          organizations.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6">
+            <a
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-9"
+              style="text-decoration: none"
+            >
+              <div class="team-member">
+                <div class="member-card">
+                  <img
+                    src="img/Nusrat Khan_Updated.jpg"
+                    alt="Team Member"
+                    class="member-image"
+                    style="margin: 10px 0"
+                  />
+                  <div class="member-name">Nusrat Khan</div>
+                  <div class="member-position">Independent Director</div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="modal fade" id="modal-9">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Independent Direcetor
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body py-3">
+                  <div class="box" style="display: flex">
+                    <div class="image my-auto me-4">
+                      <img
+                        src="img/Nusrat Khan_Updated.jpg"
+                        class="rounded-start img-fluid"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="writting">
+                      <div class="card-body" style="width: 510px">
+                        <h4 class="mb-1 card-title">Nusrat Khan</h4>
+                        <p class="card-text">
+                          Nusrat Khan, born on 13 March 1983 in Dhaka, is a
+                          charismatic and hardworking leader who inspires peers
+                          with her dedication and excellence. She began her
+                          career as a lecturer at East West University and later
+                          joined the Department of Finance at the University of
+                          Dhaka, where she is now an Associate Professor. With
+                          an MSc in Management of Risks (distinction) from St.
+                          John's University, New York, she is a Fulbright
+                          Scholar and a member of the Beta Gamma Sigma honor
+                          society. Renowned for her academic excellence and
+                          numerous journal publications, she also serves as an
+                          independent director of Bangladesh Welding Electrodes
+                          Ltd. Her achievements have earned her widespread
+                          admiration in academia and beyond.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-lg-3 px-3 justify-content-center">
+          <div class="col-lg-3 col-md-3 col-sm-6">
+            <a
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#mymodal"
+              style="text-decoration: none"
+            >
+              <div class="team-member">
+                <div class="member-card">
+                  <img
+                    src="img/WhatsApp Image 2024-04-09 at 1.29.48 PM.jpeg"
+                    alt="Team Member"
+                    class="member-image"
+                    style="height: 250px; margin: 10px 0"
+                  />
+                  <div class="member-name">Ahsan Zaman Chowdhury</div>
+                  <div class="member-position">DMD & CEO</div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="modal fade" id="mymodal">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Chairman
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body py-3">
+                  <div class="box" style="display: flex">
+                    <div class="image my-auto me-4">
+                      <img
+                        src="img/WhatsApp Image 2024-04-09 at 1.29.48 PM.jpeg"
+                        class="rounded-start"
+                        alt="..."
+                        style="height: 250px"
+                      />
+                    </div>
+                    <div class="writting">
+                      <div class="card-body" style="width: 510px">
+                        <h4 class="card-title">Ahsan Zaman Chowdhury</h4>
+                        <p class="card-text">
+                          Mr. Ahsan Zaman Chowdhury, a seasoned banking
+                          professional with nearly four decades of experience,
+                          has held key roles at AB Bank, Eastern Bank Limited,
+                          and Trust Bank PLC. Joining Trust Bank in 2016, he
+                          rose to Deputy Managing Director and Chief Business
+                          Officer in 2020 and later served as Managing Director
+                          (In-Charge). Renowned for his expertise in business
+                          development, corporate banking, and strategic
+                          decision-making, he has driven profitability and
+                          excellence at Trust Bank. A graduate of the University
+                          of Chittagong, he is also an avid golfer, traveler,
+                          and active member of socio-cultural organizations,
+                          embodying leadership and dedication in all facets of
+                          his life.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
+    <footer class="footer">
+      <div class="container">
+        <div class="main-logo-section">
+          <img
+            src="img/tbl-logo-footer.png"
+            alt="Main Logo"
+            class="main-logo"
+          />
+          <!-- <div class="motto">Trust Bank PLC - A Bank for Financial Freedom</div> -->
+        </div>
+
+        <div class="row">
+          <div class="col-md-3 mb-4">
+            <h5 class="footer-heading">QUICK LINKS</h5>
+            <a href="#" class="footer-link">Home</a>
+            <a href="#" class="footer-link">About Us</a>
+            <a href="#" class="footer-link">Services</a>
+            <a href="#" class="footer-link">Contact</a>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <h5 class="footer-heading">SERVICES</h5>
+            <a href="#" class="footer-link">Banking</a>
+            <a href="#" class="footer-link">Loans</a>
+            <a href="#" class="footer-link">Credit Cards</a>
+            <a href="#" class="footer-link">Investments</a>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <h5 class="footer-heading">SUPPORT</h5>
+            <a href="#" class="footer-link">Board of Director</a>
+            <a href="#" class="footer-link">Executive Committee</a>
+            <a href="#" class="footer-link">Audit Committee</a>
+            <a href="#" class="footer-link">Senior Management Team</a>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <h5 class="footer-heading">NEWSLETTER</h5>
+            <div class="d-flex gap-2">
+              <input
+                type="email"
+                class="form-control email-input"
+                placeholder="Enter your email"
+              />
+              <button class="btn search-btn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+            <div class="social-icons">
+              <a href="#" class="social-icon"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <p class="mb-md-0">© 2024 Trust Bank PLC. All rights reserved.</p>
+            </div>
+            <div class="col-md-6">
+              <div class="credentials-section">
+                <div class="badge-container">
+                  <a href="https://www.bb.org.bd/en/index.php" target="_blank">
+                    <img
+                      src="img/passport.jpg"
+                      alt="Badge 1"
+                      class="badge-img"
+                    />
+                  </a>
+                  <a href="https://www.cse.com.bd/" target="_blank">
+                    <img src="img/cse.jpg" alt="Badge 2" class="badge-img" />
+                  </a>
+                  <a href="https://www.dsebd.org/" target="_blank">
+                    <img
+                      src="img/dhaka stock exchange.png"
+                      alt="Badge 3"
+                      class="badge-img"
+                    />
+                  </a>
+                  <a href="http://www.passport.gov.bd/" target="_blank">
+                    <img
+                      src="img/passport.png"
+                      alt="Badge 4"
+                      class="badge-img"
+                    />
+                  </a>
+                </div>
+                <a href="tel:16201" class="helpline">
+                  <i class="fas fa-phone-alt"></i> 16201
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

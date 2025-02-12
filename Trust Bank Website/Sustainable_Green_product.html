@@ -1,194 +1,445 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sustainable Finance</title>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  >
-  <style>
-    body {
-      background-color: #e7f4e4;
-      color: #2d6233;
-    }
-    .heading {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    .subheading {
-      font-size: 1.25rem;
-      font-weight: bold;
-      margin-top: 1.5rem;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sustainable Finance</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        background-color: #e7f4e4;
+        color: #2d6233;
+      }
+      .heading {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .subheading {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-top: 1.5rem;
+      }
 
-     .nav-link {
-            color: #495057;
-            font-weight: 500;
-        }
-        .nav-link.active {
-            background-color: #023020 !important;
-            color: white !important;
-        }
-        .btn-read-more {
-            background-color: #023020;
-            color: white;
-            transition: all 0.3s;
-        }
-        .btn-read-more:hover {
-            background-color: #218838;
-            color: white;
-        }
-        .btn-download {
-            background-color:#023020;
-            color: white;
-            transition: all 0.3s;
-        }
-        .btn-download:hover {
-            background-color: #023020;
-            color: white;
-        }
-        .accordion-item {
-            margin-bottom: 5px;
+      .nav-link {
+        color: #495057;
+        font-weight: 500;
+      }
+      .nav-link.active {
+        background-color: #023020 !important;
+        color: white !important;
+      }
+      .btn-read-more {
+        background-color: #023020;
+        color: white;
+        transition: all 0.3s;
+      }
+      .btn-read-more:hover {
+        background-color: #218838;
+        color: white;
+      }
+      .btn-download {
+        background-color: #023020;
+        color: white;
+        transition: all 0.3s;
+      }
+      .btn-download:hover {
+        background-color: #023020;
+        color: white;
+      }
+      .accordion-item {
+        margin-bottom: 5px;
+      }
+
+      :root {
+        --royal-green: #023020;
+      }
+
+      .navbar {
+        padding: 0;
+        z-index: 1000;
+      }
+
+      .navbar-top {
+        background-color: var(--royal-green);
+        padding: 8px 0;
+      }
+
+      .navbar-top a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        margin-left: 20px;
+      }
+
+      .main-navbar {
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--royal-green);
+      }
+
+      .nav-link {
+        color: var(--royal-green) !important;
+        padding: 20px !important;
+        font-weight: 500;
+      }
+
+      .mega-menu {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 30px;
+        background-color: var(--royal-green);
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-item:hover .mega-menu {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .mega-menu h3 {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .mega-menu-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .mega-menu-list li a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        padding: 8px 0;
+        display: block;
+        transition: all 0.3s ease;
+      }
+
+      .mega-menu-list li a:hover {
+        color: white;
+        padding-left: 5px;
+      }
+
+      .search-container {
+        position: relative;
+        margin-left: 20px;
+      }
+
+      .search-btn {
+        background-color: var(--royal-green);
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .search-btn:hover {
+        background-color: rgba(2, 48, 32, 0.9);
+      }
+
+      .search-btn i {
+        font-size: 16px;
+      }
+
+      .custom-footer {
+        background-color: #006e2e;
+        margin-top: 100px; /* Replace with your desired color */
+      }
+
+      @media (max-width: 768px) {
+        .chart-image {
+          width: 300px;
+          height: 300px;
+          margin-bottom: 20px;
         }
 
-         :root {
-            --royal-green: #023020;
+        #partner .carousel-inner {
+          padding: 1em;
         }
-
-        .navbar {
-            padding: 0;
-            z-index: 1000;
+        #partner .card {
+          margin: 0 0.5em;
+          box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+          border: none;
         }
-
-        .navbar-top {
-            background-color: var(--royal-green);
-            padding: 8px 0;
+        #partner .carousel-control-prev,
+        .carousel-control-next {
+          background-color: #e1e1e1;
+          width: 6vh;
+          height: 6vh;
+          border-radius: 50%;
+          top: 50%;
+          transform: translateY(-50%);
         }
-
-        .navbar-top a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            margin-left: 20px;
-        }
-
-        .main-navbar {
-            background-color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .navbar-brand {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--royal-green);
-        }
-
-        .nav-link {
-            color: var(--royal-green) !important;
-            padding: 20px !important;
-            font-weight: 500;
-        }
-
-        .mega-menu {
-            position: absolute;
-            width: 100%;
-            left: 0;
-            right: 0;
-            padding: 30px;
-            background-color: var(--royal-green);
-            visibility: hidden;
-            opacity: 0;
-            transition: all 0.3s ease;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .nav-item:hover .mega-menu {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .mega-menu h3 {
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .mega-menu-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .mega-menu-list li a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            padding: 8px 0;
+        @media (min-width: 768px) {
+          #partner .carousel-item {
+            margin-right: 0;
+            flex: 0 0 33.333333%;
             display: block;
-            transition: all 0.3s ease;
-        }
+            width: 3000px;
+          }
 
-        .mega-menu-list li a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-
-        .search-container {
-            position: relative;
-            margin-left: 20px;
-        }
-
-        .search-btn {
-            background-color: var(--royal-green);
-            border: none;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 4px;
+          #partner .carousel-inner {
             display: flex;
+          }
+        }
+        #partner .card .img-wrapper {
+          max-width: 100%;
+          height: 13em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .card img {
+          max-height: 100%;
+        }
+        #partner_show {
+          text-decoration: none;
+        }
+
+        @media (max-width: 767px) {
+          #partner .card .img-wrapper {
+            height: 17em;
+          }
+        }
+
+        .navbar .medialinks {
+          width: 97%;
+        }
+
+        .utility-links {
+          margin-right: 10px;
+          margin-top: 10px;
+        }
+
+        .utility-links .imglink {
+          margin-right: 10px;
+        }
+
+        .mobile-nav {
+          padding-bottom: 20px;
+        }
+
+        @media (max-width: 576px) {
+          .sidebar {
+            /* height: 200px; */
+            /* width: 170px !important; */
+            padding: 20px; /* Reduced width for mobile screens */
+            /* margin-left:50px; */
+          }
+          #partner .carousel-inner {
+            padding: 0 rem;
+          }
+
+          #partner .card {
+            height: 300px;
+            width: 250px;
+            text-align: center;
+          }
+
+          #partner .card-body {
             align-items: center;
-            gap: 5px;
+            margin-top: 50px;
+          }
+
+          footer {
+            text-align: center;
+          }
+
+          footer i {
+            text-align: center;
+          }
+
+          footer .row {
+            text-align: center;
+            align-items: center;
+          }
+
+          .footer-link {
+            text-align: center;
+            align-items: center;
+          }
+
+          .footer-link::before {
+            content: "";
+            text-align: center;
+            position: block;
+            left: 90px;
+          }
+
+          .your-one-partner {
+            text-align: left;
+          }
+          .partner-lead {
+            width: 250px;
+            text-align: left;
+          }
+
+          .partbut {
+            align-items: center;
+            text-align: left;
+            margin-left: 45px;
+          }
+
+          .counter-section {
+            height: 900px;
+          }
+
+          .counter-section .counterDiv {
+            margin-bottom: 20px;
+          }
+          .trust-logo {
+            width: 200px;
+          }
         }
 
-        .search-btn:hover {
-            background-color: rgba(2, 48, 32, 0.9);
+        .modal {
+          color: black;
         }
 
-        .search-btn i {
-            font-size: 16px;
+        .foreign-link {
+          color: black;
+        }
+        #socialLinksDropdown {
+          transition: none !important; /* Disable unwanted animations */
         }
 
-           .custom-footer {
-    background-color: #006E2E;
-    margin-top:100px; /* Replace with your desired color */
-}
-  </style>
-</head>
-<body>
-       <section>
+        .atmNav button[aria-expanded="true"] {
+          position: relative; /* Ensure it stays in place */
+          margin-left: -30px;
+        }
+
+        .mobile-atm {
+          background-color: transparent;
+        }
+
+        .atmNav {
+          margin-right: 20px;
+          background-color: transparent;
+          /* width: 0px; */
+          /* border: none; */
+        }
+
+        .mobileeNav {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+
+        @media screen and (max-width: 380px) and (max-height: 780px) {
+          /* Styles for devices smaller than or equal to 360x740 */
+          .utility-links .imglink {
+            margin-right: 3px;
+            /* margin-top: 10px; */
+          }
+          .partner-lead {
+            width: 200px;
+            text-align: left;
+          }
+          .your-one-partner {
+            text-align: left;
+          }
+        }
+        .achieve-img {
+          width: 250px;
+        }
+        .imgdiv {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="">
       <nav class="navbar navbar-top">
-        <div class="container d-flex justify-content-between">
+        <div class="medialinks d-flex justify-content-between">
           <div class="social-links">
-            <a href="#">f</a>
-            <a href="#">in</a>
-            <a href="#">yt</a>
+            <!-- Dropdown button for mobile view -->
+            <!-- Button -->
+            <div class="atmNav mt-6">
+              <!-- Mobile Dropdown Button -->
+              <button
+                class="btn btn-primary w-100 d-md-none mobile-atm"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#socialLinksDropdown"
+                aria-expanded="false"
+                aria-controls="socialLinksDropdown"
+                style="
+                  outline: none;
+                  box-shadow: none;
+                  border: none;
+                  background: none;
+                "
+              >
+                <i class="bi bi-list fs-4"></i>
+              </button>
+
+              <!-- Collapsible Dropdown Content -->
+              <div class="collapse mt-2" id="socialLinksDropdown">
+                <a href="#" class="d-block py-2 border-bottom"
+                  >ATM/Branch Locations</a
+                >
+                <a href="#" class="d-block py-2 border-bottom"
+                  >Bank Note Security</a
+                >
+                <a href="#" class="d-block py-2 border-bottom"
+                  >Complaint Cell</a
+                >
+                <a href="#" class="d-block py-2">Tender</a>
+              </div>
+            </div>
+
+            <!-- Links for larger screens -->
+            <div class="d-none d-md-block">
+              <a href="#" class="d-inline-block me-3">ATM/Branch Locations</a>
+              <a href="#" class="d-inline-block me-3">Bank Note Security</a>
+              <a href="#" class="d-inline-block me-3">Complaint Cell</a>
+              <a href="#" class="d-inline-block">Tender</a>
+            </div>
           </div>
+
           <div class="utility-links">
-            <a href="#">CONNECT</a>
-            <a href="#">CAREERS</a>
-            <a href="#">INVESTORS RELATION</a>
+            <a href="#"
+              ><img src="/imgs/web.png" alt="" class="imglink" /> iBanking
+            </a>
+            <a href="#"
+              ><img src="/imgs/tbl-ekyc.png" alt="" class="imglink" />ekYc</a
+            >
+            <a href="#"
+              ><img src="/imgs/tap-logo.png" alt="" class="imglink" />tap</a
+            >
           </div>
         </div>
       </nav>
 
       <!-- Main Navbar -->
-      <nav class="navbar main-navbar">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            <img src="/tbl-logo.png" />
+      <nav class="navbar main-navbar d-none d-lg-block">
+        <div class="navback d-flex align-items-center justify-content-between">
+          <a class="navbar-brand" href="/">
+            <img src="/tbl-logo.png" class="trust-logo" />
           </a>
           <div class="nav-items d-flex align-items-center">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row">
@@ -212,10 +463,6 @@
                           <li>
                             <a href="/CARD/TBL Card.html">Trust Bank Cards</a>
                           </li>
-                          <!-- <li><a href="#">Credit Card</a></li>
-                                            <li><a href="#">Student File</a></li>
-                                            <li><a href="#">Priority Banking: Monarch</a></li>
-                                            <li><a href="#">Neera</a></li> -->
                         </ul>
                       </div>
                       <div class="col-md-3">
@@ -250,7 +497,6 @@
                         <h3>NRB BANKING</h3>
                         <ul class="mega-menu-list">
                           <li><a href="/NRB_Bond.html">NRB BONDS</a></li>
-                          <!-- <li><a href="#">Account Facilities for NRBs</a></li> -->
                         </ul>
                       </div>
                       <div class="col-md-3">
@@ -261,9 +507,6 @@
                               >Trust Money App</a
                             >
                           </li>
-                          <!-- <li><a href="#">PrimePlus</a></li>
-                                            <li><a href="#">Prime Assist</a></li>
-                                            <li><a href="#">RemitPrime</a></li> -->
                         </ul>
                       </div>
                     </div>
@@ -294,7 +537,6 @@
                           <li>
                             <a href="/Trade_Financing.html">Trade Financing</a>
                           </li>
-                          <!-- <li><a href="#">Corporate Banking</a></li> -->
                         </ul>
                       </div>
                       <div class="col-md-3">
@@ -374,100 +616,11 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">ABOUT US</a>
-                <div class="mega-menu">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-3">
-                        <h3>MEET Trust BANK</h3>
-                        <ul class="mega-menu-list">
-                          <li>
-                            <a href="/Whole About Page/About_page_body.html"
-                              >Overview</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/About_page_body.html"
-                              >History</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/About_page_body.html"
-                              >Mission & Vision</a
-                            >
-                          </li>
-                          <li><a href="/Contact_us.html">Contact us</a></li>
-                        </ul>
-                      
-                        
-                      </div>
-                      <div class="col-md-3">
-                        <h3>OUR TEAM</h3>
-                        <ul class="mega-menu-list">
-                          <li>
-                            <a href="/Whole About Page/board_of_directors.html"
-                              >Board of Directors</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/executive_comm.html"
-                              >Executive Committee</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/audit_comm.html"
-                              >Audit Committee</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/risk_management.html"
-                              >Risk Management Committee</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/snr_management.html"
-                              >SNR Management Committee</a
-                            >
-                          </li>
-                          <li><a href="#">Management</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-3">
-                          <h3>OUR SUBSIDIARIES</h3>
-                        <ul class="mega-menu-list">
-                          <li>
-                            <a href="/Whole About Page/board_of_directors.html"
-                              >Board of Directors</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/board_of_directors.html"
-                              >Board of Directors</a
-                            >
-                          </li>
-                          <!-- <li><a href="#">Joint Ventures</a></li> -->
-                        </ul>
-                       
-                      </div>
-                      <div class="col-md-3">
-                        <h3>Executive Committees</h3>
-                        <ul class="mega-menu-list">
-                          <li>
-                            <a href="/Whole About Page/executive_comm.html"
-                              >Executive Committee</a
-                            >
-                          </li>
-                          <li>
-                            <a href="/Whole About Page/risk_management.html"
-                              >Risk Management</a
-                            >
-                          </li>
-                        </ul>
-                       
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <a
+                  class="nav-link"
+                  href="/Whole About Page/About_page_body.html"
+                  >ABOUT US</a
+                >
               </li>
             </ul>
             <div class="search-container">
@@ -480,200 +633,391 @@
         </div>
       </nav>
     </section>
-  <div class="container my-5">
-    <div class="text-center mb-4">
-      <h1 class="text-success">Sustainable & Green product</h1>
-    </div>
-    <div class="mb-4">
-      <p>Bangladesh is one of the promising countries towards attaining SDGs on action to end poverty, protect the planet, and ensure peace and prosperity for all people by 2030. To attain the goal, sustainable finance plays a significant role. Sustainable Finance covers Green Finance including Agriculture, CMSME, and Socially Responsible Finance linked to sustainability.</p>
-      <p>Socially Responsible Finance is financing that supports actions mitigating or addressing a specific social issue and seeking to achieve positive social outcomes. The project categories include but are not limited to providing or promoting basic infrastructure, access to essential services, affordable housing, employment generation, food security, socioeconomic advancement, and empowerment. Our mission is to reach the wider section of people towards inclusive, sustainable, and quality growth. As such, our motto is “A Bank for Financial Inclusion.”</p>
-      <p>Trust Bank PLC is always concerned for the social and environmental impact of its investments. The bank is doing business with the objective of reducing greenhouse gas emissions by any manner. In-house green policies and practices are another part of becoming an environment-friendly bank.</p>
-    </div>
-    <div>
-      <h2 class="subheading">GOVERNANCE, SUSTAINABILITY AND COMPLIANCE</h2>
-      <p>The rapid change in climate (one of the major threats in today’s world) will be too great to allow many ecosystems to suitably adapt, since the change has a direct impact on biodiversity, agriculture, forestry, dry land, water resources, and human health. Due to unusual weather patterns, rising greenhouse gases, and declining air quality, society demands that businesses also take responsibility in safeguarding the planet.</p>
-      <p>Our commitment is to sustainable investment which has strengthened Green Financing strategy in line with the United Nations’ Sustainable Development Goals on affordable and clean energy, economic growth and climate action. We verify it through a mandatory social and environmental screening process in our project financing activities. During the year, we disbursed BDT 4,398.03 million in green finance and BDT 88,925.15 million in sustainable finance with a goal of low-carbon economy.</p>
-      <p>In the year 2023, Trust Bank Ltd. has been recognized as one of the Seven Banks in the "Sustainability Rating 2022”. This rating has been declared by Bangladesh Bank based on the Bank’s performance on four indicators which are Sustainable Finance, Green Refinance, Corporate Social Responsibility and Core Banking Sustainability. </p>
-    </div>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary d-lg-none mobile-nav">
+      <div class="container-fluid mobileeNav">
+        <div>
+          <a class="navbar-brand" href="/">
+            <img src="/tbl-logo.png" class="trust-logo" />
+          </a>
+        </div>
+        <div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  For You
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/DepositProducts.html"
+                      >Deposit Products</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/LOAN/Loans.html">Loan</a>
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/LOAN/defence Personel loan.html"
+                      >Defence Personnel Loan</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/CARD/TBL Card.html"
+                      >Trust Bank Cards</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/CARD/TBL Card.html"
+                      >Trust Bank Cards</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/ISLAMIC BANK/about Islamic Banking.html"
+                      >Islamic Banking</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/ISLAMIC BANK/diposite.html"
+                      >Islamic Banking Deposit</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/ISLAMIC BANK/final Ratio.html"
+                      >Islamic Banking Final Ratio</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  For Your Business
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/SME_Financing.html"
+                      >SME Financing</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/SME_productBasedLoans.html"
+                      >SME Product Loans</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/Agriculture_loan.html"
+                      >Agriculture Loans</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/Trade_Financing.html"
+                      >Trade Financing</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/AnnualGeneralMeeting.html"
+                      >Annual General Meeting</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/AnnualReports.html"
+                      >Annual Reports</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/FinanceReports.html"
+                      >Finance Reports</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/InvestorRelations.html"
+                      >Investor Relations</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/Whole About Page/About_page_body.html"
+                  >About Us</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <div class="container my-5">
-    <h2 class="major-heading text-center text-success mb-4">Major Achievement</h2>
-
-    <div class="row align-items-center mb-4">
-      <div class="col-md-4 text-center">
-        <img src="/im1.png" alt="Bank Logo" class="img-fluid">
+      <div class="text-center mb-4">
+        <h1 class="text-success">Sustainable & Green product</h1>
       </div>
-      <div class="col-md-8">
-        <p class="mb-1"><span class="highlight">One of the top 7 Sustainable Banks of the country</span>, as declared by Bangladesh Bank.</p>
+      <div class="mb-4">
+        <p>
+          Bangladesh is one of the promising countries towards attaining SDGs on
+          action to end poverty, protect the planet, and ensure peace and
+          prosperity for all people by 2030. To attain the goal, sustainable
+          finance plays a significant role. Sustainable Finance covers Green
+          Finance including Agriculture, CMSME, and Socially Responsible Finance
+          linked to sustainability.
+        </p>
+        <p>
+          Socially Responsible Finance is financing that supports actions
+          mitigating or addressing a specific social issue and seeking to
+          achieve positive social outcomes. The project categories include but
+          are not limited to providing or promoting basic infrastructure, access
+          to essential services, affordable housing, employment generation, food
+          security, socioeconomic advancement, and empowerment. Our mission is
+          to reach the wider section of people towards inclusive, sustainable,
+          and quality growth. As such, our motto is “A Bank for Financial
+          Inclusion.”
+        </p>
+        <p>
+          Trust Bank PLC is always concerned for the social and environmental
+          impact of its investments. The bank is doing business with the
+          objective of reducing greenhouse gas emissions by any manner. In-house
+          green policies and practices are another part of becoming an
+          environment-friendly bank.
+        </p>
+      </div>
+      <div>
+        <h2 class="subheading">GOVERNANCE, SUSTAINABILITY AND COMPLIANCE</h2>
+        <p>
+          The rapid change in climate (one of the major threats in today’s
+          world) will be too great to allow many ecosystems to suitably adapt,
+          since the change has a direct impact on biodiversity, agriculture,
+          forestry, dry land, water resources, and human health. Due to unusual
+          weather patterns, rising greenhouse gases, and declining air quality,
+          society demands that businesses also take responsibility in
+          safeguarding the planet.
+        </p>
+        <p>
+          Our commitment is to sustainable investment which has strengthened
+          Green Financing strategy in line with the United Nations’ Sustainable
+          Development Goals on affordable and clean energy, economic growth and
+          climate action. We verify it through a mandatory social and
+          environmental screening process in our project financing activities.
+          During the year, we disbursed BDT 4,398.03 million in green finance
+          and BDT 88,925.15 million in sustainable finance with a goal of
+          low-carbon economy.
+        </p>
+        <p>
+          In the year 2023, Trust Bank Ltd. has been recognized as one of the
+          Seven Banks in the "Sustainability Rating 2022”. This rating has been
+          declared by Bangladesh Bank based on the Bank’s performance on four
+          indicators which are Sustainable Finance, Green Refinance, Corporate
+          Social Responsibility and Core Banking Sustainability.
+        </p>
+      </div>
+      <div class="container my-5">
+        <h2 class="major-heading text-center text-success mb-4">
+          Major Achievement
+        </h2>
+
+        <div class="row align-items-center mb-4">
+          <div class="col-md-4 text-center imgdiv">
+            <!-- <img src="/im1.png" alt="Bank Logo" class="achieve-img" /> -->
+          </div>
+          <div class="col-md-8">
+            <!-- <p class="mb-1">
+              <span class="highlight"
+                >One of the top 7 Sustainable Banks of the country</span
+              >, as declared by Bangladesh Bank.
+            </p> -->
+          </div>
+        </div>
+
+        <p>
+          Trust Bank PLC is concerned with social and environmental impacts of
+          its investments and in-house green management to become a sustainable
+          investment-friendly bank. Trust Bank PLC has been conducting banking
+          business in those areas and in such a manner that helps the overall
+          reduction of carbon emission by its customers as well as from its own
+          operations. Sustainable finance is often understood both as
+          <span class="highlight">“doing good and doing well.”</span>
+        </p>
+
+        <h3 class="subheading">
+          Trust Bank sustainable financing position up to December, 2023
+        </h3>
+
+        <div class="text-center my-4">
+          <img
+            src="/im2.png"
+            alt="Sustainable Financing Chart"
+            class="chart-image"
+          />
+          <p>
+            The Sustainable Finance Unit (SFU) of the bank ensures that funds
+            are properly administered and disbursed in accordance with the
+            bank’s vision, objectives, and areas of focus. We have a
+            well-defined structure for reviewing and monitoring our CSR
+            initiatives. The SFU of the bank has created policy guidelines on
+            Corporate Social Responsibility and processes to monitor and
+            evaluate our CSR programs. This not only helps in designing the
+            target group but also in monitoring and evaluating the program in a
+            structured way.
+          </p>
+          <p>
+            Over the years, Trust Bank has taken a number of great moves to
+            expand its diversified services aiming to help millions of rural
+            populations. In view of what, Trust Bank PLC. added a new product
+            named ‘TRUST PRANTIK’ for expansion of income generating activities
+            by bringing the unbanked segment of population under the banking
+            network and also to gear up economic activities in the rural areas
+            and increase financial inclusion. It is also designed for targeting
+            the people of natural disaster affected area’s/ low income people,
+            landless farmers, Small/ Marginal or micro entrepreneurs. They will
+            start their banking relationship by opening a 10 taka account with
+            the bank as per BB circular.
+          </p>
+        </div>
       </div>
     </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="main-logo-section">
+          <img
+            src="img/tbl-logo-footer.png"
+            alt="Main Logo"
+            class="main-logo"
+          />
+          <!-- <div class="motto">Trust Bank PLC - A Bank for Financial Freedom</div> -->
+        </div>
 
-    <p>
-      Trust Bank PLC is concerned with social and environmental impacts of its investments and in-house green management to become a sustainable investment-friendly bank. Trust Bank PLC has been conducting banking business in those areas and in such a manner that helps the overall reduction of carbon emission by its customers as well as from its own operations. Sustainable finance is often understood both as <span class="highlight">“doing good and doing well.”</span>
-    </p>
-
-    <h3 class="subheading">Trust Bank sustainable financing position up to December, 2023</h3>
-
-    <div class="text-center my-4">
-      <img src="/im2.png" alt="Sustainable Financing Chart" class="chart-image">
-      <p>The Sustainable Finance Unit (SFU) of the bank ensures that funds are properly administered and disbursed in accordance with the bank’s vision, objectives, and areas of focus. We have a well-defined structure for reviewing and monitoring our CSR initiatives. The SFU of the bank has created policy guidelines on Corporate Social Responsibility and processes to monitor and evaluate our CSR programs. This not only helps in designing the target group but also in monitoring and evaluating the program in a structured way.</p>
-    <p>Over the years, Trust Bank has taken a number of great moves to expand its diversified services aiming to help millions of rural populations. In view of what, Trust Bank PLC. added a new product named ‘TRUST PRANTIK’ for expansion of income generating activities by bringing the unbanked segment of population under the banking network and also to gear up economic activities in the rural areas and increase financial inclusion. It is also designed for targeting the people of natural disaster affected area’s/ low income people, landless farmers, Small/ Marginal or micro entrepreneurs. They will start their banking relationship by opening a 10 taka account with the bank as per BB circular.</p>
-    </div>
-  </div>
-
-
-  </div>
-   <footer class="custom-footer text-white py-5">
-        <div class="container">
-          <div class="row">
-            <!-- Logo and Subscribe -->
-            <div class="col-lg-3 mb-4">
-              <div class="logo mb-4">LOGO</div>
-              <div class="subscribe-form">
-                <form class="d-flex">
-                  <input
-                    type="email"
-                    class="form-control me-2"
-                    placeholder="Enter your email to get the latest news"
-                  />
-                  <button class="btn btn-primary" type="submit">Search</button>
-                </form>
-              </div>
-            </div>
-
-            <!-- Column One -->
-            <div class="col-lg-3 mb-4">
-              <h5 class="mb-3">COLUMN ONE</h5>
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Twenty One</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Thirty Two</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Fourty Three</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Fifty Four</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <!-- Column Two -->
-            <div class="col-lg-3 mb-4">
-              <h5 class="mb-3">COLUMN TWO</h5>
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Sixty Five</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Seventy Six</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Eighty Seven</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Ninety Eight</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <!-- Column Three -->
-            <div class="col-lg-3 mb-4">
-              <h5 class="mb-3">COLUMN THREE</h5>
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >One Two</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Three Four</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Five Six</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Seven Eight</a
-                  >
-                </li>
-              </ul>
-              <div class="mt-4">
-                <h5 class="mb-3">COLUMN FOUR</h5>
-                <p class="mb-2">Join Us</p>
-                <div class="social-icons">
-                  <a href="#" class="text-white me-3"
-                    ><i class="bi bi-youtube"></i
-                  ></a>
-                  <a href="#" class="text-white me-3"
-                    ><i class="bi bi-facebook"></i
-                  ></a>
-                  <a href="#" class="text-white me-3"
-                    ><i class="bi bi-twitter"></i
-                  ></a>
-                  <a href="#" class="text-white me-3"
-                    ><i class="bi bi-instagram"></i
-                  ></a>
-                  <a href="#" class="text-white"
-                    ><i class="bi bi-linkedin"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
+        <div class="row">
+          <div class="col-md-3 mb-4">
+            <h5 class="footer-heading">QUICK LINKS</h5>
+            <a href="#" class="footer-link">Home</a>
+            <a href="#" class="footer-link">About Us</a>
+            <a href="#" class="footer-link">Services</a>
+            <a href="#" class="footer-link">Contact</a>
           </div>
 
-          <!-- Bottom Footer -->
-          <div class="row mt-4 pt-4 border-top">
-            <div class="col-md-6">
-              <p class="mb-0">Greelogix © 2024. All rights reserved.</p>
+          <div class="col-md-3 mb-4">
+            <h5 class="footer-heading">SERVICES</h5>
+            <a href="#" class="footer-link">Banking</a>
+            <a href="#" class="footer-link">Loans</a>
+            <a href="#" class="footer-link">Credit Cards</a>
+            <a href="#" class="footer-link">Investments</a>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <h5 class="footer-heading">SUPPORT</h5>
+            <a href="#" class="footer-link">Board of Director</a>
+            <a href="#" class="footer-link">Executive Committee</a>
+            <a href="#" class="footer-link">Audit Committee</a>
+            <a href="#" class="footer-link">Senior Management Team</a>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <h5 class="footer-heading">NEWSLETTER</h5>
+            <div class="d-flex gap-2">
+              <input
+                type="email"
+                class="form-control email-input"
+                placeholder="Enter your email"
+              />
+              <button class="btn search-btn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
             </div>
-            <div class="col-md-6">
-              <ul class="list-inline mb-0 text-md-end">
-                <li class="list-inline-item">
-                  <a href="#" class="text-white text-decoration-none">Home</a>
-                </li>
-                <li class="list-inline-item ms-3">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Services</a
-                  >
-                </li>
-                <li class="list-inline-item ms-3">
-                  <a href="#" class="text-white text-decoration-none">Blog</a>
-                </li>
-                <li class="list-inline-item ms-3">
-                  <a href="#" class="text-white text-decoration-none"
-                    >Help Center</a
-                  >
-                </li>
-                <li class="list-inline-item ms-3">
-                  <a href="#" class="text-white text-decoration-none">About</a>
-                </li>
-              </ul>
+            <div class="social-icons">
+              <a href="#" class="social-icon"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
             </div>
           </div>
         </div>
-      </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+
+        <div class="footer-bottom">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <p class="mb-md-0">© 2024 Trust Bank PLC. All rights reserved.</p>
+            </div>
+            <div class="col-md-6">
+              <div class="credentials-section">
+                <div class="badge-container">
+                  <a href="https://www.bb.org.bd/en/index.php" target="_blank">
+                    <img
+                      src="img/passport.jpg"
+                      alt="Badge 1"
+                      class="badge-img"
+                    />
+                  </a>
+                  <a href="https://www.cse.com.bd/" target="_blank">
+                    <img src="img/cse.jpg" alt="Badge 2" class="badge-img" />
+                  </a>
+                  <a href="https://www.dsebd.org/" target="_blank">
+                    <img
+                      src="img/dhaka stock exchange.png"
+                      alt="Badge 3"
+                      class="badge-img"
+                    />
+                  </a>
+                  <a href="http://www.passport.gov.bd/" target="_blank">
+                    <img
+                      src="img/passport.png"
+                      alt="Badge 4"
+                      class="badge-img"
+                    />
+                  </a>
+                </div>
+                <a href="tel:16201" class="helpline">
+                  <i class="fas fa-phone-alt"></i> 16201
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

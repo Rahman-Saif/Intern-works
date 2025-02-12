@@ -263,7 +263,7 @@ const updateData = (emi) => {
             }
         },
         business: {
-            name: "Trust Bank LTD.",
+            name: "Trust Bank PLC.",
             address: "Albania, Tirane ish-Dogana, Durres 2001",
             phone: "(+355) 069 11 11 111",
             email: "email@example.com",
